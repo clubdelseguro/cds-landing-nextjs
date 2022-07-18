@@ -1,16 +1,716 @@
-html,
 body {
-  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button.rec-dot_active {
+  background-color: #C4C4C4;
+  box-shadow: 0 0 1px 3px #C4C4C4;
+}
+
+/* button.rec-dot {
+  display: none;
+} */
+
+.cotiza-ahora-seguro-automotriz {
+  text-decoration: none;
+  margin-top: 35px;
+  padding: 9px 15px;
+  background-color: #FC8100;
+  border-radius: 32px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #FFFFFF;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+button.rec-dot:hover,
+button.rec-dot:active,
+button.rec-dot:focus {
+  box-shadow: 0 0 1px 3px #C4C4C4;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  min-height: 100vh;
+}
+
+.contenido {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 250px;
+}
+
+.body {
+  width: 100%;
+  max-width: 1060px;
+}
+
+@media screen and (max-width: 800px) {
+  .ocultar {
+    display: none;
+  }
+
+  .contenido {
+    margin-bottom: 450px;
+  }
+}
+
+.root-header-home {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 415px;
+  background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/inicio_header_9cc2a0b31b.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container-header-home {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.title-header-home {
+  width: 407.96px;
+  height: 100.73px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 56px;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+.description-header-home {
+  margin-top: 25px;
+  margin-bottom: 0;
+  width: 413.9px;
+  height: 89.43px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+}
+
+.cotiza-ahora-header-home {
+  width: 158.43px;
+  height: 40.09px;
+  border-radius: 32px;
+  background-color: #FC8100;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 980px) {
+  .root-header-home {
+    background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/inicio_header_md_3093dcfe7e.png');
+  }
+
+  .description-header-home {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .title-header-home {
+    width: 160px;
+    height: 39px;
+    font-size: 20px;
+    line-height: 21px;
+    margin-top: 19px;
+  }
+
+  .description-header-home {
+    margin-top: 13px;
+    width: 229px;
+    height: 41px;
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  .cotiza-ahora-header-home {
+    width: 93.11px;
+    height: 22.7px;
+    border-radius: 18.623px;
+    font-size: 12.4754px;
+    line-height: 12px;
+    margin-top: 13px;
+  }
+}
+
+.root-header-movil-home {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header-movil-home {
+  background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_header_md_inicio_092e920902.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container-header-movil-home {
+  width: 400px;
+  height: 148px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 35px 35px 0px 0px;
+  position: absolute;
+  bottom: 0px;
+}
+
+@media screen and (max-width: 500px) {
+  .container-header-movil-home {
+    width: 272px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header-movil-home {
+    background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/inicio_header_movil_4f30c37228.png');
+  }
+}
+
+.title-activa-tus-beneficios {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 48px;
+  line-height: 56px;
+  text-align: center;
+  color: #000000;
+}
+
+@media screen and (max-width: 800px) {
+  .title-activa-tus-beneficios {
+    font-size: 31.5789px;
+    line-height: 37px;
+  }
+}
+
+.root-how-to-quote {
+  margin-top: 88px;
+  margin-bottom: 27px;
+}
+
+.title-how-to-quote {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 47px;
+  text-align: center;
+}
+
+.container-cards-how-to-quote {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.flecha-how-to-quote {
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .root-how-to-quote {
+    margin-top: 100px;
+  }
+
+  .title-how-to-quote {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .flecha-how-to-quote {
+    margin-left: 30px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .flecha-how-to-quote {
+    display: none;
+  }
+}
+
+.root-card-how-to-quote {
+  width: 218px;
+  width: 218px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-card-how-to-quote {
+  height: 47px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-card-how-to-quote {
+  width: 95.75px;
+  height: 30.64px;
+  border: 2px solid #FC8100;
+  border-radius: 57px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24.6225px;
+  line-height: 29px;
+  text-align: center;
+  color: #FC8100;
+}
+
+.description-how-to-quote {
+  margin: 0;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 17.2358px;
+  line-height: 20px;
+  text-align: center;
+  color: #000000;
+}
+
+@media screen and (max-width: 960px) {
+  .description-how-to-quote {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+
+.cards-blogs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.cards-blogs-movil {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .cards-blogs-movil {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .cards-blogs {
+    display: none;
+  }
+}
+
+.root-card-blog {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #FFFFFF;
+  height: 253.99px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  margin-bottom: 30px;
+  text-decoration: none;
+}
+
+.img-card-blog {
+  width: 100%;
+  height: 145.7px;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.description-card-blog {
+  margin-top: 31px;
+  margin-left: 26px;
+  margin-right: 18px;
+  margin-bottom: 14.77px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+  text-overflow: Ellipsis;
+  white-space: normal;
+  overflow: hidden;
+}
+
+.title-card-blog {
+  position: absolute;
+  right: 0%;
+  top: 47%;
+  min-width: 80px;
+  padding: 0px 18px;
+  height: 29.53px;
+  background: #FC8100;
+  border-radius: 20px 0px 0px 20px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12.973px;
+  line-height: 15px;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.root-container-cotiza-ahora-con-nosotros {
+  width: 100%;
+  border-radius: 48px 52px 52px 52px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.img-cotiza-ahora-con-nosotros {
+  width: 50%;
+  height: 206px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 48px 0px 0px 52px;
+  background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/cotiza_ahora_con_nosotros_5c054c8be5.png');
+}
+
+.content-cotiza-ahora-con-nosotros {
+  width: 50%;
+  height: 206px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.title-cotiza-ahora-con-nosotros {
+  margin-top: 30px;
+  margin-bottom: 0px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 44.313px;
+  line-height: 52px;
+  text-align: center;
+  color: #FC8100;
+}
+
+.description-cotiza-ahora-con-nosotros {
+  margin: 0;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 44.313px;
+  line-height: 52px;
+  text-align: center;
+}
+
+.bottom-cotiza-ahora-con-nosotros {
+  border-radius: 0px 0px 52px 0px;
+  position: absolute;
+  width: 100%;
+  height: 55px;
+  bottom: 0;
+  background: #FC8100;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 770px) {
+  .root-container-cotiza-ahora-con-nosotros {
+    flex-direction: column;
+  }
+
+  .img-cotiza-ahora-con-nosotros {
+    width: 100%;
+    height: 245px;
+    border-radius: 52px 52px 0px 0px;
+  }
+
+  .content-cotiza-ahora-con-nosotros {
+    width: 100%;
+    height: 150px;
+  }
+
+  .bottom-cotiza-ahora-con-nosotros {
+    border-radius: 52px;
+    height: 51px;
+  }
+
+  .title-cotiza-ahora-con-nosotros {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .description-cotiza-ahora-con-nosotros {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+.root-importancia-elegirnos {
+  margin-top: 25px;
+  margin-bottom: 36px;
+}
+
+.title-importancia-elegirnos {
+  margin-left: 48px;
+  text-align: left;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 33.913px;
+  line-height: 40px;
+  color: #000000;
+  margin-bottom: 30px;
+}
+
+.card-importancia-elegirnos {
+  width: 278.48px;
+  background-color: #FBFBFB;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+}
+
+.title-card-importancia-elegirnos {
+  margin-left: 26.62px;
+  padding-top: 16px;
+  margin-right: 16.71px;
+  height: 61px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+}
+
+.name-importancia-elegirnos {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  padding-bottom: 24px;
+}
+
+.cards-importancia-elegirnos {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 800px) {
+  .title-importancia-elegirnos {
+    margin-left: 24px;
+    margin-right: 18px;
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #5A5A5A;
+    margin-bottom: 34px;
+  }
+
+  .cards-importancia-elegirnos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .root-importancia-elegirnos {
+    margin-top: 34px;
+    margin-bottom: 26px;
+  }
+
+  .name-importancia-elegirnos {
+    color: #727171;
+  }
+}
+
+.root-porque-elegir-el-club {
+  width: 100%;
+  height: 330px;
+  background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/porque_Elegir_El_Club_aeabf34180.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-end;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 40px;
+}
+
+.content-porque-elegir-el-club {
+  width: auto;
+  max-width: 391px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 50px;
+}
+
+.title-porque-elegir-el-club {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 24px;
+}
+
+.description-porque-elegir-el-club {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #000000;
+  margin: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .content-porque-elegir-el-club {
+    margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .root-porque-elegir-el-club {
+    background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/porque_Elegir_El_Club_md_360f258d67.png');
+    background-position: top right;
+  }
+
+  .content-porque-elegir-el-club {
+    margin-right: 5px;
+  }
+
+
+}
+
+@media screen and (max-width: 796px) {
+  .content-porque-elegir-el-club {
+    margin-right: 0px;
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .root-porque-elegir-el-club {
+    background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/porque_Elegir_El_Club_movil_8dbb8e5401.png');
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 284px;
+  }
+
+  .title-porque-elegir-el-club {
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  .description-porque-elegir-el-club {
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  .content-porque-elegir-el-club {
+    height: 150px;
+    display: flex;
+  }
+}
+
+.root-quienes-respaldan {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.title-quienes-respaldan {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 46.4761px;
+  line-height: 54px;
+  text-align: center;
+  color: #FF8300;
+}
+
+.logos-quienes-respaldan {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo-quienes-respaldan {
+  width: 194px;
+  height: 129px;
+  background: #F8F4F4;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+.ver-mas-quienes-respaldan {
+  margin-top: 37px;
+  width: 228px;
+  height: 46px;
+  background-color: #FF8300;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  text-decoration: none;
 }

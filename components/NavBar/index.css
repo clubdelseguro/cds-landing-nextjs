@@ -1,0 +1,24 @@
+.topbarmovil-header {
+    display: none;
+    width: 100%;
+}
+
+.topbar-header {
+    width: 100%;
+}
+
+.navbar {
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+@media screen and (max-width: 940px) {
+    .topbarmovil-header {
+        display: flex;
+    }
+
+    .topbar-header {
+        display: none;
+    }
+}

@@ -1,0 +1,111 @@
+.root-cards-help {
+    width: 100%;
+    min-height: 730px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.card-contacto-help {
+    width: 100%;
+    max-width: 430px;
+    height: 730px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 45px;
+    background-color: #FFFFFF;
+}
+
+.cards-help {
+    width: 100%;
+    max-width: 610px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-help {
+    width: 100%;
+    max-width: 610px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 45px;
+    background-color: #FFFFFF;
+}
+
+.card-help-title {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-bottom: 52px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.asistencia-img {
+    background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_asistencia_0247606954.png');
+    background-position: center top;
+    height: 319px;
+}
+
+.faq-img {
+    background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_faq_31f8a3ca2e.png');
+    background-position: center top;
+    height: 283px;
+}
+
+.contacto-img {
+    background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_contacto_d7cc563032.png');
+    background-position: center top;
+    height: 678px;
+}
+
+@media screen and (max-width: 800px) {
+    .root-cards-help {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+
+    .cards-help {
+        align-items: center;
+    }
+
+    .card-help {
+        width: 320px;
+        height: 300px;
+        margin-top: 35px;
+    }
+
+    .card-contacto-help {
+        width: 320px;
+        max-width: 400px;
+        height: 300px;
+        margin-top: 31px;
+        padding: 0;
+    }
+
+    .card-help-title {
+        font-size: 36px;
+        line-height: 42px;
+        padding-bottom: 33px;
+    }
+
+    .asistencia-img {
+        background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_asistencia_movil_68073a4ece.png');
+        height: 267px;
+    }
+
+    .faq-img {
+        background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_faq_movil_68ca9d859d.png');
+        height: 267px;
+    }
+
+    .contacto-img {
+        background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_contacto_movil_3301833a6c.png');
+        height: 267px;
+    }
+}

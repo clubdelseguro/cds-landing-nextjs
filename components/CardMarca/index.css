@@ -1,0 +1,61 @@
+
+.card-marcas {
+    width: 331px;
+    display: flex;
+    flex-direction: column;
+    background-color: #E4E4E4;
+    border-radius: 21px;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.header-card-marcas {
+    margin-top: 29px;
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+    font-size: 29.2174px;
+    line-height: 34px;
+    padding-left: 26px;
+}
+
+.body-card-marcas {
+    margin-top: 16px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 26.9286px;
+    line-height: 32px;
+    text-align: start;
+    padding-left: 26px;
+}
+
+.footer-card-marcas {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row-reverse;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14.8966px;
+    line-height: 17px;
+    text-align: center;
+}
+
+.ver-mas-card-marcas {
+    padding-top: 5px;
+    padding-left: 16px;
+    padding-bottom: 8.09px;
+    padding-right: 16.73px;
+    background-color: #000000;
+    border-radius: 21px 0px 21px 0px;
+}
+
+.text-header-card-marcas {
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    .card-marcas {
+        width: 320px;
+    }
+}
