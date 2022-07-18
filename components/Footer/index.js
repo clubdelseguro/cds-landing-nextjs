@@ -1,7 +1,5 @@
+import Link from 'next/link';
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './index.css';
-
 
 export const Footer = () => {
     return (
@@ -37,18 +35,24 @@ export const Footer = () => {
                     </div>
                     <ul className="content" style={{ padding: '0px 15px' }}>
                         <li>
-                            <Link style={{ textDecoration: 'none', color: '#000000' }} to={'/blog/guia-completa-para-contratar-un-seguro-para-autos'}>
-                                Guía completa para contratar un seguro para autos
+                            <Link href={'/blog/guia-completa-para-contratar-un-seguro-para-autos'}>
+                                <div className='link'>
+                                    Guía completa para contratar un seguro para autos
+                                </div>
                             </Link>
                         </li>
                         <li>
-                            <Link style={{ textDecoration: 'none', color: '#000000' }} to={'/blog/seguro-automotriz-todo-lo-que-debes-saber-acerca-de-las-coberturas'}>
-                                Seguro Automotriz, todo lo que debes saber acerca de las coberturas
+                            <Link href={'/blog/seguro-automotriz-todo-lo-que-debes-saber-acerca-de-las-coberturas'}>
+                                <div className='link'>
+                                    Seguro Automotriz, todo lo que debes saber acerca de las coberturas
+                                </div>
                             </Link>
                         </li>
                         <li>
-                            <Link style={{ textDecoration: 'none', color: '#000000' }} to={'/blog/guia-para-cotizar-el-seguro-de-tu-auto'}>
-                            Guía para cotizar el seguro de tu auto
+                            <Link href={'/blog/guia-para-cotizar-el-seguro-de-tu-auto'}>
+                                <div className='link'>
+                                    Guía para cotizar el seguro de tu auto
+                                </div>
                             </Link>
                         </li>
                     </ul>

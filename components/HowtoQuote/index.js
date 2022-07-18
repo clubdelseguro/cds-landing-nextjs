@@ -66,7 +66,7 @@ const useStyles = makeStyles(theme => ({
         fontWeight: 'bold'
     },
     bottom: {
-        margin: '30px'
+        margin: '30px',
     }
 }));
 

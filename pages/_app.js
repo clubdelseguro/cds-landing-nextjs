@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import { ThemeProvider } from '@mui/material/styles';
 import { theme } from '../utils/theme';
 import Head from "next/head";
+import { Footer } from '../components/Footer';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -12,7 +13,12 @@ function MyApp({ Component, pageProps }) {
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
       </Head>
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
+        <div className="App">
+          <div className="contenido">
+            <Component {...pageProps} />
+          </div>
+          <Footer />
+        </div>
       </ThemeProvider>
     </>
   )
