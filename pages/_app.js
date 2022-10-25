@@ -3,6 +3,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { theme } from '../utils/theme';
 import Head from "next/head";
 import { Footer } from '../components/Footer';
+import NextNProgress from 'nextjs-progressbar';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -15,6 +16,7 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider theme={theme}>
         <div className="App">
           <div className="contenido">
+            <NextNProgress color='#FC8100' />
             <Component {...pageProps} />
           </div>
           <Footer />
