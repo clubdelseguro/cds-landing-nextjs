@@ -90,7 +90,7 @@ function Contacto({ data }) {
 
 Contacto.getInitialProps = async ({ req }) => {
     const [data] = await Promise.all([
-        fetch(`https://strapi.clubdelseguro.cl/pages/6`).then((r) => r.json()),
+        fetch(`${process.env.REACT_APP_DOMINIO_API}/pages/6`).then((r) => r.json()),
     ]);
 
     return {

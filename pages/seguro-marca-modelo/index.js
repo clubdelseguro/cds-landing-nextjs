@@ -76,9 +76,9 @@ function Marcas({ data, benefits, brands }) {
 
 Marcas.getInitialProps = async ({ req }) => {
     const [data, benefits, brands] = await Promise.all([
-        fetch(`https://strapi.clubdelseguro.cl/pages/7`).then((r) => r.json()),
-        fetch(`https://strapi.clubdelseguro.cl/benefits`).then((r) => r.json()),
-        fetch(`https://strapi.clubdelseguro.cl/brands`).then((r) => r.json()),
+        fetch(`${process.env.REACT_APP_DOMINIO_API}/pages/7`).then((r) => r.json()),
+        fetch(`${process.env.REACT_APP_DOMINIO_API}/benefits`).then((r) => r.json()),
+        fetch(`${process.env.REACT_APP_DOMINIO_API}/brands`).then((r) => r.json()),
     ]);
 
     return {

@@ -43,9 +43,9 @@ function SeguroAutomotriz({ data, benefits, coverages }) {
 
 SeguroAutomotriz.getInitialProps = async ({ req }) => {
     const [data, benefits, coverages] = await Promise.all([
-        fetch(`https://strapi.clubdelseguro.cl/pages/3`).then((r) => r.json()),
-        fetch(`https://strapi.clubdelseguro.cl/benefits`).then((r) => r.json()),
-        fetch(`https://strapi.clubdelseguro.cl/coverages`).then((r) => r.json()),
+        fetch(`${process.env.REACT_APP_DOMINIO_API}/pages/3`).then((r) => r.json()),
+        fetch(`${process.env.REACT_APP_DOMINIO_API}/benefits`).then((r) => r.json()),
+        fetch(`${process.env.REACT_APP_DOMINIO_API}/coverages`).then((r) => r.json()),
     ]);
 
     return {
