@@ -1,0 +1,455 @@
+.rootCompaniesPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 63px;
+    width: 100%;
+}
+
+.rootHeaderAseguradoras {
+    width: 100%;
+    height: 396px;
+    background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_header_60c131daf6.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.titleCompaniesPage {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 44.313px;
+    line-height: 52px;
+    text-align: center;
+}
+
+.containerCompanies {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.fila-companies {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 45px;
+}
+
+.botonCompany {
+    width: 270px;
+    height: 41px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 51px;
+    margin-top: 15px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.nameCompany {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    padding-left: 5px;
+}
+
+.company-companies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 362px;
+    margin-bottom: 40px;
+}
+
+.containerImgCompanies {
+    height: 113px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont-header {
+    display: flex;
+    justify-content: center;
+    margin-top: 23px;
+    position: absolute;
+}
+
+.containerHeaderCompanies {
+    width: 455px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-radius: 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: relative;
+    top: 111px;
+    left: 50%;
+    margin: 0;
+}
+
+.topContainerHeaderCompanies {
+    width: 100%;
+    height: 130px;
+    background-color: #EDEDED;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px 40px 0px 0px;
+}
+
+.contentTopContainerHeaderCompanies {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    padding-left: 54px;
+    padding-right: 44px;
+}
+
+.bottomContainerHeaderCompanies {
+    width: 100%;
+    height: 104px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 0px 40px 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.contentBottomContainerHeaderCompanies {
+    padding-left: 64px;
+    padding-right: 53px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17.8889px;
+    line-height: 21px;
+    text-align: center;
+    color: #FC8100;
+}
+
+.quieroCotizarHeaderCompanies {
+    position: absolute;
+    width: 160px;
+    height: 39px;
+    background-color: #FC8100;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: -19px;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 900px) {
+    .rootHeaderAseguradoras {
+        background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_header_md_7b8408288e.png');
+        margin-bottom: 200px;
+    }
+
+    .containerHeaderCompanies {
+        width: auto;
+        max-width: 455px;
+        min-width: 320px;
+        top: 342px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .topContainerHeaderCompanies {
+        height: 170px;
+    }
+
+    .bottomContainerHeaderCompanies {
+        height: 119px;
+    }
+
+    .contentTopContainerHeaderCompanies {
+        padding-left: 19px;
+        padding-right: 12px;
+    }
+
+    .contentBottomContainerHeaderCompanies {
+        padding-left: 45px;
+        padding-right: 38px;
+    }
+
+}
+
+
+@media screen and (max-width: 800px) {
+    .fila-companies {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    .company-companies {
+        max-width: 314px;
+        margin-top: 34px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .rootHeaderAseguradoras {
+        background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_header_movil_77fb2881a2.png');
+    }
+}
+
+.rootCompany {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px 0px;
+}
+
+.containerTitleCompany {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.titleCompany {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 44.313px;
+    line-height: 52px;
+    text-align: start;
+    margin: 0;
+}
+
+.containerDescriptionCompany {
+    max-width: 542px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #000000;
+}
+
+.evaluacionGeneralCompany {
+    width: 280px;
+    height: 37px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 35px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 29px;
+}
+
+.subtitleCompany {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 44.313px;
+    line-height: 52px;
+    color: #000000;
+    text-align: start;
+    margin: 41px 0px;
+}
+
+@media screen and (max-width: 960px) {
+    .rootCompany {
+        flex-direction: column;
+    }
+
+    .subtitleCompany {
+        margin-left: 10px;
+        margin-right: 22.22px;
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .companyPage {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .rootCompany {
+        width: 350px;
+        flex-direction: column;
+        margin-right: 30px;
+    }
+}
+
+@media screen and (max-width: 710px) {
+    .companyPage {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .rootCompany {
+        width: auto;
+        margin-right: 0px;
+    }
+}
+
+.rootHeaderCompany {
+    height: 396px;
+    background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/company_header_2b90eadc9f.png');
+    position: relative;
+}
+
+.containerHeaderCompany {
+    position: absolute;
+    width: 502px;
+    height: 210px;
+    right: 28px;
+    bottom: 27px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 40px 40px 21px;
+}
+
+.headerContainerCompany {
+    display: flex;
+    flex-direction: row;
+    height: 103.85px;
+    margin-top: 24px;
+    width: 100%;
+}
+
+.imgHeaderContainerCompany {
+    max-width: 150px;
+    max-height: 50px;
+    margin-left: 23px;
+}
+
+.titleContainerCompany {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30.8824px;
+    line-height: 36px;
+    margin: 0;
+    text-align: start;
+}
+
+.subtitleContainerCompany {
+    margin: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19.7964px;
+    line-height: 23px;
+    transform: rotate(0.01deg);
+    text-align: start;
+    margin-top: 12px;
+}
+
+.titleHeaderContainerCompany {
+    margin-left: 29px;
+    margin-right: 69px;
+}
+
+.bottomContainerCompany {
+    margin-top: 5px;
+    margin-left: 23px;
+    margin-bottom: 24px;
+    margin-right: 46px;
+}
+
+.textBottomContainerCompany {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: start;
+}
+
+@media screen and (max-width: 860px) {
+    .containerHeaderCompany {
+        position: absolute;
+        width: 306px;
+        height: auto;
+        left: 20px;
+        bottom: -110%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .headerContainerCompany {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+
+    .titleContainerCompany {
+        font-weight: bold;
+        font-size: 30.8824px;
+        line-height: 36px;
+    }
+
+    .rootHeaderCompany {
+        margin-bottom: 40px;
+        background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/company_header_2b90eadc9f.png');
+    }
+}
+
+@media screen and (max-width: 710px) {
+    .containerHeaderCompany {
+        width: 406px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -70%;
+    }
+
+
+    .rootHeaderCompany {
+        margin-bottom: 300px;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    .containerHeaderCompany {
+        width: 306px;
+        bottom: -90%;
+    }
+
+
+    .rootHeaderCompany {
+        margin-bottom: 350px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .rootHeaderCompany {
+        background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/company_header_movil_78772e2b05.png');
+    }
+}

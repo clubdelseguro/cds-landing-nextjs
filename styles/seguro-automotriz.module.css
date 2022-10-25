@@ -1,0 +1,131 @@
+.cardsBodySeguroAutomotriz {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.headerSeguroAutomotriz {
+    width: 100%;
+    max-width: 1060px;
+    height: 386px;
+    border-radius: 0px 0px 40px 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+    margin-bottom: 150px;
+    background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_header_seguro_automotriz_433f457e53.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.rootContainerSeguroAutomotriz {
+    width: 100%;
+    max-width: 636px;
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    position: absolute;
+    top: 298px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.root-seguro-automotriz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titleSeguroAutomotriz {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 22px;
+    margin-top: 40px;
+}
+
+.descriptionSeguroAutomotriz {
+    width: 100%;
+    max-width: 432px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #000000;
+    margin: 0px 30px;
+}
+
+.cotizaAhoraSeguroAutomotriz {
+    text-decoration: none;
+    margin-top: 35px;
+    padding: 9px 15px;
+    background-color: #FC8100;
+    border-radius: 32px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.title-activa-tus-beneficios-segurp-automotriz {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 32px;
+    margin-top: 35px;
+}
+
+@media screen and (max-width: 800px) {
+    .cardsBodySeguroAutomotriz {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .titleSeguroAutomotriz {
+        font-size: 20px;
+        line-height: 21px;
+        margin-top: 13px;
+    }
+
+    .descriptionSeguroAutomotriz {
+        width: auto;
+        font-size: 14px;
+        line-height: 14px;
+        margin: 0;
+        padding: 0px 10px;
+    }
+
+    .title-activa-tus-beneficios-segurp-automotriz {
+        font-size: 31.5789px;
+        line-height: 37px;
+    }
+
+    .rootContainerSeguroAutomotriz {
+        top: 359px;
+        width: 272px;
+    }
+
+    .headerSeguroAutomotriz {
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .headerSeguroAutomotriz {
+        background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_header_movil_seguro_automotriz_658ee5445a.png');
+    }
+
+}

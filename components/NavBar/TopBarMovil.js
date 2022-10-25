@@ -9,9 +9,9 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Grid } from '@material-ui/core';
-import { Link } from 'react-router-dom';
 import { rutas } from '../../utils/constants';
+import { Grid } from '@mui/material';
+import Link from 'next/link';
 
 export const TopBarMovil = () => {
     const [state, setState] = React.useState({
@@ -38,7 +38,7 @@ export const TopBarMovil = () => {
         >
             <List>
                 {rutas.map((text, i) => (
-                    <Link to={text.url} style={{ textDecoration: 'none', color: '#000000' }} key={i}>
+                    <Link href={text.url} style={{ textDecoration: 'none', color: '#000000' }} key={i}>
                         <ListItem button key={text.id}>
                             <ListItemText primary={text.name} />
                         </ListItem>
@@ -70,7 +70,7 @@ export const TopBarMovil = () => {
                     justifyContent="space-between"
                     alignItems="flex-start"
                 >
-                    <Link to="/">
+                    <Link href="/">
                         <img loading="lazy" src="/assets/logo-CDS-Blanco.svg" alt="Icono" />
                     </Link>
 

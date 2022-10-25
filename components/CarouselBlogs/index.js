@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { makeStyles } from '@mui/styles';
 import { CardsBlog } from '../../components/CardsBlog'
 import Carousel from 'react-elastic-carousel';
 import Link from 'next/link';
+import styles from '../../styles/components/CarouselBlogs.module.css';
 
 const breakPoints = [
     {
@@ -19,53 +18,20 @@ const breakPoints = [
     },
 ]
 
-const useStyles = makeStyles(theme => ({
-    cardsBeneficio: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-around',
-        margin: '2% 0%'
-    },
-    button: {
-        backgroundColor: '#000000',
-        borderRadius: '20px',
-        textDecoration: 'none',
-        color: '#FFFFFF',
-        width: '228px',
-        height: '46px',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: '18px',
-        lineHeight: '21px',
-        fontWeight: 'bold'
-    },
-    bottom: {
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        margin: '20px 0px',
-    }
-}));
-
 
 export const CarouselBlogs = ({ blogs }) => {
-
-    const classes = useStyles();
     return (
-        <div className={classes.cardsBeneficio}>
+        <div className={styles.cardsBeneficio}>
             <Carousel breakPoints={breakPoints} showArrows={false} enableAutoPlay={true} autoPlaySpeed={5000}>
                 {
                     blogs?.map((blog, i) => i < 4 ? <CardsBlog key={blog.id} blog={blog} /> : null)
                 }
             </Carousel>
-            <div className={classes.bottom}>
-                <Link href="/blog" style={{ textDecoration: 'none' }}>
-                    <div className={classes.button}>Ver más blogs</div>
-                </Link>
-            </div>
+            <Link href="/blog">
+                <div className={styles.bottom}>
+                    <div className={styles.button}>Ver más blogs</div>
+                </div>
+            </Link>
         </div>
     )
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import { quitarAcentos } from '../../utils/constants';
-import './index.css';
 
 export const CardModel = ({ name, brand }) => {
     let model = quitarAcentos(name);

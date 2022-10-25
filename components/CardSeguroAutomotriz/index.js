@@ -1,5 +1,4 @@
 import React from 'react';
-import './index.css'
 
 export const CardSeguroAutomotriz = ({img, title, subtitle, color, data, company, coverage}) => {
     return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { quitarAcentos } from '../../utils/constants';
-import './index.css';
+/* import './index.css'; */
 
 export const CardComuna = ({ name, region }) => {
     let commune = quitarAcentos(name);

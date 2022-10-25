@@ -1,7 +1,7 @@
 import React from 'react';
 import { TopBar } from './TopBar';
 import { TopBarMovil } from './TopBarMovil';
-import './index.css'
+/* import './index.css' */
 
 export const NavBar = () => {
     return (

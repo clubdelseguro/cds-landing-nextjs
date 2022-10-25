@@ -1,0 +1,46 @@
+.card {
+    width: 250px;
+    height: 297px;
+    margin: 20px 0px;
+}
+
+.headerCard {
+    width: 100%;
+    height: 144px;
+    border: 5px solid #F37420;
+    box-sizing: border-box;
+    border-radius: 40px 0px 0px 0px;
+}
+
+.bodyCard {
+    width: 100%;
+    height: 153px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: flex-end;
+    text-align: right;
+    color: #F37420;
+    margin: 0px 14px 5px 14px;
+}
+
+.content {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 13px;
+    color: #030101;
+    margin: 0px 14px;
+    text-align: right;
+}

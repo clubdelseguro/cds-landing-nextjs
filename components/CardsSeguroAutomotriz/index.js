@@ -1,6 +1,5 @@
 import React from 'react';
 import { CardSeguroAutomotriz } from '../CardSeguroAutomotriz';
-import './index.css';
 import Carousel from 'react-elastic-carousel';
 
 const breakPoints = [

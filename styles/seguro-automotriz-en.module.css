@@ -1,0 +1,302 @@
+.headerRegiones {
+    width: 100%;
+    max-width: 1060px;
+    height: 386px;
+    border-radius: 0px 0px 40px 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 270px;
+    background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_header_region_7079a74957.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.rootContainerRegiones {
+    width: auto;
+    max-width: 636px;
+    background-color: #FFFFFF;
+    border-radius: 50px;
+    position: absolute;
+    top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin: 0px 24px;
+}
+
+.titleRegiones {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+    color: #000000;
+    margin: 0;
+    margin-top: 57px;
+}
+
+.descriptionRegiones {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #000000;
+    margin: 17px 102px;
+}
+
+.cotizaAhoraRegiones {
+    width: 160px;
+    height: 39px;
+    background: #FC8100;
+    border-radius: 32px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 55px;
+    text-decoration: none;
+}
+
+.seguroAutomotrizRegiones {
+    width: 100%;
+    max-width: 642px;
+    min-height: 90px;
+    background: linear-gradient(0deg, #FFFFFF, #FFFFFF);
+    border-radius: 50px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    color: #FC8100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -45px;
+}
+
+.bodyRegiones {
+    width: 100%;
+    background-color: #F0F0F0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.containerBodyRegiones {
+    width: 100%;
+    max-width: 1060px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 59px;
+}
+
+.topbarmovil-headerRegiones {
+    display: none;
+    width: 100%;
+}
+
+.topbar-headerRegiones {
+    width: 100%;
+}
+
+.carouselCardRegiones {
+    display: none;
+}
+
+.bodyRegiones-page {
+    width: 100%;
+    max-width: 1060px;
+}
+
+.cards-marcas-regiones-page {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 940px) {
+    .topbarmovil-headerRegiones {
+        display: flex;
+    }
+
+    .topbar-headerRegiones {
+        display: none;
+    }
+
+    .containerBodyRegiones {
+        display: none;
+    }
+
+    .carouselCardRegiones {
+        width: 100%;
+        display: block;
+        margin-top: 85px;
+    }
+
+    .rootContainerRegiones {
+        top: 250px;
+    }
+
+    .cards-marcas-regiones-page {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 550px) {
+
+    .descriptionRegiones {
+        margin: 17px 0px;
+    }
+
+    .seguroAutomotrizRegiones {
+        font-size: 24px;
+        line-height: 28px;
+        width: 100%;
+        min-width: 320px;
+        border-radius: 20px;
+    }
+
+    .headerRegiones {
+        margin-bottom: 250px;
+    }
+
+    .titleRegiones {
+        font-size: 36px;
+        line-height: 42px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+
+    .headerRegiones {
+        margin-bottom: 250px;
+        background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_header_movil_region_852b8e5249.png');
+    }
+}
+
+.bodyRegionesPage {
+    width: 100%;
+    max-width: 1060px;
+}
+
+.titleMarcas {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    color: #000000;
+    padding: 0px 41px;
+}
+
+.cardsMarcasRegionesPage {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 940px) {
+    .cardsMarcasRegionesPage {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .titleMarcas {
+        font-size: 18px;
+        line-height: 21px;
+    }
+}
+
+.headerRegion {
+    width: 100%;
+    max-width: 1060px;
+    height: 386px;
+    border-radius: 0px 0px 40px 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 180px;
+    background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_header_region_7079a74957.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.bodyComunas {
+    width: 100%;
+    background-color: #F0F0F0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.containerBodyComunas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1060px;
+}
+
+.titleContainerBodyComunas {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    color: #000000;
+    margin-left: 11px;
+    margin-right: 12px;
+}
+
+.titleRegion {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 35.7551px;
+    line-height: 42px;
+    text-align: center;
+    color: #000000;
+    margin-top: 32px;
+}
+
+@media screen and (max-width: 940px) {
+    .headerRegion {
+        margin-bottom: 250px;
+    }
+
+}
+
+@media screen and (max-width: 380px) {
+
+    .headerRegion {
+        margin-bottom: 350px;
+        background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_header_movil_region_852b8e5249.png');
+    }
+
+    .titleRegion {
+        width: 261px;
+    }
+}

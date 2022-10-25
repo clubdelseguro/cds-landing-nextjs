@@ -1,0 +1,105 @@
+.headerAsistenciasPage {
+    width: 100%;
+    max-width: 1060px;
+    height: 386px;
+    display: flex;
+    background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_header_asistencia_0cf3ee17e2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerHeaderAsistencias {
+    width: 100%;
+    max-width: 520px;
+    height: 72px;
+    background: #FFFFFF;
+    border-radius: 1000px 0px 0px 0px;
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+}
+
+.containerTitleAsistencias {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.titleAsistencias {
+    margin: 0px 43px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+    color: #000000;
+}
+
+.descriptionAsistencias {
+    width: 100%;
+    max-width: 383px;
+    margin: 0px 43px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #000000;
+}
+
+.cards-beneficios-asistencia {
+    width: 100%;
+    max-width: 790px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.carousel-beneficios-asistencia {
+    display: none;
+}
+
+
+@media screen and (max-width: 900px) {
+    .containerHeaderAsistencias {
+        max-width: none;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .cards-beneficios-asistencia {
+        display: none;
+    }
+
+    .carousel-beneficios-asistencia {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .containerTitleAsistencias {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 0px;
+    }
+
+    .descriptionAsistencias {
+        width: auto;
+        margin: 14px 43px;
+    }
+}
+
+@media screen and (max-width: 482px) {
+    .headerAsistenciasPage {
+        background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_header_movil_asistencia_9f49316947.png');
+    }
+}

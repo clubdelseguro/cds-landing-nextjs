@@ -1,0 +1,216 @@
+.rootNuestroObjetivo {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.headerQuienesSomosPage {
+    width: 100%;
+    max-width: 1060px;
+    height: 386px;
+    display: flex;
+    background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_header_quienes_somos_0aa4a9ea48.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerHeaderQuienesSomos {
+    width: 100%;
+    max-width: 594px;
+    height: 72px;
+    background: #FFFFFF;
+    border-radius: 0px 100px 0px 0px;
+    position: absolute;
+    bottom: -2px;
+    left: -1px;
+}
+
+.itemNuestroObjetivo {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleNuestroObjetivo {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+}
+
+.descriptionNuestroObjetivo {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+    .imgNuestroObjetivo {
+        display: none;
+    }
+
+    .rootNuestroObjetivo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 13px;
+    }
+
+    .itemNuestroObjetivo {
+        width: 100%;
+        max-width: 432px;
+        margin-bottom: 22px;
+    }
+
+    .titleNuestroObjetivo {
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    .descriptionNuestroObjetivo {
+        padding: 0px 14px;
+    }
+
+    .containerHeaderQuienesSomos {
+        border-radius: 100px 100px 0px 0px;
+        height: 27px;
+        max-width: 272px;
+        left: auto;
+        right: auto;
+    }
+
+    .headerQuienesSomosPage {
+        height: 250px;
+    }
+}
+
+.rootNuestraHistoria {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+}
+
+.titleNuestraHistoria {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.containerNuestraHistoria {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.descriptionNuestraHistoria {
+    width: 50%;
+    font-style: normal;
+    font-weight: 300px;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: justify;
+    margin-left: 26px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contentNuestraHistoria {
+    width: 50%;
+}
+
+.imgNuestraHistoria {
+    width: 100%;
+}
+
+.desarrolloNuestraHistoria {
+    font-style: normal;
+    font-weight: 300px;
+    font-size: 18px;
+    line-height: 21.09px;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+}
+
+.seguir-leyendo {
+    display: none;
+}
+
+@media screen and (max-width: 1060px) {
+    .rootNuestraHistoria {
+        width: auto;
+        margin-left: 15px;
+        margin-right: 24px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .rootNuestraHistoria {
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .containerNuestraHistoria {
+        flex-direction: column;
+    }
+
+    .contentNuestraHistoria {
+        width: 100%;
+    }
+
+    .descriptionNuestraHistoria {
+        width: auto;
+        margin-top: 15px;
+        margin-left: 30px;
+        margin-right: 24px;
+    }
+
+    .desarrolloNuestraHistoria {
+        margin-left: 30px;
+        margin-right: 24px;
+    }
+
+    .titleNuestraHistoria {
+        font-size: 18px;
+        line-height: 21px;
+        margin-bottom: 16px;
+    }
+
+    .seguir-leyendo {
+        width: 196px;
+        height: 50px;
+        background-color: #060606;
+        color: #FFFFFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 482px) {
+    .headerQuienesSomosPage {
+        background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_header_movil_quienes_somos_0e3ad53712.png');
+    }
+}

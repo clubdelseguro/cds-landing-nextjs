@@ -1,0 +1,91 @@
+.rootHelpPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+.headerQuienesHelp {
+    width: 100%;
+    max-width: 1060px;
+    height: 241px;
+    display: flex;
+    background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_header_help_f91d295ba5.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 0px 40px 40px;
+}
+
+.titleHelpPage {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+    color: #FC8100;
+}
+
+.containerHeaderHelp {
+    width: 100%;
+    max-width: 520px;
+    height: 57px;
+    background: #FFFFFF;
+    border-radius: 100px 100px 0px 0px;
+    position: absolute;
+    bottom: -2px;
+}
+
+.containerHelpPage {
+    min-height: 127px;
+    max-width: 520px;
+    width: auto;
+    background-color: #FC8100;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.descriptionHelpPage {
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    margin: 33px 64px;
+}
+
+@media screen and (max-width: 800px) {
+    .titleHelpPage {
+        font-size: 37.7143px;
+        line-height: 44px;
+        text-align: center;
+        color: #FD9120;
+    }
+
+    .containerHelpPage {
+        width: auto;
+        margin-top: 52px;
+    }
+
+    .descriptionHelpPage {
+        margin: 33px 42px;
+    }
+}
+
+@media screen and (max-width: 482px) {
+    .headerQuienesHelp {
+        background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_header_movil_help_95ff1ae552.png');
+    }
+
+    .containerHeaderHelp {
+        height: 27px;
+        max-width: 272px;
+    }
+}

@@ -1,5 +1,4 @@
 import React from 'react';
-import './index.css'
 
 export const CardMarca = ({img, oferta}) => {
     return (

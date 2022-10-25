@@ -1,0 +1,118 @@
+.rootPoliticas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 17px;
+}
+
+.rootHeaderErrorPage {
+    width: 100%;
+    height: 470px;
+    background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/Rectangle_106_6a990c3b22.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+@media screen and (max-width: 480px) {
+    .rootHeaderErrorPage {
+        height: 250px;
+        background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_header_movil_error_page_2452a74902.png');
+    }
+}
+
+.titlePoliticas {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+}
+
+.bottomHeaderPoliticasPage {
+    width: 100%;
+    max-width: 548.5px;
+    height: 72px;
+    background-color: #FFFFFF;
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 100px 0px 0px 0px;
+}
+
+.descriptionPoliticas {
+    width: auto;
+    max-width: 389px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    padding: 0px 17px;
+}
+
+.containerPoliticas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 62px;
+    margin-bottom: 30px;
+}
+
+.content-politicas {
+    padding: 0px 17px;
+    width: auto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: justify;
+    margin-bottom: 32px;
+}
+
+.button-ver-mas-politicas {
+    display: none;
+}
+
+.iframe {
+    width: 100%;
+    height: 600px;
+    zoom: 1;
+}
+
+
+@media screen and (max-width: 800px) {
+    .containerPoliticas {
+        margin-left: 17px;
+        margin-right: 20px;
+        margin-top: 29px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ocultar-content-politicas {
+        display: none;
+    }
+
+    .button-ver-mas-politicas {
+        width: 196px;
+        height: 50px;
+        display: flex;
+        background-color: #060606;
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+    }
+}

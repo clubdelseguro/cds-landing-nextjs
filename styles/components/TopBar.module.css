@@ -1,0 +1,87 @@
+.containerTopBar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.elementSup {
+    width: 100%;
+    max-width: 1060px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.logo {
+    background-color: #FFFFFF;
+    width: 340px;
+    padding: 15px 0px;
+    border-radius: 0px 0px 40px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.barNavigation {
+    width: 60%;
+    min-height: 47px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    border-radius: 20px 0px 30px 20px;
+}
+
+.barNavigation2 {
+    width: 100%;
+    height: 47px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    border-radius: 0px 0px 0px 20px;
+}
+
+.item {
+    height: 100%;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.item2 {
+    height: 100%;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #FC8100;
+    width: 20%;
+    border-radius: 0px 0px 20px 0px;
+    align-items: center;
+    cursor: pointer;
+}
+
+;
+
+.link {
+    text-decoration: none;
+}
+
+.rrss {
+    width: 215px;
+    height: 41px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}

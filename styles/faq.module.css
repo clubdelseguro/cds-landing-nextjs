@@ -1,0 +1,132 @@
+.acordion {
+    margin: 17px 0px;
+    max-width: 879px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.titleAccordion {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25.7143px;
+    line-height:30px;
+    text-align: center;
+    color: #fc8100;
+    margin: 0;
+    padding: 0;
+}
+
+.descriptionAccordion {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    padding: 18px;
+    width: auto;
+    max-width: 703px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.description {
+    background-color: red;
+}
+
+.contentido {
+    background-color: #F1F1F1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.rootHeaderFaqPage {
+    width: 100%;
+    height: 470px;
+    background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_header_faq_a1d028b01a.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-bottom: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.contentHeaderFaqPage {
+    width: auto;
+    max-width: 548.5px;
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 398px;
+    left: 50%;
+    border-radius: 60px 0px 0px 0px;
+}
+
+.titleHeaderFaqPage {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+    color: #000000;
+}
+
+.descriptionHeaderFaqPage {
+    width: auto;
+    max-width: 389px;
+    margin: 0px 43px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #000000;
+}
+
+.titleFaq {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 46.6667px;
+    line-height: 55px;
+    text-align: center;
+    color: #000000;
+}
+
+@media screen and (max-width: 730px) {
+    .contentHeaderFaqPage {
+        left: auto;
+    }
+
+    .titleHeaderFaqPage {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .descriptionHeaderFaqPage {
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .rootHeaderFaqPage {
+        margin-bottom: 40px;
+    }
+
+    .titleFaq {
+        font-size: 36px;
+        line-height: 42px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .rootHeaderFaqPage {
+        background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_header_movil_faq_f1e967e756.png');
+    }
+}

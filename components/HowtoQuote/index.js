@@ -1,7 +1,7 @@
 import React from 'react';
-import { makeStyles } from '@mui/styles';
 import { CardHowToQuote } from '../CardHowToQuote';
 import Carousel from 'react-elastic-carousel';
+import styles from '../../styles/components/HowToQuote.module.css';
 
 const breakPoints = [
     {
@@ -50,28 +50,7 @@ const elements = [
     },
 ]
 
-const useStyles = makeStyles(theme => ({
-    button: {
-        backgroundColor: theme.palette.primary.main,
-        borderRadius: '20px',
-        color: '#FFFFFF',
-        width: '228px',
-        height: '46px',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: '18px',
-        lineHeight: '21px',
-        fontWeight: 'bold'
-    },
-    bottom: {
-        margin: '30px',
-    }
-}));
-
 export const HowToQuote = () => {
-    const classes = useStyles();
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <div className="root-how-to-quote">
@@ -92,9 +71,9 @@ export const HowToQuote = () => {
                 }
             </Carousel>
 
-            <div className={classes.bottom}>
+            <div className={styles.bottom}>
                 <a href="https://cotizador.clubdelseguro.cl/" style={{ textDecoration: 'none' }} target="_blank" rel="noreferrer">
-                    <div className={classes.button}>
+                    <div className={styles.button}>
                         Iniciar mi cotización
                     </div>
                 </a>

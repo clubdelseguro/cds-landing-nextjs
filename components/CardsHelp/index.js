@@ -1,19 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './index.css';
+import Link from 'next/link';
+
 export const CardsHelp = () => {
     return (
         <div className="root-cards-help">
             <div className="cards-help">
-                <Link to="/asistencias" className="card-help card-help-title asistencia-img" >
-                    <span>Asistencias</span>
+
+                <Link href="/asistencias">
+                    <div className="card-help card-help-title asistencia-img">
+                        <span>Asistencias</span>
+                    </div>
                 </Link>
-                <Link to="/faq" className="card-help card-help-title faq-img" >
-                    <span>Preguntas Frecuentes</span>
+                <Link href="/faq">
+                    <div className="card-help card-help-title faq-img" >
+                        <span>Preguntas Frecuentes</span>
+                    </div>
                 </Link>
             </div>
-            <Link to="/contacto" className="card-contacto-help card-help-title contacto-img" >
-                <span>Contacto</span>
+            <Link href="/contacto">
+                <div className="card-contacto-help card-help-title contacto-img">
+                    <span>Contacto</span>
+                </div>
             </Link>
         </div>
     )
