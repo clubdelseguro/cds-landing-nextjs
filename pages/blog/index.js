@@ -33,7 +33,7 @@ function Blogs({ data, blogs }) {
                 <div className={styles.paginatorBlogs}>
                     <b>Página:</b>
                     {
-                        blogsChunk.map((val, i) => <button className={`item-paginator-blogs ${i + 1 === page ? 'selected-item-paginator-blogs' : ''}`} onClick={e => setPage(i + 1)}> {i + 1} </button>)
+                        blogsChunk.map((val, i) => <button key={i} className={`item-paginator-blogs ${i + 1 === page ? 'selected-item-paginator-blogs' : ''}`} onClick={e => setPage(i + 1)}> {i + 1} </button>)
                     }
                 </div>
                 <div className={styles.bodyBlogs}>

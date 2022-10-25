@@ -5,12 +5,12 @@ import { Hidden } from '@mui/material';
 import Head from 'next/head'
 // import { MetaTags } from 'react-meta-tags';
 
-function Home({ benefits, blogs }) {
+function Home({ benefits, blogs, data }) {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
             <Head>
                 <title> Club del Seguro</title>
-                <meta name="description" />
+                <meta name="description" content={data?.data.meta} />
             </Head>
             <Hidden only={['xs', 'sm']}>
                 <Header />
@@ -27,12 +27,14 @@ function Home({ benefits, blogs }) {
 
 
 Home.getInitialProps = async ({ req }) => {
-    const [benefits, blogs] = await Promise.all([
+    const [data, benefits, blogs] = await Promise.all([
+        fetch(`https://strapi.clubdelseguro.cl/pages/2`).then((r) => r.json()),
         fetch(`https://strapi.clubdelseguro.cl/benefits`).then((r) => r.json()),
         fetch(`https://strapi.clubdelseguro.cl/blogs`).then((r) => r.json()),
     ]);
 
     return {
+        data,
         benefits,
         blogs
     };

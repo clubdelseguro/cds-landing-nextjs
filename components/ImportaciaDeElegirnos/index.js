@@ -9,7 +9,7 @@ export const ImportaciaDeElegirnos = () => {
             <div className="cards-importancia-elegirnos">
                 <div className="card-importancia-elegirnos">
                     <div className="title-card-importancia-elegirnos">
-                        "Todo siempre fue muy claro y transparente"
+                        “Todo siempre fue muy claro y transparente”
                     </div>
                     <div className="name-importancia-elegirnos">
                         Jorge Troncoso

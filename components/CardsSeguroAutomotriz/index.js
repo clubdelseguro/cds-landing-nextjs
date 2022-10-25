@@ -34,7 +34,7 @@ export const CardsSeguroAutomotriz = ({ color, company, coverages }) => {
             <div className="carousel-cards-seguro-automotriz">
                 <Carousel breakPoints={breakPoints} showArrows={false} enableAutoPlay={true} autoPlaySpeed={5000}>
                     {
-                        coverages?.map((coverage) => <CardSeguroAutomotriz color={color} coverage={coverage} company={company ? company : 'Mapfre'} title="Plan sin deducible" img="/assets/SeguroAutomotriz/img-card1.png" subtitle="full cobertura" data="no pagas nada" />)
+                        coverages?.map((coverage, i) => <CardSeguroAutomotriz key={i} color={color} coverage={coverage} company={company ? company : 'Mapfre'} title="Plan sin deducible" img="/assets/SeguroAutomotriz/img-card1.png" subtitle="full cobertura" data="no pagas nada" />)
                     }
                 </Carousel>
             </div>

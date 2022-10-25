@@ -3,16 +3,15 @@ import { Header } from './Header';
 import { Body } from './Body';
 import { HeaderMovil } from './HeaderMovil';
 import { Hidden } from '@mui/material';
-import { PageService } from '../../services/PageService';
-import { MetaTags } from 'react-meta-tags';
+import Head from 'next/head';
 
 export const HomePage = () => {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-            <MetaTags>
+            <Head>
                 <title> Club del Seguro</title>
                 <meta name="description" />
-            </MetaTags>
+            </Head>
             <Hidden only={['xs', 'sm']}>
                 <Header  />
             </Hidden>
