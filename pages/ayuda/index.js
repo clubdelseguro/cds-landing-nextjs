@@ -33,8 +33,8 @@ function Ayuda({ data, blogs }) {
 
 Ayuda.getInitialProps = async ({ req }) => {
     const [data, blogs] = await Promise.all([
-        fetch(`https://strapi.clubdelseguro.cl/pages/1`).then((r) => r.json()),
-        fetch(`https://strapi.clubdelseguro.cl/blogs`).then((r) => r.json()),
+        fetch(`${process.env.REACT_APP_DOMINIO_API}/pages/1`).then((r) => r.json()),
+        fetch(`${process.env.REACT_APP_DOMINIO_API}/blogs`).then((r) => r.json()),
     ]);
 
     return {

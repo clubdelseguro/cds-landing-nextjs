@@ -74,8 +74,8 @@ function Compania({ blogs, companies }) {
 
 Compania.getInitialProps = async ({ req }) => {
     const [blogs, companies] = await Promise.all([
-        fetch(`https://strapi.clubdelseguro.cl/blogs`).then((r) => r.json()),
-        fetch(`https://strapi.clubdelseguro.cl/companies`).then((r) => r.json()),
+        fetch(`${process.env.REACT_APP_DOMINIO_API}/blogs`).then((r) => r.json()),
+        fetch(`${process.env.REACT_APP_DOMINIO_API}/companies`).then((r) => r.json()),
     ]);
 
     return {
