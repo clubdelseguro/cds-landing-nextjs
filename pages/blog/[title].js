@@ -65,7 +65,7 @@ function Blog({ blogs }) {
 
 Blog.getInitialProps = async ({ req }) => {
     const [blogs] = await Promise.all([
-        fetch(`${process.env.REACT_APP_DOMINIO_API}/blogs`).then((r) => r.json()),
+        fetch(`https://strapi.clubdelseguro.cl/blogs`).then((r) => r.json()),
     ]);
 
     return {

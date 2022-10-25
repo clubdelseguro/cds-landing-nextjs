@@ -66,8 +66,8 @@ function Region({benefits, regions }) {
 
 Region.getInitialProps = async ({ req }) => {
     const [benefits, regions] = await Promise.all([
-        fetch(`${process.env.REACT_APP_DOMINIO_API}/benefits`).then((r) => r.json()),
-        fetch(`${process.env.REACT_APP_DOMINIO_API}/regions`).then((r) => r.json()),
+        fetch(`https://strapi.clubdelseguro.cl/benefits`).then((r) => r.json()),
+        fetch(`https://strapi.clubdelseguro.cl/regions`).then((r) => r.json()),
     ]);
 
     return {
