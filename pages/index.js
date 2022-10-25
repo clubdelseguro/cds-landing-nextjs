@@ -1,6 +1,6 @@
-import { Header } from './HomePage/Header';
-import { Body } from './HomePage/Body';
-import { HeaderMovil } from './HomePage/HeaderMovil';
+import Header from './HomePage/Header';
+import Body from './HomePage/Body';
+import HeaderMovil from './HomePage/HeaderMovil';
 import { Hidden } from '@mui/material';
 import Head from 'next/head'
 // import { MetaTags } from 'react-meta-tags';

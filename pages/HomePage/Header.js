@@ -1,7 +1,7 @@
 import React from 'react';
 import { TopBar } from '../../components/NavBar/TopBar';
 
-export const Header = () => {
+export default function Header() {
     return (
         <div className="root-header-home">
             <div className="body">

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Header } from './Header';
-import { Body } from './Body';
-import { HeaderMovil } from './HeaderMovil';
+import Header from './Header';
+import Body from './Body';
+import HeaderMovil from './HeaderMovil';
 import { Hidden } from '@mui/material';
 import Head from 'next/head';
 
-export const HomePage = () => {
+export default function HomePage() {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
             <Head>
@@ -13,7 +13,7 @@ export const HomePage = () => {
                 <meta name="description" />
             </Head>
             <Hidden only={['xs', 'sm']}>
-                <Header  />
+                <Header />
             </Hidden>
             <Hidden only={['md', 'lg', 'xl']}>
                 <HeaderMovil />

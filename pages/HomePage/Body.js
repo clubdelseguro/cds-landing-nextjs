@@ -5,7 +5,7 @@ import { PorqueElegirElClub } from '../../components/PorqueElegirElClub'
 import { QuienesNosRespaldan } from '../../components/QuienesNosRespaldan';
 import { CarouselBlogs } from '../../components/CarouselBlogs';
 import { ActivaTusBeneficios } from '../../components/ActivaTusBeneficios';
-export const Body = ({ benefits, blogs }) => {
+export default function Body({ benefits, blogs }) {
     return (
         <>
             <HowToQuote />

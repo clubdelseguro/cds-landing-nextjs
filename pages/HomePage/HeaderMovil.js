@@ -14,7 +14,7 @@ import { Grid } from '@mui/material';
 import Link from 'next/link';
 
 
-export const HeaderMovil = () => {
+export default function HeaderMovil() {
     const [state, setState] = React.useState({
         top: false,
         left: false,
