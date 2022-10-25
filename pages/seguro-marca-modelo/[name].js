@@ -63,8 +63,8 @@ function Marca({ benefits, brands }) {
 
 Marca.getInitialProps = async ({ req }) => {
     const [benefits, brands] = await Promise.all([
-        fetch(`${process.env.REACT_APP_DOMINIO_API}/benefits`).then((r) => r.json()),
-        fetch(`${process.env.REACT_APP_DOMINIO_API}/brands`).then((r) => r.json()),
+        fetch(`https://strapi.clubdelseguro.cl/benefits`).then((r) => r.json()),
+        fetch(`https://strapi.clubdelseguro.cl/brands`).then((r) => r.json()),
     ]);
 
     return {

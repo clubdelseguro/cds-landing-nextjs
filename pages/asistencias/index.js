@@ -73,8 +73,8 @@ function Asistencias({ data, benefits }) {
 
 Asistencias.getInitialProps = async ({ req }) => {
     const [data, benefits] = await Promise.all([
-        fetch(`${process.env.REACT_APP_DOMINIO_API}/pages/11`).then((r) => r.json()),
-        fetch(`${process.env.REACT_APP_DOMINIO_API}/benefits`).then((r) => r.json()),
+        fetch(`https://strapi.clubdelseguro.cl/pages/11`).then((r) => r.json()),
+        fetch(`https://strapi.clubdelseguro.cl/benefits`).then((r) => r.json()),
     ]);
 
     return {

@@ -85,7 +85,7 @@ function QuienesSomos({ data }) {
 
 QuienesSomos.getInitialProps = async ({ req }) => {
     const [data] = await Promise.all([
-        fetch(`${process.env.REACT_APP_DOMINIO_API}/pages/10`).then((r) => r.json()),
+        fetch(`https://strapi.clubdelseguro.cl/pages/10`).then((r) => r.json()),
     ]);
 
     return {

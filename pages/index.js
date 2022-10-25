@@ -28,9 +28,9 @@ function Home({ benefits, blogs, data }) {
 
 Home.getInitialProps = async ({ req }) => {
     const [data, benefits, blogs] = await Promise.all([
-        fetch(`${process.env.REACT_APP_DOMINIO_API}/pages/2`).then((r) => r.json()),
-        fetch(`${process.env.REACT_APP_DOMINIO_API}/benefits`).then((r) => r.json()),
-        fetch(`${process.env.REACT_APP_DOMINIO_API}/blogs`).then((r) => r.json()),
+        fetch(`https://strapi.clubdelseguro.cl/pages/2`).then((r) => r.json()),
+        fetch(`https://strapi.clubdelseguro.cl/benefits`).then((r) => r.json()),
+        fetch(`https://strapi.clubdelseguro.cl/blogs`).then((r) => r.json()),
     ]);
 
     return {

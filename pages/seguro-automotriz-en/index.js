@@ -91,9 +91,9 @@ function Regiones({ data, benefits, regions }) {
 
 Regiones.getInitialProps = async ({ req }) => {
     const [data, benefits, regions] = await Promise.all([
-        fetch(`${process.env.REACT_APP_DOMINIO_API}/pages/8`).then((r) => r.json()),
-        fetch(`${process.env.REACT_APP_DOMINIO_API}/benefits`).then((r) => r.json()),
-        fetch(`${process.env.REACT_APP_DOMINIO_API}/regions`).then((r) => r.json()),
+        fetch(`https://strapi.clubdelseguro.cl/pages/8`).then((r) => r.json()),
+        fetch(`https://strapi.clubdelseguro.cl/benefits`).then((r) => r.json()),
+        fetch(`https://strapi.clubdelseguro.cl/regions`).then((r) => r.json()),
     ]);
 
     return {
