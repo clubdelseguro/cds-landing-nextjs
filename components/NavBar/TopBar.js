@@ -13,41 +13,41 @@ export const TopBar = () => {
                 </Link>
                 <div className={styles.barNavigation}>
                     <div className={styles.barNavigation2}>
-                        <div className={styles.item} style={{ width: '10%', backgroundColor: '#000000', borderRadius: '0px 0px 0px 20px' }}>
-                            <Link href="/">
+                        <Link href="/">
+                            <div className={styles.item} style={{ width: '10%', backgroundColor: '#000000', borderRadius: '0px 0px 0px 20px' }}>
                                 <div className={styles.link} style={{ color: '#FFFFFF' }}>
                                     Inicio
                                 </div>
-                            </Link>
-                        </div>
-                        <div className={styles.item} style={{ width: '20%', backgroundColor: '#000000' }}>
-                            <Link href="/quienes-somos" >
+                            </div>
+                        </Link>
+                        <Link href="/quienes-somos" >
+                            <div className={styles.item} style={{ width: '20%', backgroundColor: '#000000' }}>
                                 <div className={styles.link} style={{ color: '#FFFFFF' }}>
                                     Quienes somos
                                 </div>
-                            </Link>
-                        </div>
-                        <div className={styles.item} style={{ width: '20%', backgroundColor: '#000000' }}>
-                            <Link href="/seguro-automotriz" >
+                            </div>
+                        </Link>
+                        <Link href="/seguro-automotriz" >
+                            <div className={styles.item} style={{ width: '20%', backgroundColor: '#000000' }}>
                                 <div className={styles.link} style={{ color: '#FFFFFF' }}>
                                     Seguro Automotriz
                                 </div>
-                            </Link>
-                        </div>
-                        <div className={styles.item} style={{ width: '10%', backgroundColor: '#000000' }}>
-                            <Link href="/blog">
+                            </div>
+                        </Link>
+                        <Link href="/blog">
+                            <div className={styles.item} style={{ width: '10%', backgroundColor: '#000000' }}>
                                 <div className={styles.link} style={{ color: '#FFFFFF' }}>
                                     Blog
                                 </div>
-                            </Link>
-                        </div>
-                        <div className={styles.item} style={{ width: '10%', backgroundColor: '#000000' }}>
-                            <Link href="/ayuda">
+                            </div>
+                        </Link>
+                        <Link href="/ayuda">
+                            <div className={styles.item} style={{ width: '10%', backgroundColor: '#000000' }}>
                                 <div className={styles.link} style={{ color: '#FFFFFF' }}>
                                     Ayuda
                                 </div>
-                            </Link>
-                        </div>
+                            </div>
+                        </Link>
                         <div className={styles.item} style={{ backgroundColor: '#F5F5F5', width: '20%' }}>
                             <a href="https://clubdelseguro.trytoku.com/" target="_blank" rel="noreferrer" className={styles.link} style={{ color: '#000000' }}>
                                 Pagar Aqui
