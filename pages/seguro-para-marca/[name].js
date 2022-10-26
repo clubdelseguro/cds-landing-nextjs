@@ -33,7 +33,7 @@ function Marca({ benefits, brands }) {
                 <div className={styles.containerHeaderMarca}>
                     {brand?.logo && <img loading="lazy" src={brand?.logo?.url} alt="Logo Compañia" />}
                     <div className={styles.containerTitleMarcaPage}>
-                        <h1 className={styles.titleMarcaPage}>{brand?.name}</h1>
+                        <h1 className={styles.titleMarcaPage}>{brand?.title}</h1>
                         <p className={styles.descriptionMarcaPage}>{brand?.description}</p>
                     </div>
                 </div>
