@@ -20,6 +20,8 @@ function MyApp({ Component, pageProps }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
       </Head>
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZDD5FJ"
+        height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe></noscript>
       <ThemeProvider theme={theme}>
         <div className="App">
           <div className="contenido">

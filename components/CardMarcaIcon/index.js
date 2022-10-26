@@ -7,7 +7,7 @@ export const CardMarcaIcon = ({ brand }) => {
     var name = quitarAcentos(brand.name);
 
     const respuesta = brand.logo?.url ? (
-        <Link href={`/seguro-marca-modelo/${name}`}>
+        <Link href={`/seguro-para-marca/${name}`}>
             <div className="root-card-marca-icon">
                 <div className="img-marca-card-marca-icon">
                     <img loading="lazy" src={brand.logo.url} alt="Logo marca" />
@@ -16,7 +16,7 @@ export const CardMarcaIcon = ({ brand }) => {
             </div>
         </Link>
     ) : (
-        <Link href={`/seguro-marca-modelo/${name}`}>
+        <Link href={`/seguro-para-marca/${name}`}>
             <div className="root-card-marca-icon-title">
                 <p className="nombre-marca-card-marca-icon">{brand.title}</p>
             </div>
