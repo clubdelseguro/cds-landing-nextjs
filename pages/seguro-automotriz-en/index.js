@@ -34,8 +34,8 @@ function Regiones({ data, benefits, regions }) {
     return (
         <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <Head>
-                <title>{data?.titlePage} Club del Seguro</title>
-                <meta name="description" content={data?.meta} />
+                <title>{data?.data.titlePage} Club del Seguro</title>
+                <meta name="description" content={data?.data.meta} />
             </Head>
             <div className={styles.headerRegiones}>
                 <div className={styles.rootContainerRegiones}>

@@ -29,11 +29,13 @@ function Marcas({ data, benefits, brands }) {
         }
     }
 
+    console.log('data', data);
+
     return (
         <div className={styles.rootMarcasPage}>
             <Head>
-                <title>{data?.titlePage} Club del Seguro</title>
-                <meta name="description" content={data?.meta} />
+                <title>{data?.data.titlePage} Club del Seguro</title>
+                <meta name="description" content={data?.data.meta} />
             </Head>
             <div className={styles.headerMarcasPage}>
                 <div className={styles.containerHeaderRegiones}>
