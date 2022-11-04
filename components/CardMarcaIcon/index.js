@@ -12,13 +12,13 @@ export const CardMarcaIcon = ({ brand }) => {
                 <div className="img-marca-card-marca-icon">
                     <img loading="lazy" src={brand.logo.url} alt="Logo marca" />
                 </div>
-                <p className="nombre-marca-card-marca-icon">{brand.title}</p>
+                <h2 className="nombre-marca-card-marca-icon">{brand.title}</h2>
             </div>
         </Link>
     ) : (
         <Link href={`/seguro-para-marca/${name}`}>
             <div className="root-card-marca-icon-title">
-                <p className="nombre-marca-card-marca-icon">{brand.title}</p>
+                <h2 className="nombre-marca-card-marca-icon">{brand.title}</h2>
             </div>
         </Link>
     )

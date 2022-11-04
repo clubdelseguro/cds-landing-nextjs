@@ -44,9 +44,9 @@ function Regiones({ data, benefits, regions }) {
                     <a href="https://cotizador.clubdelseguro.cl" className={styles.cotizaAhoraRegiones} target="_blank" rel="noreferrer">
                         Cotiza ahora
                     </a>
-                    <div className={styles.seguroAutomotrizRegiones}>
+                    <p className={styles.seguroAutomotrizRegiones}>
                         Seguro Automotriz en tu región
-                    </div>
+                    </p>
                 </div>
             </div>
             <NavBar />
