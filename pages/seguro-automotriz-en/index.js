@@ -34,8 +34,8 @@ function Regiones({ data, benefits, regions }) {
     return (
         <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <Head>
-                <title>{data?.titlePage} Club del Seguro</title>
-                <meta name="description" content={data?.meta} />
+                <title>{data?.data.titlePage} Club del Seguro</title>
+                <meta name="description" content={data?.data.meta} />
             </Head>
             <div className={styles.headerRegiones}>
                 <div className={styles.rootContainerRegiones}>
@@ -44,9 +44,9 @@ function Regiones({ data, benefits, regions }) {
                     <a href="https://cotizador.clubdelseguro.cl" className={styles.cotizaAhoraRegiones} target="_blank" rel="noreferrer">
                         Cotiza ahora
                     </a>
-                    <div className={styles.seguroAutomotrizRegiones}>
+                    <p className={styles.seguroAutomotrizRegiones}>
                         Seguro Automotriz en tu región
-                    </div>
+                    </p>
                 </div>
             </div>
             <NavBar />
