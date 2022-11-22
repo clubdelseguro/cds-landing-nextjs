@@ -29,7 +29,7 @@ export const CarouselBlogs = ({ blogs }) => {
             </Carousel>
             <Link href="/blog">
                 <div className={styles.bottom}>
-                    <div className={styles.button}>Ver más blogs</div>
+                    <p className={styles.button}>Ver más blogs</p>
                 </div>
             </Link>
         </div>

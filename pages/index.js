@@ -13,10 +13,10 @@ function Home({ benefits, blogs, data }) {
                 <meta name="description" content={data?.data.meta} />
             </Head>
             <Hidden only={['xs', 'sm']}>
-                <Header />
+                <Header title={data.data.title} description={data.data.description} />
             </Hidden>
             <Hidden only={['md', 'lg', 'xl']}>
-                <HeaderMovil />
+                <HeaderMovil title={data.data.title} description={data.data.description} />
             </Hidden>
             <div className="body">
                 <Body benefits={benefits} blogs={blogs} />

@@ -14,7 +14,7 @@ import { Grid } from '@mui/material';
 import Link from 'next/link';
 
 
-export default function HeaderMovil() {
+export default function HeaderMovil({ title, description }) {
     const [state, setState] = React.useState({
         top: false,
         left: false,
@@ -112,8 +112,8 @@ export default function HeaderMovil() {
             </AppBar>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <div className="container-header-movil-home">
-                    <h1 className="title-header-home">Bienvenidos al Club del seguro</h1>
-                    <h3 className="description-header-home">Te asesoramos para encontrar la mejor opción para el seguro de tu auto.</h3>
+                    <h1 className="title-header-home">{title}</h1>
+                    <p className="description-header-home">{description}</p>
                     <a href="https://cotizador.clubdelseguro.cl/" target="_blank" rel="noreferrer">
                         <div className="cotiza-ahora-seguro-automotriz">
                             Cotiza ahora

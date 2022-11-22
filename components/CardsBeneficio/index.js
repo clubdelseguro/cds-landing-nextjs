@@ -8,8 +8,8 @@ export const CardsBeneficio = ({ beneficio }) => {
             <div className={styles.headerCard} style={{ background: `url(${beneficio?.image?.url})` }}>
             </div>
             <div className={styles.bodyCard}>
-                <div className={styles.title}>{beneficio.title}</div>
-                <div className={styles.content}>{ReactHtmlParser(beneficio.description)}</div>
+                <p className={styles.title}>{beneficio.title}</p>
+                <p className={styles.content}>{ReactHtmlParser(beneficio.description)}</p>
             </div>
         </div>
     )

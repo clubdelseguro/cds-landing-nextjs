@@ -510,6 +510,7 @@ button.rec-dot:focus {
   font-size: 18px;
   line-height: 21px;
   text-align: center;
+  margin: 0;
 }
 
 .name-importancia-elegirnos {
@@ -519,6 +520,7 @@ button.rec-dot:focus {
   line-height: 16px;
   text-align: center;
   padding-bottom: 24px;
+  margin: 0;
 }
 
 .cards-importancia-elegirnos {
@@ -581,7 +583,7 @@ button.rec-dot:focus {
 
 .title-porque-elegir-el-club {
   font-style: normal;
-  font-weight: 500;
+  font-weight: bold;
   font-size: 36px;
   line-height: 42px;
   text-align: center;

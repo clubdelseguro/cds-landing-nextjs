@@ -20,9 +20,9 @@ const breakPoints = [
 export const QuienesNosRespaldan = () => {
     return (
         <div className="root-quienes-respaldan">
-            <h2 className="title-quienes-respaldan">
+            <p className="title-quienes-respaldan">
                 Quienes nos <b> respaldan </b>
-            </h2>
+            </p>
             <Carousel breakPoints={breakPoints} enableAutoPlay showArrows={false} autoPlaySpeed={5000} >
                 <Link href="/aseguradoras/consorcio-seguros" >
                     <div className="logo-quienes-respaldan consorcio">
@@ -41,9 +41,9 @@ export const QuienesNosRespaldan = () => {
                 </Link>
             </Carousel>
             <Link href="/aseguradoras" >
-                <div className="ver-mas-quienes-respaldan">
+                <p className="ver-mas-quienes-respaldan">
                     Ver todos los seguros
-                </div>
+                </p>
             </Link>
         </div>
     )
