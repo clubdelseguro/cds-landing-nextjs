@@ -54,7 +54,7 @@ export const HowToQuote = () => {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <div className="root-how-to-quote">
-                <h2 className="title-how-to-quote">Cómo cotizar</h2>
+                <h2 className="title-how-to-quote">¿Cómo cotizar en Club del Seguro?</h2>
             </div>
             <Carousel breakPoints={breakPoints} enableAutoPlay showArrows={false} autoPlaySpeed={5000} >
                 {

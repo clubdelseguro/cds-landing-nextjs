@@ -26,7 +26,7 @@ const breakPoints = [
 export const ActivaTusBeneficios = ({ benefits }) => {
     return (
         <div className={styles.containerBeneficios}>
-            <h3 className={styles.titleActivaTusBeneficios}>Activa tus beneficios</h3>
+            <p className={styles.titleActivaTusBeneficios}>Activa tus beneficios</p>
             <div className={styles.cardsBeneficio}>
                 <Carousel breakPoints={breakPoints} showArrows={false} enableAutoPlay={true} autoPlaySpeed={5000}>
                     {
@@ -37,7 +37,7 @@ export const ActivaTusBeneficios = ({ benefits }) => {
                 </Carousel>
                 <Link href="/asistencias" style={{ textDecoration: 'none' }}>
                     <div className={styles.bottom}>
-                        <div className={styles.button}>Ver todos los beneficios</div>
+                        <p className={styles.button}>Ver todos los beneficios</p>
                     </div>
                 </Link>
             </div>
