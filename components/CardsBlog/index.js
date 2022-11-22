@@ -10,12 +10,12 @@ export const CardsBlog = ({ blog }) => {
         <Link href={`/blog/${name}`} >
             <div className="root-card-blog">
                 <img loading="lazy" className="img-card-blog" src={`${blog?.img_card?.url}`} alt="Img Blog" />
-                <h3 className="description-card-blog">
+                <p className="description-card-blog">
                     {ReactHtmlParser(blog?.description)}
-                </h3>
-                <h2 className="title-card-blog">
+                </p>
+                <p className="title-card-blog">
                     {blog?.title}
-                </h2>
+                </p>
             </div>
         </Link>
     )
