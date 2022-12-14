@@ -19,6 +19,17 @@ function MyApp({ Component, pageProps }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107921532-1"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-107921532-1'););`,
+          }}
+        />
       </Head>
       <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZDD5FJ"
         height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe></noscript>
