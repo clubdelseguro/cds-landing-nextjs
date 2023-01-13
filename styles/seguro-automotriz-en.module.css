@@ -52,7 +52,7 @@
 .cotizaAhoraRegiones {
     width: 160px;
     height: 39px;
-    background: #FC8100;
+    background: #FF521B;
     border-radius: 32px;
     font-style: normal;
     font-weight: normal;
@@ -78,7 +78,7 @@
     font-size: 36px;
     line-height: 42px;
     text-align: center;
-    color: #FC8100;
+    color: #FF521B;
     display: flex;
     justify-content: center;
     align-items: center;

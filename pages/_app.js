@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
         <meta charset="utf-8" />
         <link rel="icon" href="./assets/img-logo.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#FC8100" />
+        <meta name="theme-color" content="#FF521B" />
         <meta name="description" content="Club Del Seguro" />
         <meta property="og:image" content="https://clubdelseguro.cl/assets/Logo-CDS-Original.svg" />
         <link rel="apple-touch-icon" href="./assets/img-logo.svg" />
@@ -37,7 +37,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <ThemeProvider theme={theme}>
           <div className="App">
             <div className="contenido">
-              <NextNProgress color='#FC8100' />
+              <NextNProgress color='#FF521B' />
               <Component {...pageProps} />
             </div>
             <Footer />
