@@ -17,7 +17,7 @@ button.rec-dot_active {
   text-decoration: none;
   margin-top: 35px;
   padding: 9px 15px;
-  background-color: #FC8100;
+  background-color: #FF521B;
   border-radius: 32px;
   font-style: normal;
   font-weight: bold;
@@ -117,7 +117,7 @@ button.rec-dot:focus {
   width: 158.43px;
   height: 40.09px;
   border-radius: 32px;
-  background-color: #FC8100;
+  background-color: #FF521B;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -268,7 +268,7 @@ button.rec-dot:focus {
 .title-card-how-to-quote {
   width: 95.75px;
   height: 30.64px;
-  border: 2px solid #FC8100;
+  border: 2px solid #FF521B;
   border-radius: 57px;
   display: flex;
   justify-content: center;
@@ -278,7 +278,7 @@ button.rec-dot:focus {
   font-size: 24.6225px;
   line-height: 29px;
   text-align: center;
-  color: #FC8100;
+  color: #FF521B;
 }
 
 .description-how-to-quote {
@@ -364,7 +364,7 @@ button.rec-dot:focus {
   min-width: 80px;
   padding: 0px 18px;
   height: 29.53px;
-  background: #FC8100;
+  background: #FF521B;
   border-radius: 20px 0px 0px 20px;
   font-style: normal;
   font-weight: 500;
@@ -412,7 +412,7 @@ button.rec-dot:focus {
   font-size: 44.313px;
   line-height: 52px;
   text-align: center;
-  color: #FC8100;
+  color: #FF521B;
 }
 
 .description-cotiza-ahora-con-nosotros {
@@ -430,7 +430,7 @@ button.rec-dot:focus {
   width: 100%;
   height: 55px;
   bottom: 0;
-  background: #FC8100;
+  background: #FF521B;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
@@ -669,7 +669,7 @@ button.rec-dot:focus {
   font-size: 46.4761px;
   line-height: 54px;
   text-align: center;
-  color: #FF8300;
+  color: #FF521B;
 }
 
 .logos-quienes-respaldan {
@@ -696,7 +696,7 @@ button.rec-dot:focus {
   margin-top: 37px;
   width: 228px;
   height: 46px;
-  background-color: #FF8300;
+  background-color: #FF521B;
   border-radius: 25px;
   display: flex;
   justify-content: center;
@@ -993,7 +993,7 @@ button.rec-dot:focus {
   min-width: 200.82px;
   padding: 0px 18px;
   height: 29.53px;
-  background: #FC8100;
+  background: #FF521B;
   border-radius: 20px 0px 0px 20px;
   font-style: normal;
   font-weight: 500;
@@ -1029,7 +1029,7 @@ button.rec-dot:focus {
 }
 
 .selected-item-paginator-blogs {
-  background-color: #FC8100;
+  background-color: #FF521B;
   border-radius: 50%;
   color: #FFFFFF;
   cursor: default;
@@ -1306,7 +1306,7 @@ button.rec-dot:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #FC8100;
+  background-color: #FF521B;
   border-radius: 35px;
   color: #FFFFFF;
   font-style: normal;
@@ -1443,7 +1443,7 @@ button.rec-dot:focus {
 .root-card-region {
   width: 313px;
   height: 144px;
-  background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #FC8100;
+  background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #FF521B;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 50px;
   display: flex;
@@ -1569,7 +1569,7 @@ button.rec-dot:focus {
 .root-card-marca-icon {
   width: 156px;
   height: 144px;
-  background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #FC8100;
+  background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #FF521B;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 24px;
   display: flex;
@@ -1584,7 +1584,7 @@ button.rec-dot:focus {
 .root-card-marca-icon-title {
   width: 156px;
   height: 144px;
-  background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #FC8100;
+  background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #FF521B;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 24px;
   display: flex;
@@ -1638,7 +1638,7 @@ button.rec-dot:focus {
 .root-card-model {
   width: 238px;
   height: 144px;
-  background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #FC8100;
+  background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #FF521B;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 24px;
   display: flex;
@@ -1662,7 +1662,7 @@ button.rec-dot:focus {
   width: 313px;
   height: 90px;
   background: #FFFFFF;
-  border: 1px solid #FC8100;
+  border: 1px solid #FF521B;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 21px;

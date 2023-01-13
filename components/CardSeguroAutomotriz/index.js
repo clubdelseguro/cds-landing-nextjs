@@ -11,7 +11,7 @@ export const CardSeguroAutomotriz = ({img, title, subtitle, color, data, company
                     </div>
                     <div className="subheader-seguro-automotriz">
                         <span style={{
-                            backgroundColor: color ? color : '#FC8100',
+                            backgroundColor: color ? color : '#FF521B',
                             borderRadius: '20px',
                             padding: '4px 24px',
                             color: '#FFFFFF',

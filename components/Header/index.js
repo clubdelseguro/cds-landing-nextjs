@@ -94,7 +94,7 @@ export const Header = () => {
                                 sit id consequat tempus venenatis metus.</span>
                         </div>
                         <div>
-                            <Button variant="contained" style={{ backgroundColor: '#FC8100', borderRadius: '20px' }}>
+                            <Button variant="contained" style={{ backgroundColor: '#FF521B', borderRadius: '20px' }}>
                                 Cotiza ahora
                             </Button>
                         </div>

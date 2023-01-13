@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.clubdelseguro.cl
+
+# Sitemaps
+Sitemap: https://www.clubdelseguro.cl/sitemap.xml

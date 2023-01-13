@@ -26,7 +26,7 @@
     font-size: 48px;
     line-height: 56px;
     text-align: center;
-    color: #FC8100;
+    color: #FF521B;
 }
 
 .containerHeaderHelp {
@@ -43,7 +43,7 @@
     min-height: 127px;
     max-width: 520px;
     width: auto;
-    background-color: #FC8100;
+    background-color: #FF521B;
     border-radius: 20px;
     display: flex;
     flex-direction: column;

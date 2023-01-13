@@ -62,7 +62,7 @@ function Contacto({ data }) {
                     fontWeight: 'bold',
                     fontSize: '33.6px',
                     lineHeight: '39px',
-                    color: '#FC8100'
+                    color: '#FF521B'
                 }}>Te podría interesar también:</h3>
                 <div style={{
                     display: 'flex',
