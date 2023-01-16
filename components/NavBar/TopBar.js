@@ -8,7 +8,7 @@ export const TopBar = () => {
             <div className={styles.elementSup}>
                 <Link href="/" >
                     <div className={styles.logo}>
-                        <img loading="lazy" src="/assets/Logo-CDS-Original.svg" alt="Logo CDS" />
+                        <img loading="lazy" src="/assets/Logo 2023 CDS Normal.png" width="241px" alt="Logo CDS" />
                     </div>
                 </Link>
                 <div className={styles.barNavigation}>

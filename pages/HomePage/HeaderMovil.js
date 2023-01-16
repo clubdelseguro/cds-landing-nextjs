@@ -74,7 +74,7 @@ export default function HeaderMovil({ title, description }) {
                             alignItems="flex-start"
                         >
                             <Link href="/">
-                                <img loading="lazy" src="/assets/logo-CDS-Blanco.svg" alt="Icono" />
+                                <img loading="lazy" src="/assets/Logo 2023 CDS Blanco Transparente.png" width="150px" alt="Icono" />
                             </Link>
 
                             <div style={{
