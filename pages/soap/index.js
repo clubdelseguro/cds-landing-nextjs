@@ -62,7 +62,7 @@ function Soap({ data, benefits, brands }) {
                         style={{ width: '517px', height: '230px' }}
                     />} */}
                             <span>
-                                El Seguro Obligatorio (SOAP) no cubre los daños que puedan ocacionarse en el vehículo motorizado, solo ampara los riesgos de muerte y lesiones de las personas y reembolsa los gastos médicos y hospitalarios. En cambio, el seguro full cobertura cubre daños al auto y asistencia mecánica, grúas, talleres, entre otros servicios de asistencia. Estos seguros son complementarios entre ellos.
+                                El Seguro Obligatorio (SOAP) no cubre los daños que puedan ocasionarse en el vehículo motorizado, solo ampara los riesgos de muerte y lesiones de las personas y reembolsa los gastos médicos y hospitalarios. En cambio, el seguro full cobertura cubre daños al auto y asistencia mecánica, grúas, talleres, entre otros servicios de asistencia. Estos seguros son complementarios entre ellos.
                             </span>
                             <span>
                                 El SOAP debe ser contratado por todo propietario de vehículo motorizado, remolque, aclopado y casa rodante al momento de adquirir su permiso de circulación.
