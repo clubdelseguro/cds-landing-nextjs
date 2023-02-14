@@ -1,0 +1,319 @@
+.rootNuestroObjetivo {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.headerQuienesSomosPage {
+    width: 100%;
+    max-width: 1060px;
+    height: 386px;
+    display: flex;
+    background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_header_quienes_somos_0aa4a9ea48.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerHeaderQuienesSomos {
+    width: 100%;
+    max-width: 594px;
+    height: 72px;
+    background: #FFFFFF;
+    border-radius: 0px 100px 0px 0px;
+    position: absolute;
+    bottom: -2px;
+    left: -1px;
+}
+
+.itemNuestroObjetivo {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleNuestroObjetivo {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+}
+
+.descriptionNuestroObjetivo {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+    .imgNuestroObjetivo {
+        display: none;
+    }
+
+    .rootNuestroObjetivo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 13px;
+    }
+
+    .itemNuestroObjetivo {
+        width: 100%;
+        max-width: 432px;
+        margin-bottom: 22px;
+    }
+
+    .titleNuestroObjetivo {
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    .descriptionNuestroObjetivo {
+        padding: 0px 14px;
+    }
+
+    .containerHeaderQuienesSomos {
+        border-radius: 100px 100px 0px 0px;
+        height: 27px;
+        max-width: 272px;
+        left: auto;
+        right: auto;
+    }
+
+    .header-quienes-somos-page {
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 482px) {
+    .header-quienes-somos-page {
+        background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/img_header_movil_quienes_somos_0e3ad53712.png');
+    }
+}
+
+
+.rootContainerCotizaAhoraConNosotros {
+    width: 100%;
+    border-radius: 48px 52px 52px 52px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.imgCotizaAhoraConNosotros {
+    width: 50%;
+    height: 206px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 48px 0px 0px 52px;
+    background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/cotiza_ahora_con_nosotros_5c054c8be5.png');
+}
+
+.contentCotizaAhoraConNosotross {
+    width: 50%;
+    height: 206px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.titleCotizaAhoraConNosotros {
+    margin-top: 30px;
+    margin-bottom: 0px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 44.313px;
+    line-height: 52px;
+    text-align: center;
+    color: #FF521B;
+}
+
+.description-cotiza-ahora-con-nosotros {
+    margin: 0;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 44.313px;
+    line-height: 52px;
+    text-align: center;
+}
+
+.bottomCotizaAhoraConNosotros {
+    border-radius: 0px 0px 52px 0px;
+    position: absolute;
+    width: 100%;
+    height: 55px;
+    bottom: 0;
+    background: #FF521B;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 770px) {
+    .rootContainerCotizaAhoraConNosotros {
+        flex-direction: column;
+    }
+
+    .imgCotizaAhoraConNosotros {
+        width: 100%;
+        height: 245px;
+        border-radius: 52px 52px 0px 0px;
+    }
+
+    .contentCotizaAhoraConNosotross {
+        width: 100%;
+        height: 150px;
+    }
+
+    .bottomCotizaAhoraConNosotros {
+        border-radius: 52px;
+        height: 51px;
+    }
+
+    .titleCotizaAhoraConNosotros {
+        margin-top: 20px;
+        margin-bottom: 0px;
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .description-cotiza-ahora-con-nosotros {
+        font-size: 24px;
+        line-height: 28px;
+    }
+}
+
+
+.rootNuestraHistoria {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+}
+
+.titleNuestraHistoria {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.containerNuestraHistoria {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.descriptionNuestraHistoria {
+    width: 50%;
+    font-style: normal;
+    font-weight: 300px;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: justify;
+    margin-left: 26px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contentNuestraHistoria {
+    width: 50%;
+}
+
+.imgNuestraHistoria {
+    width: 100%;
+}
+
+.desarrolloNuestraHistoria {
+    font-style: normal;
+    font-weight: 300px;
+    font-size: 18px;
+    line-height: 21.09px;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+}
+
+.seguir-leyendo {
+    display: none;
+}
+
+@media screen and (max-width: 1060px) {
+    .rootNuestraHistoria {
+        width: auto;
+        margin-left: 15px;
+        margin-right: 24px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .rootNuestraHistoria {
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .containerNuestraHistoria {
+        flex-direction: column;
+    }
+
+    .contentNuestraHistoria {
+        width: 100%;
+    }
+
+    .descriptionNuestraHistoria {
+        width: auto;
+        margin-top: 15px;
+        margin-left: 30px;
+        margin-right: 24px;
+    }
+
+    .desarrolloNuestraHistoria {
+        margin-left: 30px;
+        margin-right: 24px;
+    }
+
+    .titleNuestraHistoria {
+        font-size: 18px;
+        line-height: 21px;
+        margin-bottom: 16px;
+    }
+
+    .seguir-leyendo {
+        width: 196px;
+        height: 50px;
+        background-color: #060606;
+        color: #FFFFFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+    }
+}
