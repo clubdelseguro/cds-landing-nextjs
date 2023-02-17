@@ -10,7 +10,7 @@ export const TopBar = () => {
           <div className={styles.logo}>
             <img
               loading="lazy"
-              src="/assets/Logo 2023 CDS Normal.svg"
+              src="/assets/Logo 2023 CDS Normal.png"
               width="241px"
               alt="Logo CDS"
             />
