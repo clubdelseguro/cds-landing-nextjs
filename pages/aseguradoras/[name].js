@@ -7,6 +7,7 @@ import { CarouselBlogs } from '../../components/CarouselBlogs';
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { CardsSeguroAutomotriz } from "../../components/CardsSeguroAutomotriz";
+import ReactHtmlParser from 'react-html-parser';
 
 function Compania({ blogs, companies }) {
     const [company, setCompany] = useState(null);
@@ -59,7 +60,7 @@ function Compania({ blogs, companies }) {
                         </div>
                     </div>
                     <p className={styles.containerDescriptionCompany}>
-                        {company?.description}
+                        {ReactHtmlParser(company?.description)}
                     </p>
                 </div>
             </div>

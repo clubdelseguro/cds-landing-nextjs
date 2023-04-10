@@ -15,6 +15,11 @@ const breakPoints = [
         itemsToShow: 3,
         pagination: false,
     },
+    {
+        width: 815,
+        itemsToShow: 4,
+        pagination: false,
+    },
 ]
 
 export const QuienesNosRespaldan = () => {
@@ -37,6 +42,11 @@ export const QuienesNosRespaldan = () => {
                 <Link href="/aseguradoras/reale-seguros" >
                     <div className="logo-quienes-respaldan reale">
                         <img loading="lazy" src="https://cds-landing.s3.sa-east-1.amazonaws.com/image_46_8b54a7b9ae.png" alt="Logo Reale" />
+                    </div>
+                </Link>
+                <Link href="/aseguradoras/sura-seguros" >
+                    <div className="logo-quienes-respaldan sura">
+                        <img loading="lazy" src="https://cds-landing.s3.sa-east-1.amazonaws.com/logo_sura_4b190d7fcb.png" alt="Logo Sura" />
                     </div>
                 </Link>
             </Carousel>
