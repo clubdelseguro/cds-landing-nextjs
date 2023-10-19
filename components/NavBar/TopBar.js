@@ -123,7 +123,7 @@ export const TopBar = () => {
                 alt="logo fb"
               />
             </a>
-            <a
+           {/*  <a
               href="https://twitter.com/Club_Del_Seguro"
               target="_blank"
               rel="noreferrer"
@@ -134,7 +134,7 @@ export const TopBar = () => {
                 src="/assets/logo-twiter.svg"
                 alt="logo twiter"
               />
-            </a>
+            </a> */}
             <a
               className="rrss-a"
               href="tel:+6003001919"

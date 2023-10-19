@@ -20,9 +20,9 @@ export const Footer = () => {
                         <a className="rrss-a" href="https://www.facebook.com/clubdelseguro.cl/" target="_blank" rel="noreferrer">
                             <img loading="lazy" style={{ marginLeft: '10.81px', height: '17px' }} src="/assets/logo-fb.svg" alt="logo fb" />
                         </a>
-                        <a className="rrss-a" href="https://twitter.com/Club_Del_Seguro" target="_blank" rel="noreferrer">
+                        {/* <a className="rrss-a" href="https://twitter.com/Club_Del_Seguro" target="_blank" rel="noreferrer">
                             <img loading="lazy" style={{ marginLeft: '12.27px', height: '16.5px' }} src="/assets/logo-twiter.svg" alt="logo twiter" />
-                        </a>
+                        </a> */}
                         <a className="rrss-a" href="tel:+6003001919" style={{ marginLeft: '11.1px', marginRight: '14.92px', height: '17px', fontStyle: 'normal', fontWeight: 'normal', fontSize: '12px', lineHeight: '14px', textDecoration: 'none', color: '#000000' }}>
                             <img loading="lazy" style={{ height: '17px' }} src="/assets/logo-phone.svg" alt="logo phone" />
                             <span style={{ marginLeft: '14px' }}>6003001919</span>
