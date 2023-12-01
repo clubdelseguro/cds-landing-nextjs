@@ -10,12 +10,12 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <meta charset="utf-8" />
-        <link rel="icon" href="./assets/img-logo.svg" />
+        <link rel="icon" href="https://clubdelseguro.cl/assets/favicon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#FF521B" />
         <meta name="description" content="Club Del Seguro" />
         <meta property="og:image" content="https://clubdelseguro.cl/assets/Logo-CDS-Original.svg" />
-        <link rel="apple-touch-icon" href="./assets/img-logo.svg" />
+        <link rel="apple-touch-icon" href="https://clubdelseguro.cl/assets/img-logo.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
