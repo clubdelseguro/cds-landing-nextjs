@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <meta charset="utf-8" />
-        <link rel="icon" href="https://clubdelseguro.cl/assets/favicon.png" />
+        <link rel="icon" href="favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#FF521B" />
         <meta name="description" content="Club Del Seguro" />
