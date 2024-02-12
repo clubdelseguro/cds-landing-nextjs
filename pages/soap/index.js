@@ -32,7 +32,7 @@ function Soap({ data, benefits, brands }) {
                     </div>
                 </div>
 
-                <a href="https://www.segurossura.cl/SoapVenta/Cotizador/enviaPaso?rut=76215627&idConvenio=CORREDORESSURAMARZO2023" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
+                <a href="https://www.segurossura.cl/SoapVenta/Cotizador/enviaPaso?rut=76215627&idConvenio=COREDORESSURAMARZO2024" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
                     <div className={styles.rootContainerCotizaAhoraConNosotros}>
                         <div className={styles.imgCotizaAhoraConNosotros} />
                         <div className={styles.contentCotizaAhoraConNosotross}>
@@ -87,7 +87,7 @@ function Soap({ data, benefits, brands }) {
                 </div>
                 <ImportaciaDeElegirnos />
 
-                <a href="https://www.segurossura.cl/SoapVenta/Cotizador/enviaPaso?rut=76215627&idConvenio=CORREDORESSURAMARZO2023" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
+                <a href="https://www.segurossura.cl/SoapVenta/Cotizador/enviaPaso?rut=76215627&idConvenio=COREDORESSURAMARZO2024" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
                     <div className={styles.rootContainerCotizaAhoraConNosotros}>
                         <div className={styles.imgCotizaAhoraConNosotros} />
                         <div className={styles.contentCotizaAhoraConNosotross}>
