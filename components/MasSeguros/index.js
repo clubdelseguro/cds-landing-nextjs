@@ -5,6 +5,7 @@ import makeStyles from '@mui/styles/makeStyles';
 import LocalAirportIcon from '@mui/icons-material/LocalAirport';
 import AirportShuttleIcon from '@mui/icons-material/AirportShuttle';
 import { styled } from '@mui/material/styles';
+/* import { useRouter } from 'next/router'; */
 
 const CustomButton = styled(Button)(({ theme }) => ({
     backgroundColor: 'white',
@@ -63,10 +64,15 @@ export const MasSeguros = () => {
     const classes = useStyles();
     const [isFlying, setIsFlying] = React.useState(false);
     const [isDriving, setIsDriving] = React.useState(false);
+    /* const router = useRouter(); */
 
     const handleAirplaneClick = () => {
         setIsFlying(true);
-        setTimeout(() => setIsFlying(false), 1500);
+        setTimeout(() => {
+            setIsFlying(false);
+            window.open('https://asistencia.seguroenviaje.com/Administracion/Seguro/A76215627K1044', '_blank')
+        }, 1500);
+        /* router.push('/asistencia-de-viajes') */
     };
 
     const handleWheelClick = () => {
@@ -112,7 +118,7 @@ export const MasSeguros = () => {
                         </Grid>
                     </CustomButton>
                 </Grid>
-                <Grid item>
+                {/* <Grid item>
                     <CustomButton className={classes.button} onClick={handleWheelClick}>
                         <Grid
                             container
@@ -132,7 +138,7 @@ export const MasSeguros = () => {
                             </span>
                         </Grid>
                     </CustomButton>
-                </Grid>
+                </Grid> */}
             </Grid>
             {/* <Link href="/aseguradoras" >
                 <p className="ver-mas-quienes-respaldan">
