@@ -119,6 +119,15 @@
     background-image: url('https://cds-landing.s3.sa-east-1.amazonaws.com/cotiza_ahora_con_nosotros_5c054c8be5.png');
 }
 
+.imgAsistenciaViaje {
+    width: 50%;
+    height: 206px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 48px 0px 0px 52px;
+    background-image: url('/assets/cds-1.png');
+}
+
 .contentCotizaAhoraConNosotross {
     width: 50%;
     height: 206px;
@@ -173,6 +182,12 @@
     }
 
     .imgCotizaAhoraConNosotros {
+        width: 100%;
+        height: 245px;
+        border-radius: 52px 52px 0px 0px;
+    }
+
+    .imgAsistenciaViaje {
         width: 100%;
         height: 245px;
         border-radius: 52px 52px 0px 0px;
