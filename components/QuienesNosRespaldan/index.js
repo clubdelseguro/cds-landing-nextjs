@@ -44,9 +44,16 @@ export const QuienesNosRespaldan = () => {
                         <img loading="lazy" src="https://cds-landing.s3.sa-east-1.amazonaws.com/image_46_8b54a7b9ae.png" alt="Logo Reale" />
                     </div>
                 </Link>
-                <Link href="/aseguradoras/sura-seguros" >
+                {/* <Link href="/aseguradoras/sura-seguros" >
                     <div className="logo-quienes-respaldan sura">
                         <img loading="lazy" src="https://cds-landing.s3.sa-east-1.amazonaws.com/logo_sura_4b190d7fcb.png" alt="Logo Sura" />
+                    </div>
+                </Link> */}
+                <Link href="/aseguradoras/renta-seguros" >
+                    <div className="logo-quienes-respaldan sura">
+                        <img style={{
+                            width: '160px',
+                        }} loading="lazy" src="https://cds-img.s3.amazonaws.com/Logo+Renta.png" alt="Logo Renta" />
                     </div>
                 </Link>
             </Carousel>
