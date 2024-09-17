@@ -67,13 +67,10 @@ export const MasSeguros = () => {
     /* const router = useRouter(); */
 
     const handleAirplaneClick = () => {
+        window.open('https://asistencia.seguroenviaje.com/Administracion/Seguro/A76215627K1044', '_blank');
         setIsFlying(true);
         setTimeout(() => {
             setIsFlying(false);
-            const newWindow = window.open('', '_blank');
-            if (newWindow) {
-                newWindow.location.href = 'https://asistencia.seguroenviaje.com/Administracion/Seguro/A76215627K1044';
-            }
         }, 1500);
         /* router.push('/asistencia-de-viajes') */
     };
