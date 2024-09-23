@@ -83,7 +83,7 @@ export const MasSeguros = () => {
     return (
         <div className="root-quienes-respaldan">
             <p className="title-quienes-respaldan">
-                Otros <b> seguros </b>
+                Otros <b> productos </b>
             </p>
             <Grid
                 xs={12}
@@ -113,7 +113,7 @@ export const MasSeguros = () => {
                                 className={`${classes.text} ${isFlying ? classes.hiddenText : ''
                                     }`}
                             >
-                                Seguro de viajes
+                                Asistencia en Viaje
                             </span>
                         </Grid>
                     </CustomButton>
