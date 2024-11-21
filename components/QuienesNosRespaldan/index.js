@@ -31,7 +31,7 @@ export const QuienesNosRespaldan = () => {
             <Carousel breakPoints={breakPoints} enableAutoPlay showArrows={false} autoPlaySpeed={5000} >
                 <Link href="/aseguradoras/consorcio-seguros" >
                     <div className="logo-quienes-respaldan consorcio">
-                        <img loading="lazy" src="https://cds-landing.s3.sa-east-1.amazonaws.com/trayectoria_2018_3_93f5c82c74.png" alt="Logo Consorcio" />
+                        <img loading="lazy" src="https://cds-img.s3.us-east-1.amazonaws.com/companies-logo/LogoConsorcio_300x98.svg" alt="Logo Consorcio" />
                     </div>
                 </Link>
                 <Link href="/aseguradoras/mapfre-seguros" >
