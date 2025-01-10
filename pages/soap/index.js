@@ -36,10 +36,10 @@ function Soap({ data, benefits, brands }) {
                     <div className={styles.rootContainerCotizaAhoraConNosotros}>
                         <div className={styles.imgCotizaAhoraConNosotros} />
                         <div className={styles.contentCotizaAhoraConNosotross}>
-                            <h2 className={styles.titleCotizaAhoraConNosotros} style={{ fontWeight: 'normal', color: 'rgb(0, 51, 160)', marginTop: '5px', lineHeight: '40px', maxWidth: '400px' }}>Contrata tu <b>SOAP</b> aquí
+                            <h2 className={styles.titleCotizaAhoraConNosotros} style={{ fontWeight: 'normal', color: 'rgb(0, 48, 88)', marginTop: '5px', lineHeight: '40px', maxWidth: '400px' }}>Contrata tu <b>SOAP</b> aquí
                             </h2>
-                            <img loading="lazy" src='https://cds-landing.s3.sa-east-1.amazonaws.com/logo_sura_4b190d7fcb.png' width="100" alt="Logo Renta Nacional" style={{ marginTop: '10px' }} />
-                            <div className={styles.bottomCotizaAhoraConNosotros} style={{ backgroundColor: 'rgb(0, 51, 160)' }}>
+                            <img loading="lazy" src='https://cds-img.s3.us-east-1.amazonaws.com/companies-logo/LogoConsorcio_300x98.svg' width="100" alt="Logo Renta Nacional" style={{ marginTop: '10px' }} />
+                            <div className={styles.bottomCotizaAhoraConNosotros} style={{ backgroundColor: 'rgb(0, 48, 88)' }}>
                                 <span style={{ color: '#FFFFFF', fontWeight: 'normal' }} >Quiero Cotizar mi <b>SOAP</b></span>
                             </div>
                         </div>
@@ -91,10 +91,10 @@ function Soap({ data, benefits, brands }) {
                     <div className={styles.rootContainerCotizaAhoraConNosotros}>
                         <div className={styles.imgCotizaAhoraConNosotros} />
                         <div className={styles.contentCotizaAhoraConNosotross}>
-                            <h2 className={styles.titleCotizaAhoraConNosotros} style={{ fontWeight: 'normal', color: 'rgb(0, 51, 160)', marginTop: '5px', lineHeight: '40px', maxWidth: '400px' }}>Contrata tu <b>SOAP</b> aquí
+                            <h2 className={styles.titleCotizaAhoraConNosotros} style={{ fontWeight: 'normal', color: 'rgb(0, 48, 88)', marginTop: '5px', lineHeight: '40px', maxWidth: '400px' }}>Contrata tu <b>SOAP</b> aquí
                             </h2>
-                            <img loading="lazy" src='https://cds-landing.s3.sa-east-1.amazonaws.com/logo_sura_4b190d7fcb.png' width="100" alt="Logo Renta Nacional" style={{ marginTop: '10px' }} />
-                            <div className={styles.bottomCotizaAhoraConNosotros} style={{ backgroundColor: 'rgb(0, 51, 160)' }}>
+                            <img loading="lazy" src='https://cds-img.s3.us-east-1.amazonaws.com/companies-logo/LogoConsorcio_300x98.svg' width="100" alt="Logo Renta Nacional" style={{ marginTop: '10px' }} />
+                            <div className={styles.bottomCotizaAhoraConNosotros} style={{ backgroundColor: 'rgb(0, 48, 88)' }}>
                                 <span style={{ color: '#FFFFFF', fontWeight: 'normal' }} >Quiero Cotizar mi <b>SOAP</b></span>
                             </div>
                         </div>
