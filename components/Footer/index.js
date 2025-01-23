@@ -59,7 +59,7 @@ export const Footer = () => {
                 </div>
                 <div className="item">
                     <div style={{ height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', marginTop: '16px' }}>
-                        <img loading="lazy" src="/assets/Logo 2023 CDS Normal.png" width="241px" alt="Logo CDS" />
+                        <img loading="lazy" src="https://cds-img.s3.us-east-1.amazonaws.com/Logo+CDS+2025.png" width="241px" alt="Logo CDS" />
                     </div>
                 </div>
             </div>
