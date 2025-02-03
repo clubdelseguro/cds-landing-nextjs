@@ -37,7 +37,7 @@ function Soap({ data, benefits, brands }) {
         </div>
 
         <a
-          href="https://www.segurossura.cl/SoapVenta/Cotizador/enviaPaso?rut=76215627&idConvenio=COREDORESSURAMARZO2024"
+          href="https://portal-corredores.consorcio.cl/cns/convenios-soap/Club-del-Seguro-soap-2025/compra-tu-soap"
           target="_blank"
           rel="noreferrer"
           style={{ textDecoration: "none" }}
@@ -132,7 +132,7 @@ function Soap({ data, benefits, brands }) {
         <ImportaciaDeElegirnos />
 
         <a
-          href="https://www.segurossura.cl/SoapVenta/Cotizador/enviaPaso?rut=76215627&idConvenio=COREDORESSURAMARZO2024"
+          href="https://portal-corredores.consorcio.cl/cns/convenios-soap/Club-del-Seguro-soap-2025/compra-tu-soap"
           target="_blank"
           rel="noreferrer"
           style={{ textDecoration: "none" }}
