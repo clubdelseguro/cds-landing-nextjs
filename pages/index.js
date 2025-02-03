@@ -19,7 +19,7 @@ function Home({ benefits, blogs, data }) {
       <Head>
         <title> Club del Seguro</title>
         <meta name="description" content={data?.data.meta} />
-        <script src="/static/scripts.js" />
+        {/* <script src="/static/scripts.js" /> */}
       </Head>
       <Hidden only={["xs", "sm"]}>
         <Header title={data.data.title} description={data.data.description} />
