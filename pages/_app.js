@@ -4,6 +4,8 @@ import { theme } from '../utils/theme';
 import Head from "next/head";
 import { Footer } from '../components/Footer';
 import NextNProgress from 'nextjs-progressbar';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -43,6 +45,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <Footer />
           </div>
         </ThemeProvider>
+        <a href="https://wa.me/+56953793717" className="whatsapp" target="_blank" rel="noreferrer"> <i className="fab fa-whatsapp"></i></a>
       </body>
     </>
   )
