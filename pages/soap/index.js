@@ -8,6 +8,8 @@ export async function getServerSideProps() {
   };
 }
 
+/* Cambio de redireccion automatica */
+
 export default function Soap() {
   return null;
 }
