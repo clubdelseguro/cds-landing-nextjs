@@ -3,22 +3,77 @@ import { NavBar } from '../../components/NavBar';
 import Link from 'next/link';
 import { CotizaAhoraConNosotros } from '../../components/CotizaAhoraConNosotros';
 import { useState } from 'react';
+import { TextField } from '@mui/material';
 
 function Garantia() {
 
     const [rut, setRut] = useState('');
     const [resultado, setResultado] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
+
+    const formatearRut = (value) => {
+        let rutLimpio = value.replace(/[^0-9kK]/g, '').toUpperCase();
+
+        if (rutLimpio.length <= 1) return rutLimpio;
+
+        const dv = rutLimpio.slice(-1);
+        let cuerpo = rutLimpio.slice(0, -1);
+
+        cuerpo = cuerpo.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
+        return `${cuerpo}-${dv}`;
+    };
+
+    const validarRut = (rutCompleto) => {
+        const rutLimpio = rutCompleto.replace(/\./g, '').replace('-', '');
+
+        if (rutLimpio.length < 8) return false;
+
+        const cuerpo = rutLimpio.slice(0, -1);
+        let dv = rutLimpio.slice(-1).toUpperCase();
+
+        let suma = 0;
+        let multiplo = 2;
+
+        for (let i = cuerpo.length - 1; i >= 0; i--) {
+            suma += multiplo * cuerpo.charAt(i);
+            multiplo = multiplo < 7 ? multiplo + 1 : 2;
+        }
+
+        const dvEsperado = 11 - (suma % 11);
+
+        let dvFinal = '';
+
+        if (dvEsperado === 11) dvFinal = '0';
+        else if (dvEsperado === 10) dvFinal = 'K';
+        else dvFinal = dvEsperado.toString();
+
+        return dvFinal === dv;
+    };
+
+    const handleRutChange = (e) => {
+        const valorFormateado = formatearRut(e.target.value);
+        setError(validarRut(valorFormateado) ? '' : 'RUT no válido');
+        setRut(valorFormateado);
+    };
 
     const buscarGarantia = async () => {
-        if (!rut) {
-            alert('Ingresa un RUT');
+        setError('');
+        setResultado(null);
+
+        if (!rut.trim()) {
+            setError('Debes ingresar un RUT');
+            return;
+        }
+
+        if (!validarRut(rut)) {
+            setError('El RUT ingresado no es válido');
             return;
         }
 
         try {
             setLoading(true);
-            setResultado(null);
 
             const response = await fetch('https://srwpzwufyxmbtkhfxycl.supabase.co/functions/v1/customer-exists-by-rut', {
                 method: 'POST',
@@ -30,26 +85,20 @@ function Garantia() {
                 })
             });
 
-
             if (!response.ok) {
-                throw new Error('Error al consultar garantía');
+                throw new Error('Error API');
             }
 
             const data = await response.json();
-            console.log('data', data);
 
-            // La API debe retornar algo como:
-            // true
-            // o
-            // { result: true }
+            setResultado(data.exists);
 
-            setResultado(
-                typeof data === 'boolean'
-                    ? data
-                    : data.result
-            );
         } catch (error) {
-            console.error(error);
+            // console.error(error);
+
+            setError(
+                'Error al buscar. Intenta más tarde.'
+            );
         } finally {
             setLoading(false);
         }
@@ -84,22 +133,22 @@ function Garantia() {
                             flexWrap: 'wrap'
                         }}
                     >
-                        <input
+                        <TextField
                             type="text"
                             placeholder="Ingresa tu RUT"
                             value={rut}
-                            onChange={(e) => setRut(e.target.value)}
+                            onChange={handleRutChange}
                             style={{
                                 height: '50px',
                                 minWidth: '200px',
                                 maxWidth: '300px',
-                                borderRadius: '10px',
-                                border: '1px solid #ccc',
-                                padding: '0 15px',
                                 fontSize: '16px',
                                 flex: 1
                             }}
+                            error={!!error}
+                            helperText={error ? error : ''}
                         />
+
 
                         <button
                             onClick={buscarGarantia}
@@ -122,9 +171,8 @@ function Garantia() {
                         >
                             {loading ? 'Cargando...' : 'Buscar'}
                         </button>
-
-
                     </div>
+
                     {resultado !== null && (
                         <div
                             style={{
