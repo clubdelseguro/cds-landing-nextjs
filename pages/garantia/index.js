@@ -3,7 +3,7 @@ import { NavBar } from '../../components/NavBar';
 import Link from 'next/link';
 import { CotizaAhoraConNosotros } from '../../components/CotizaAhoraConNosotros';
 import { useState } from 'react';
-import { TextField } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 
 function Garantia() {
 
@@ -150,17 +150,20 @@ function Garantia() {
                         />
 
 
-                        <button
+                        <Button
                             onClick={buscarGarantia}
-                            disabled={loading}
+                            disabled={loading || !!error || !rut.trim()}
+                            loading={loading}
+                            variant='contained'
+                            color='primary'
                             style={{
                                 height: '50px',
                                 borderRadius: '10px',
                                 minWidth: '120px',
                                 maxWidth: '140px',
                                 border: 'none',
-                                backgroundColor: loading ? '#bdbdbd' : '#ff6600',
-                                color: '#fff',
+                                // backgroundColor: loading ? '#bdbdbd' : '#ff6600',
+                                // color: '#fff',
                                 fontSize: '16px',
                                 fontWeight: 'bold',
                                 cursor: loading ? 'not-allowed' : 'pointer',
@@ -170,7 +173,7 @@ function Garantia() {
                             }}
                         >
                             {loading ? 'Cargando...' : 'Buscar'}
-                        </button>
+                        </Button>
                     </div>
 
                     {resultado !== null && (
