@@ -30,11 +30,11 @@ function Garantia() {
                 })
             });
 
-            
+
             if (!response.ok) {
                 throw new Error('Error al consultar garantía');
             }
-            
+
             const data = await response.json();
             console.log('data', data);
 
@@ -155,7 +155,7 @@ function Garantia() {
                                     textAlign: 'center'
                                 }}
                             >
-                                <div
+                                {/* <div
                                     style={{
                                         fontSize: '28px',
                                         fontWeight: 'bold',
@@ -163,7 +163,7 @@ function Garantia() {
                                     }}
                                 >
                                     ¡Excelente! Tu garantía está activa
-                                </div>
+                                </div> */}
 
                                 <div
                                     style={{
@@ -175,23 +175,23 @@ function Garantia() {
                                 >
                                     {resultado ? (
                                         <>
-                                            Tu vehículo cuenta con{' '}
+                                            {/*  Tu vehículo cuenta con{' '}
                                             <span style={{ color: '#ff6600' }}>
                                                 Garantía Mecánica
                                             </span>
                                             .
-                                            <br />
+                                            <br /> */}
                                             Para revisar la información y cobertura de tu garantía,
                                             visita el siguiente enlace o presiona el botón.
                                         </>
                                     ) : (
                                         <>
-                                            Tu vehículo cuenta con{' '}
+                                            {/* Tu vehículo cuenta con{' '}
                                             <span style={{ color: '#ff6600' }}>
                                                 Garantía Total
                                             </span>
                                             .
-                                            <br />
+                                            <br /> */}
                                             Para recibir asistencia o más información, llama al
                                             siguiente número o presiona el botón.
                                         </>
