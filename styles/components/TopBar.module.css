@@ -9,13 +9,15 @@
     max-width: 1060px;
     display: flex;
     flex-direction: row;
+    gap: 16px;
     justify-content: space-between;
     align-items: flex-start;
 }
 
 .logo {
     background-color: #FFFFFF;
-    width: 340px;
+    width: 300px;
+    flex: 0 0 300px;
     padding: 5px 0px;
     border-radius: 0px 0px 40px 40px;
     display: flex;
@@ -23,8 +25,16 @@
     justify-content: center;
 }
 
+.logoImg {
+    width: 241px;
+    max-width: 85%;
+    height: auto;
+    display: block;
+}
+
 .barNavigation {
-    width: 60%;
+    flex: 1 1 auto;
+    min-width: 0;
     min-height: 47px;
     display: flex;
     flex-direction: column;
@@ -40,9 +50,12 @@
     display: flex;
     flex-direction: row;
     border-radius: 0px 0px 0px 20px;
+    overflow: hidden;
 }
 
 .item {
+    flex: 1 1 0;
+    min-width: 0;
     height: 100%;
     font-weight: bold;
     font-size: 12px;
@@ -52,9 +65,12 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    text-align: center;
 }
 
 .item2 {
+    flex: 1 1 0;
+    min-width: 0;
     height: 100%;
     font-weight: bold;
     font-size: 12px;
@@ -71,6 +87,14 @@
 
 .link {
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 8px;
+    text-align: center;
+    white-space: normal;
 }
 
 .rrss {
@@ -82,4 +106,26 @@
     align-items: center;
     border-radius: 0px 0px 20px 20px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 1100px) {
+    .elementSup {
+        gap: 10px;
+        padding: 0 12px;
+        box-sizing: border-box;
+    }
+
+    .logo {
+        width: 260px;
+        flex-basis: 260px;
+    }
+
+    .logoImg {
+        width: 215px;
+    }
+
+    .link {
+        padding: 0 5px;
+        font-size: 11px;
+    }
 }

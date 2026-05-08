@@ -1,4 +1,4 @@
-import ReactHtmlParser from 'react-html-parser';
+import ReactHtmlParser from 'html-react-parser';
 import styles from '../../styles/components/CardsBeneficio.module.css';
 
 export const CardsBeneficio = ({ beneficio }) => {
@@ -9,7 +9,7 @@ export const CardsBeneficio = ({ beneficio }) => {
             </div>
             <div className={styles.bodyCard}>
                 <p className={styles.title}>{beneficio.title}</p>
-                <p className={styles.content}>{ReactHtmlParser(beneficio.description)}</p>
+                <div className={styles.content}>{ReactHtmlParser(beneficio.description)}</div>
             </div>
         </div>
     )

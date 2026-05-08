@@ -1,4 +1,3 @@
-import { makeStyles } from "@mui/styles";
 import Link from "next/link";
 import styles from "../../styles/components/TopBar.module.css";
 
@@ -6,75 +5,67 @@ export const TopBar = () => {
   return (
     <div className={styles.containerTopBar}>
       <div className={styles.elementSup}>
-        <Link href="/">
-          <div className={styles.logo}>
-            <img
-              loading="lazy"
-              src="https://cds-img.s3.us-east-1.amazonaws.com/Logo+CDS+2025.png"
-              width="241px"
-              alt="Logo CDS"
-            />
-          </div>
+        <Link href="/" className={styles.logo}>
+          <img
+            loading="lazy"
+            src="https://cds-img.s3.us-east-1.amazonaws.com/Logo+CDS+2025.png"
+            className={styles.logoImg}
+            alt="Logo CDS"
+          />
         </Link>
         <div className={styles.barNavigation}>
           <div className={styles.barNavigation2}>
-            <Link href="/">
-              <div
-                className={styles.item}
-                style={{
-                  width: "10%",
-                  backgroundColor: "#000000",
-                  borderRadius: "0px 0px 0px 20px",
-                }}
-              >
-                <div className={styles.link} style={{ color: "#FFFFFF" }}>
-                  Inicio
-                </div>
-              </div>
+            <Link
+              href="/"
+              className={styles.item}
+              style={{
+                backgroundColor: "#000000",
+                borderRadius: "0px 0px 0px 20px",
+              }}
+            >
+              <span className={styles.link} style={{ color: "#FFFFFF" }}>
+                Inicio
+              </span>
             </Link>
-            <Link href="/quienes-somos">
-              <div
-                className={styles.item}
-                style={{ width: "20%", backgroundColor: "#000000" }}
-              >
-                <div className={styles.link} style={{ color: "#FFFFFF" }}>
-                  Quienes somos
-                </div>
-              </div>
+            <Link
+              href="/quienes-somos"
+              className={styles.item}
+              style={{ backgroundColor: "#000000" }}
+            >
+              <span className={styles.link} style={{ color: "#FFFFFF" }}>
+                Quienes somos
+              </span>
             </Link>
-            <Link href="/seguro-automotriz">
-              <div
-                className={styles.item}
-                style={{ width: "20%", backgroundColor: "#000000" }}
-              >
-                <div className={styles.link} style={{ color: "#FFFFFF" }}>
-                  Seguro Automotriz
-                </div>
-              </div>
+            <Link
+              href="/seguro-automotriz"
+              className={styles.item}
+              style={{ backgroundColor: "#000000" }}
+            >
+              <span className={styles.link} style={{ color: "#FFFFFF" }}>
+                Seguro Automotriz
+              </span>
             </Link>
-            <Link href="/blog">
-              <div
-                className={styles.item}
-                style={{ width: "10%", backgroundColor: "#000000" }}
-              >
-                <div className={styles.link} style={{ color: "#FFFFFF" }}>
-                  Blog
-                </div>
-              </div>
+            <Link
+              href="/blog"
+              className={styles.item}
+              style={{ backgroundColor: "#000000" }}
+            >
+              <span className={styles.link} style={{ color: "#FFFFFF" }}>
+                Blog
+              </span>
             </Link>
-            <Link href="/ayuda">
-              <div
-                className={styles.item}
-                style={{ width: "10%", backgroundColor: "#000000" }}
-              >
-                <div className={styles.link} style={{ color: "#FFFFFF" }}>
-                  Ayuda
-                </div>
-              </div>
+            <Link
+              href="/ayuda"
+              className={styles.item}
+              style={{ backgroundColor: "#000000" }}
+            >
+              <span className={styles.link} style={{ color: "#FFFFFF" }}>
+                Ayuda
+              </span>
             </Link>
             <div
               className={styles.item}
-              style={{ backgroundColor: "#F5F5F5", width: "20%" }}
+              style={{ backgroundColor: "#F5F5F5" }}
             >
               <a
                 href="https://clubdelseguro.trytoku.com/"

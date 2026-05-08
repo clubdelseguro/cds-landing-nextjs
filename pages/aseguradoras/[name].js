@@ -7,7 +7,7 @@ import { CarouselBlogs } from '../../components/CarouselBlogs';
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { CardsSeguroAutomotriz } from "../../components/CardsSeguroAutomotriz";
-import ReactHtmlParser from 'react-html-parser';
+import ReactHtmlParser from 'html-react-parser';
 
 function Compania({ blogs, companies }) {
     const [company, setCompany] = useState(null);
@@ -59,9 +59,9 @@ function Compania({ blogs, companies }) {
                             <img loading="lazy" style={{ marginRight: '20px' }} src="/assets/estrella.png" alt="Estrella evaluacion" />
                         </div>
                     </div>
-                    <p className={styles.containerDescriptionCompany}>
+                    <div className={styles.containerDescriptionCompany}>
                         {ReactHtmlParser(company?.description)}
-                    </p>
+                    </div>
                 </div>
             </div>
             <h2 className={styles.subtitleCompany}>Seguros y coberturas de {company?.name} Seguros</h2>

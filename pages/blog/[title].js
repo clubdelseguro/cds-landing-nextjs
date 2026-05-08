@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { NavBar } from "../../components/NavBar";
 import { quitarAcentos } from "../../utils/constants";
 import styles from '../../styles/blog.module.css';
-import ReactHtmlParser from 'react-html-parser';
+import ReactHtmlParser from 'html-react-parser';
 import ReactMarkdown from "react-markdown";
 import { CarouselBlogs } from "../../components/CarouselBlogs";
 import { CotizaAhoraConNosotros } from "../../components/CotizaAhoraConNosotros";
