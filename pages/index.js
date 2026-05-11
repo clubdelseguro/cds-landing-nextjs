@@ -6,6 +6,10 @@ import Head from "next/head";
 // import { MetaTags } from 'react-meta-tags';
 
 function Home({ benefits, blogs, data }) {
+  const title = data?.data?.title ?? "";
+  const description = data?.data?.description ?? "";
+  const meta = data?.data?.meta ?? "Club Del Seguro";
+
   return (
     <div
       style={{
@@ -18,17 +22,13 @@ function Home({ benefits, blogs, data }) {
     >
       <Head>
         <title> Club del Seguro</title>
-        <meta name="description" content={data?.data.meta} />
-        {/* <script src="/static/scripts.js" /> */}
+        <meta name="description" content={meta} />
       </Head>
       <Hidden only={["xs", "sm"]}>
-        <Header title={data.data.title} description={data.data.description} />
+        <Header title={title} description={description} />
       </Hidden>
       <Hidden only={["md", "lg", "xl"]}>
-        <HeaderMovil
-          title={data.data.title}
-          description={data.data.description}
-        />
+        <HeaderMovil title={title} description={description} />
       </Hidden>
       <div className="body">
         <Body benefits={benefits} blogs={blogs} />
@@ -37,17 +37,31 @@ function Home({ benefits, blogs, data }) {
   );
 }
 
-Home.getInitialProps = async ({ req }) => {
+async function safeFetchJson(url) {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) {
+      console.error(`[home] fetch ${url} -> ${res.status}`);
+      return null;
+    }
+    return await res.json();
+  } catch (err) {
+    console.error(`[home] fetch ${url} failed:`, err?.message || err);
+    return null;
+  }
+}
+
+Home.getInitialProps = async () => {
   const [data, benefits, blogs] = await Promise.all([
-    fetch(`https://strapi.clubdelseguro.cl/pages/2`).then((r) => r.json()),
-    fetch(`https://strapi.clubdelseguro.cl/benefits`).then((r) => r.json()),
-    fetch(`https://strapi.clubdelseguro.cl/blogs`).then((r) => r.json()),
+    safeFetchJson("https://strapi.clubdelseguro.cl/pages/2"),
+    safeFetchJson("https://strapi.clubdelseguro.cl/benefits"),
+    safeFetchJson("https://strapi.clubdelseguro.cl/blogs"),
   ]);
 
   return {
-    data,
-    benefits,
-    blogs,
+    data: data ?? { data: { title: "", description: "", meta: "" } },
+    benefits: Array.isArray(benefits) ? benefits : [],
+    blogs: Array.isArray(blogs) ? blogs : [],
   };
 };
 
