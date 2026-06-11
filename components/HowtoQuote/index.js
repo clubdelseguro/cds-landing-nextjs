@@ -2,6 +2,7 @@ import React from 'react';
 import { CardHowToQuote } from '../CardHowToQuote';
 import Carousel from 'react-elastic-carousel';
 import styles from '../../styles/components/HowToQuote.module.css';
+import Link from 'next/link';
 
 const breakPoints = [
     {
@@ -54,9 +55,24 @@ export const HowToQuote = () => {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <div className="root-how-to-quote">
-                <h2 className="title-how-to-quote">¿Cómo cotizar en Club del Seguro?</h2>
+                <h2 className="title-how-to-quote">¡Tuvisate un siniestro o una falla mecánica!</h2>
+                <h3 style={{
+                    margin: '10px',
+                    fontSize: '40px',
+                    fontWeight: '800',
+                    lineHeight: '47px',
+                    textAlign: 'center',
+                    color: '#FF521B'
+                }}>Consulta tu póliza ya,</h3>
+                <h3 style={{
+                    margin: '10px',
+                    fontSize: '40px',
+                    fontWeight: '800',
+                    lineHeight: '47px',
+                    textAlign: 'center',
+                }}>para obtener ayuda</h3>
             </div>
-            <Carousel breakPoints={breakPoints} enableAutoPlay showArrows={false} autoPlaySpeed={5000} >
+            {/* <Carousel breakPoints={breakPoints} enableAutoPlay showArrows={false} autoPlaySpeed={5000} >
                 {
                     elements.map((val, i) => (
                         <div key={val.id} className="container-cards-how-to-quote">
@@ -69,15 +85,15 @@ export const HowToQuote = () => {
                         </div>
                     ))
                 }
-            </Carousel>
+            </Carousel> */}
 
             <div className={styles.bottom}>
-                <a href="https://cotizador.clubdelseguro.cl/" style={{ textDecoration: 'none' }} target="_blank" rel="noreferrer">
+                <Link href="/ver-mi-poliza" style={{ textDecoration: 'none' }}>
                     <div className={styles.button}>
-                        Iniciar mi cotización
+                        Ver mi póliza
                     </div>
-                </a>
+                </Link>
             </div>
-        </div>
+        </div >
     )
 }

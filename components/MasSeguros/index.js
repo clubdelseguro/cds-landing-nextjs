@@ -76,6 +76,7 @@ export const MasSeguros = () => {
     };
 
     const handleWheelClick = () => {
+        window.open('/soap', '_blank');
         setIsDriving(true);
         setTimeout(() => setIsDriving(false), 1500);
     };
@@ -96,7 +97,16 @@ export const MasSeguros = () => {
             >
                 <Grid item>
                     <CustomButton
-                        className={classes.button}
+                        style={{
+                            width: '150px',
+                            height: '150px',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            transition: 'background-color 0.3s, color 0.3s',
+                            overflow: 'hidden',
+                        }}
                         onClick={handleAirplaneClick}
                     >
                         <Grid
@@ -118,8 +128,18 @@ export const MasSeguros = () => {
                         </Grid>
                     </CustomButton>
                 </Grid>
-                {/* <Grid item>
-                    <CustomButton className={classes.button} onClick={handleWheelClick}>
+                <Grid item>
+                    <CustomButton style={{
+                        width: '150px',
+                        height: '150px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        transition: 'background-color 0.3s, color 0.3s',
+                        overflow: 'hidden',
+                    }}
+                        onClick={handleWheelClick}>
                         <Grid
                             container
                             direction="column"
@@ -138,7 +158,7 @@ export const MasSeguros = () => {
                             </span>
                         </Grid>
                     </CustomButton>
-                </Grid> */}
+                </Grid>
             </Grid>
             {/* <Link href="/aseguradoras" >
                 <p className="ver-mas-quienes-respaldan">

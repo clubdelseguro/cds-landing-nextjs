@@ -49,6 +49,18 @@ function Contacto({ data }) {
                         <a className="rrss-a" href="https://www.facebook.com/clubdelseguro.cl/" target="_blank" rel="noreferrer">
                             <img loading="lazy" style={{ marginLeft: '26px', height: '33.11px' }} src="/assets/logo-fb.svg" alt="logo fb" />
                         </a>
+                        <a
+                            href="https://www.facebook.com/clubdelseguro.cl/"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <img
+                                loading="lazy"
+                                style={{ marginLeft: "20.81px", height: "37px" }}
+                                src="/assets/logo-wsp.svg"
+                                alt="logo fb"
+                            />
+                        </a>
                         {/* <a className="rrss-a" href="https://twitter.com/Club_Del_Seguro" target="_blank" rel="noreferrer">
                             <img loading="lazy" style={{ marginLeft: '26px', height: '31.85px' }} src="/assets/logo-twiter.svg" alt="logo twiter" />
                         </a> */}
