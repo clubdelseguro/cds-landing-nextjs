@@ -47,42 +47,104 @@ const AlertIcon = () => (
     </svg>
 );
 
-// ─── Datos simulados ──────────────────────────────────────────────────────────
+const CarIcon = () => (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path d="M5 17H3v-5l2-5h14l2 5v5h-2" stroke="#FF521B" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="7.5" cy="17.5" r="1.5" fill="#FF521B" />
+        <circle cx="16.5" cy="17.5" r="1.5" fill="#FF521B" />
+        <path d="M5 12h14" stroke="#FF521B" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+);
 
-const MOCK_CON_DATOS = {
-    rut: '12.345.678-9',
-    nombre: 'Juan Pérez González',
-    marca: 'Toyota',
-    modelo: 'Corolla',
-    anio: 2021,
-    poliza_url: 'https://mi-bucket.s3.amazonaws.com/polizas/poliza-ejemplo.pdf',
-    siniestro: {
-        coberturas: ['Choque', 'Abollón', 'Robo', 'Rotura de vidrios', 'Volcamiento'],
-        compania: 'Reale',
-        telefono: '999999999',
-    },
-    falla_mecanica: {
-        coberturas: ['Motor', 'Caja de cambios', 'Sistema eléctrico', 'Dirección', 'Frenos'],
-        compania: 'Garantía Total',
-        telefono: '988888888',
-    },
-    asistencias: [
-        { id: 1, titulo: 'Asistencia de grúa', icono: '🚛' },
-        { id: 2, titulo: 'Asistencia de taxi', icono: '🚕' },
-        { id: 3, titulo: 'Vehículo de reemplazo', icono: '🚗' },
-        { id: 4, titulo: 'Inspección técnica', icono: '🔧' },
-        { id: 5, titulo: 'Asistencia en viaje', icono: '🗺️' },
-    ],
+const ChevronRight = () => (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M9 18L15 12L9 6" stroke="#ccc" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+const STATUS_CONFIG = {
+    activa: { label: 'Activa', bg: '#f0fdf4', color: '#16a34a', border: '#bbf7d0' },
+    renunciada: { label: 'Renunciada', bg: '#fef2f2', color: '#dc2626', border: '#fecaca' },
+    pendiente: { label: 'Pendiente', bg: '#fffbeb', color: '#d97706', border: '#fde68a' },
 };
 
-// RUT de prueba sin datos: 11.111.111-1
-const MOCK_SIN_DATOS = null;
+const getStatus = (status = '') => {
+    const key = status.toLowerCase();
+    return STATUS_CONFIG[key] || { label: status, bg: '#f3f4f6', color: '#666', border: '#e5e7eb' };
+};
+
+// ─── Datos simulados ──────────────────────────────────────────────────────────
+const MOCK_CON_DATOS = [
+    {
+        propuesta: 109,
+        company: 'REALE CHILE SEGUROS GENERALES S.A',
+        assistanciePhone: '600 123 4567',
+        status: 'renunciada',
+        brand: 'TOYOTA',
+        model: 'YARIS',
+        year: '2015',
+        patent: 'BCDF12',
+        document: 'https://cds-admin-dev.s3.amazonaws.com/propuestas/propuesta109-2025-07-30_15-15.pdf',
+        guarantee: 'sin garantia',
+        name: 'MATIAS IGNACIO MORENO MORENO',
+        rut: '19.724.505-0',
+    },
+    {
+        propuesta: 115,
+        company: 'RENTA',
+        assistanciePhone: '600 987 6543',
+        status: 'activa',
+        brand: 'TOYOTA',
+        model: 'YARIS',
+        year: '2015',
+        patent: 'BCDF12',
+        document: 'https://cds-admin-dev.s3.amazonaws.com/propuestas/propuesta115-2025-10-06_14-41.pdf',
+        guarantee: 'garantia mecanica',
+        name: 'MATIAS IGNACIO MORENO MORENO',
+        rut: '19.724.505-0',
+    },
+    {
+        propuesta: 141,
+        company: 'REALE CHILE SEGUROS GENERALES S.A',
+        assistanciePhone: '600 111 2222',
+        status: 'activa',
+        brand: 'TOYOTA',
+        model: 'COROLLA',
+        year: '2020',
+        patent: 'WXYZ99',
+        document: 'https://cds-admin-dev.s3.amazonaws.com/propuestas/propuesta141-2025-11-18_12-14.pdf',
+        guarantee: 'garantia total',
+        name: 'MATIAS IGNACIO MORENO MORENO',
+        rut: '19.724.505-0',
+    },
+];
+
+const MOCK_SIN_DATOS = [];
+
+const MOCK_CON_1_DATO = [
+    {
+        propuesta: 109,
+        company: 'REALE CHILE SEGUROS GENERALES S.A',
+        assistanciePhone: '600 123 4567',
+        status: 'renunciada',
+        brand: 'TOYOTA',
+        model: 'YARIS',
+        year: '2015',
+        patent: 'BCDF12',
+        document: 'https://cds-admin-dev.s3.amazonaws.com/propuestas/propuesta109-2025-07-30_15-15.pdf',
+        guarantee: 'sin garantia',
+        name: 'MATIAS IGNACIO MORENO MORENO',
+        rut: '19.724.505-0',
+    },
+];
 
 // ─── Componente principal ─────────────────────────────────────────────────────
 
 function Siniestro() {
     const [rut, setRut] = useState('');
-    const [resultado, setResultado] = useState(undefined); // undefined = no consultado aún
+    // undefined = sin consultar | [] = consultado sin resultados | array = lista | 'detalle' = ver propuesta
+    const [propuestas, setPropuestas] = useState(undefined);
+    const [propuestaSeleccionada, setPropuestaSeleccionada] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
@@ -123,7 +185,8 @@ function Siniestro() {
 
     const consultarPoliza = async () => {
         setError('');
-        setResultado(undefined);
+        setPropuestas(undefined);
+        setPropuestaSeleccionada(null);
 
         if (!rut.trim()) { setError('Debes ingresar un RUT'); return; }
         if (!validarRut(rut)) { setError('El RUT ingresado no es válido'); return; }
@@ -132,12 +195,13 @@ function Siniestro() {
             setLoading(true);
             await new Promise((res) => setTimeout(res, 1200));
 
-            // RUT de prueba sin datos: 11.111.111-1
             const rutLimpio = rut.replace(/\./g, '').replace('-', '');
             if (rutLimpio === '111111111') {
-                setResultado(MOCK_SIN_DATOS);
+                setPropuestas(MOCK_SIN_DATOS);
+            } else if (rutLimpio === '131401884') {
+                setPropuestas(MOCK_CON_1_DATO);
             } else {
-                setResultado(MOCK_CON_DATOS);
+                setPropuestas(MOCK_CON_DATOS);
             }
 
             // ── API real ──
@@ -147,13 +211,24 @@ function Siniestro() {
             //     body: JSON.stringify({ rut }),
             // });
             // if (!response.ok) throw new Error('Error API');
-            // const data = await response.json();
-            // setResultado(data); // null si no tiene póliza
+            // const data = await response.json(); // array de propuestas
+            // setPropuestas(data);
         } catch {
             setError('Error al consultar. Intenta más tarde.');
         } finally {
             setLoading(false);
         }
+    };
+
+    const seleccionarPropuesta = (p) => setPropuestaSeleccionada(p);
+
+    const volverALista = () => setPropuestaSeleccionada(null);
+
+    const volverAlFormulario = () => {
+        setPropuestas(undefined);
+        setPropuestaSeleccionada(null);
+        setRut('');
+        setError('');
     };
 
     const descargarPoliza = () => {
@@ -173,401 +248,266 @@ function Siniestro() {
         setError('');
     };
 
-    // ─── Vista: Formulario ────────────────────────────────────────────────────
-    const VistaFormulario = () => (
-        <div style={s.formWrapper}>
-            {/* Pill badge */}
-            {/* <div style={s.badge}>🆘 Asistencia inmediata</div> */}
-
-            <h1 style={s.heroTitle}>
-                ¡Tuviste un <span style={s.orange}>siniestro</span> o<br />
-                una <span style={s.orange}>falla mecánica</span>!
-            </h1>
-
-            <p style={s.heroSub}>
-                Ingresa el RUT del asegurado y te mostramos toda la información de tu póliza al instante.
-            </p>
-
-            <div style={s.inputGroup}>
-                <label style={s.inputLabel}>RUT del asegurado</label>
-                <div style={s.inputRow}>
-                    <TextField
-                        type="text"
-                        placeholder="Ej: 12.345.678-9"
-                        value={rut}
-                        onChange={handleRutChange}
-                        onKeyDown={(e) => e.key === 'Enter' && !loading && !error && rut.trim() && consultarPoliza()}
-                        error={!!error}
-                        helperText={error || ' '}
-                        fullWidth
-                        size="medium"
-                        sx={{
-                            '& .MuiOutlinedInput-root': {
-                                borderRadius: '12px',
-                                backgroundColor: '#fff',
-                                fontSize: '16px',
-                                '&.Mui-focused fieldset': { borderColor: '#FF521B', borderWidth: '2px' },
-                            },
-                        }}
-                    />
-                    <button
-                        onClick={consultarPoliza}
-                        disabled={loading || !!error || !rut.trim()}
-                        style={{
-                            ...s.btnOrange,
-                            opacity: (loading || !!error || !rut.trim()) ? 0.55 : 1,
-                            cursor: (loading || !!error || !rut.trim()) ? 'not-allowed' : 'pointer',
-                            minWidth: '180px',
-                        }}
-                    >
-                        {loading ? (
-                            <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                <span style={s.spinner} /> Consultando...
-                            </span>
-                        ) : (
-                            <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                <SearchIcon /> Consultar póliza
-                            </span>
-                        )}
-                    </button>
-                </div>
-                <p style={s.hint}>
-                    💡 Para probar sin datos usa el RUT <strong>11.111.111-1</strong>
-                </p>
-            </div>
-        </div>
-    );
-
-    // ─── Vista: Sin datos ─────────────────────────────────────────────────────
-    const VistaSinDatos = () => (
-        <div style={s.sinDatosWrapper}>
-            <AlertIcon />
-            <h2 style={{ ...s.sectionTitle, textAlign: 'center', marginBottom: '8px' }}>
-                Sin póliza activa
-            </h2>
-            <p style={{ color: '#666', fontSize: '15px', textAlign: 'center', lineHeight: '1.6', maxWidth: '360px' }}>
-                Lamentablemente no encontramos una póliza asociada al RUT <strong>{rut}</strong> en nuestro sistema.
-            </p>
-            <a href="/cotizar" style={{ ...s.btnOrange, textDecoration: 'none', marginTop: '8px' }}>
-                Contratar seguro ahora
-            </a>
-            <button onClick={volver} style={s.btnGhost}>
-                ← Intentar con otro RUT
-            </button>
-        </div>
-    );
-
-    // ─── Vista: Con datos ─────────────────────────────────────────────────────
-    const VistaConDatos = () => (
-        <div style={s.resultadoWrapper}>
-
-            {/* Header resultado */}
-            <div style={s.resultHeader}>
-                <div>
-                    <p style={s.resultBadge}>✅ Póliza activa</p>
-                    <h1 style={{ ...s.heroTitle, fontSize: '22px', textAlign: 'left', marginBottom: '0' }}>
-                        ¡Estamos para ayudarte!
-                    </h1>
-                </div>
-                <button onClick={volver} style={s.btnGhostSmall}>← Volver</button>
-            </div>
-
-            {/* Card info asegurado */}
-            <div style={s.card}>
-                <p style={s.cardSectionLabel}>Datos del asegurado</p>
-                <div style={s.infoGrid}>
-                    {[
-                        { label: 'RUT', value: resultado.rut },
-                        { label: 'Nombre', value: resultado.nombre },
-                        { label: 'Marca', value: resultado.marca },
-                        { label: 'Modelo', value: resultado.modelo },
-                        { label: 'Año', value: resultado.anio },
-                    ].map(({ label, value }) => (
-                        <div key={label} style={s.infoItem}>
-                            <span style={s.infoLabel}>{label}</span>
-                            <span style={s.infoValue}>{value}</span>
-                        </div>
-                    ))}
-                </div>
-                <div style={{ marginTop: '20px' }}>
-                    <button style={s.btnDark} onClick={descargarPoliza}>
-                        <DownloadIcon /> Descargar póliza (PDF)
-                    </button>
-                </div>
-            </div>
-
-            {/* Título sección */}
-            <div style={s.sectionHeader}>
-                <h2 style={s.sectionTitle}>¿Qué te ocurrió?</h2>
-                <p style={s.sectionSub}>Contacta directamente a tu compañía según el caso</p>
-            </div>
-
-            {/* Cards siniestro / falla */}
-            <div style={s.cardsGrid}>
-                <CardAsistencia
-                    emoji="🚨"
-                    titulo="Tuve un siniestro"
-                    subtitulo="Choque, abollón, robo, vidrios, etc."
-                    coberturas={resultado.siniestro.coberturas}
-                    compania={resultado.siniestro.compania}
-                    telefono={resultado.siniestro.telefono}
-                    color="#FF521B"
-                />
-                <CardAsistencia
-                    emoji="🔧"
-                    titulo="Tuve una falla mecánica"
-                    subtitulo="Motor, caja de cambios, sistema eléctrico, etc."
-                    coberturas={resultado.falla_mecanica.coberturas}
-                    compania={resultado.falla_mecanica.compania}
-                    telefono={resultado.falla_mecanica.telefono}
-                    color="#2563eb"
-                />
-            </div>
-
-            {/* Otros productos */}
-            <div style={s.sectionHeader}>
-                <h2 style={s.sectionTitle}>Tus otros productos</h2>
-                <p style={s.sectionSub}>Beneficios incluidos en tu póliza</p>
-            </div>
-
-            {resultado.asistencias?.length > 0 ? (
-                <div style={s.asistenciaGrid}>
-                    {resultado.asistencias.map((a) => (
-                        <div key={a.id} style={s.asistenciaCard}>
-                            <span style={s.asistenciaEmoji}>{a.icono}</span>
-                            <div style={{ flex: 1 }}>
-                                <span style={s.asistenciaTexto}>{a.titulo}</span>
-                            </div>
-                            <CheckIcon color="#16a34a" />
-                        </div>
-                    ))}
-                </div>
-            ) : (
-                <div style={s.emptyCard}>
-                    <p>No tienes asistencias adicionales contratadas.</p>
-                    <a href="/cotizar" style={{ ...s.btnOrange, marginTop: '12px', display: 'inline-flex', textDecoration: 'none' }}>
-                        Contratar ahora
-                    </a>
-                </div>
-            )}
-
-            {/* Footer contacto */}
-            <div style={s.footerCard}>
-                <p style={s.footerTitle}>¿Necesitas más ayuda?</p>
-                <div style={s.footerRow}>
-                    <a href="https://wa.me/56999999999" style={s.footerBtn} target="_blank" rel="noreferrer">
-                        <WhatsAppIcon />
-                        WhatsApp +569 99999999
-                    </a>
-                    <a href="tel:6003001919" style={{ ...s.footerBtn, backgroundColor: '#f3f4f6', color: '#1a1a1a' }}>
-                        <PhoneIcon />
-                        600 300 1919
-                    </a>
-                </div>
-                <p style={s.footerHint}>
-                    Llama al <strong>600 300 1919</strong> para modificar o dar de baja tu póliza.
-                </p>
-            </div>
-
-        </div>
-    );
-
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
-            <div className="root-header-error-page">
-            </div>
+            <div className="root-header-error-page" />
             <NavBar />
             <div className="body">
                 <div className="root-error-page">
-                    {resultado === undefined && (<div style={s.formWrapper}>
-                        {/* Pill badge */}
-                        {/* <div style={s.badge}>🆘 Asistencia inmediata</div> */}
 
-                        <h1 style={s.heroTitle}>
-                            ¡Tuviste un <span style={s.orange}>siniestro</span> o<br />
-                            una <span style={s.orange}>falla mecánica</span>!
-                        </h1>
-
-                        <p style={s.heroSub}>
-                            Ingresa el RUT del asegurado y te mostramos toda la información de tu póliza al instante.
-                        </p>
-
-                        <div style={s.inputGroup}>
-                            <label style={s.inputLabel}>RUT del asegurado</label>
-                            <div style={s.inputRow}>
-                                <TextField
-                                    type="text"
-                                    placeholder="Ej: 12.345.678-9"
-                                    value={rut}
-                                    onChange={handleRutChange}
-                                    onKeyDown={(e) => e.key === 'Enter' && !loading && !error && rut.trim() && consultarPoliza()}
-                                    error={!!error}
-                                    helperText={error || ' '}
-                                    fullWidth
-                                    size="medium"
-                                    sx={{
-                                        '& .MuiOutlinedInput-root': {
-                                            borderRadius: '12px',
-                                            backgroundColor: '#fff',
-                                            fontSize: '16px',
-                                            '&.Mui-focused fieldset': { borderColor: '#FF521B', borderWidth: '2px' },
-                                        },
-                                    }}
-                                />
-                                <button
-                                    onClick={consultarPoliza}
-                                    disabled={loading || !!error || !rut.trim()}
-                                    style={{
-                                        ...s.btnOrange,
-                                        opacity: (loading || !!error || !rut.trim()) ? 0.55 : 1,
-                                        cursor: (loading || !!error || !rut.trim()) ? 'not-allowed' : 'pointer',
-                                        minWidth: '180px',
-                                    }}
-                                >
-                                    {loading ? (
-                                        <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                            <span style={s.spinner} /> Consultando...
-                                        </span>
-                                    ) : (
-                                        <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                            <SearchIcon /> Consultar póliza
-                                        </span>
-                                    )}
-                                </button>
-                            </div>
-                            <p style={s.hint}>
-                                💡 Para probar sin datos usa el RUT <strong>11.111.111-1</strong>
+                    {/* ══════════════════════════════════════════════════════
+                                VISTA 1: FORMULARIO
+                            ══════════════════════════════════════════════════════ */}
+                    {propuestas === undefined && (
+                        <div style={s.formWrapper}>
+                            <h1 style={s.heroTitle}>
+                                ¡Tuviste un <span style={s.orange}>siniestro</span> o<br />
+                                una <span style={s.orange}>falla mecánica</span>!
+                            </h1>
+                            <p style={s.heroSub}>
+                                Ingresa el RUT del asegurado y te mostramos toda la información de tu póliza al instante.
                             </p>
-                        </div>
-                    </div>)}
-                    {resultado === null && (<div style={s.sinDatosWrapper}>
-                        <AlertIcon />
-                        <h2 style={{ ...s.sectionTitle, textAlign: 'center', marginBottom: '8px' }}>
-                            Sin póliza activa
-                        </h2>
-                        <p style={{ color: '#666', fontSize: '15px', textAlign: 'center', lineHeight: '1.6', maxWidth: '360px' }}>
-                            Lamentablemente no encontramos una póliza asociada al RUT <strong>{rut}</strong> en nuestro sistema.
-                        </p>
-                        <a href="/cotizar" style={{ ...s.btnOrange, textDecoration: 'none', marginTop: '8px' }}>
-                            Contratar seguro ahora
-                        </a>
-                        <button onClick={volver} style={s.btnGhost}>
-                            ← Intentar con otro RUT
-                        </button>
-                    </div>)}
-                    {resultado !== null && resultado !== undefined && (<div style={s.resultadoWrapper}>
-
-                        {/* Header resultado */}
-                        <div style={s.resultHeader}>
-                            <div>
-                                <p style={s.resultBadge}>✅ Póliza activa</p>
-                                <h1 style={{ ...s.heroTitle, fontSize: '22px', textAlign: 'left', marginBottom: '0' }}>
-                                    ¡Estamos para ayudarte!
-                                </h1>
+                            <div style={s.inputGroup}>
+                                <label style={s.inputLabel}>RUT del asegurado</label>
+                                <div style={s.inputRow}>
+                                    <TextField
+                                        type="text"
+                                        placeholder="Ej: 12.345.678-9"
+                                        value={rut}
+                                        onChange={handleRutChange}
+                                        onKeyDown={(e) => e.key === 'Enter' && !loading && !error && rut.trim() && consultarPoliza()}
+                                        error={!!error}
+                                        helperText={error || ' '}
+                                        fullWidth
+                                        size="medium"
+                                        sx={{
+                                            '& .MuiOutlinedInput-root': {
+                                                borderRadius: '12px',
+                                                backgroundColor: '#fff',
+                                                fontSize: '16px',
+                                                '&.Mui-focused fieldset': { borderColor: '#FF521B', borderWidth: '2px' },
+                                            },
+                                        }}
+                                    />
+                                    <button
+                                        onClick={consultarPoliza}
+                                        disabled={loading || !!error || !rut.trim()}
+                                        style={{
+                                            ...s.btnOrange,
+                                            opacity: (loading || !!error || !rut.trim()) ? 0.55 : 1,
+                                            cursor: (loading || !!error || !rut.trim()) ? 'not-allowed' : 'pointer',
+                                            minWidth: '180px',
+                                        }}
+                                    >
+                                        {loading ? (
+                                            <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                                <span style={s.spinner} /> Consultando...
+                                            </span>
+                                        ) : (
+                                            <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                                <SearchIcon /> Consultar póliza
+                                            </span>
+                                        )}
+                                    </button>
+                                </div>
+                                <p style={s.hint}>
+                                    💡 Para probar sin datos usa el RUT <strong>11.111.111-1</strong>
+                                </p>
                             </div>
-                            <button onClick={volver} style={s.btnGhostSmall}>← Volver</button>
                         </div>
+                    )}
 
-                        {/* Card info asegurado */}
-                        <div style={s.card}>
-                            <p style={s.cardSectionLabel}>Datos del asegurado</p>
-                            <div style={s.infoGrid}>
-                                {[
-                                    { label: 'RUT', value: resultado.rut },
-                                    { label: 'Nombre', value: resultado.nombre },
-                                    { label: 'Marca', value: resultado.marca },
-                                    { label: 'Modelo', value: resultado.modelo },
-                                    { label: 'Año', value: resultado.anio },
-                                ].map(({ label, value }) => (
-                                    <div key={label} style={s.infoItem}>
-                                        <span style={s.infoLabel}>{label}</span>
-                                        <span style={s.infoValue}>{value}</span>
+                    {/* ══════════════════════════════════════════════════════
+                                VISTA 2A: SIN RESULTADOS
+                            ══════════════════════════════════════════════════════ */}
+                    {Array.isArray(propuestas) && propuestas.length === 0 && !propuestaSeleccionada && (
+                        <div style={s.sinDatosWrapper}>
+                            <AlertIcon />
+                            <h2 style={{ ...s.sectionTitle, textAlign: 'center', marginBottom: '8px' }}>
+                                Sin póliza activa
+                            </h2>
+                            <p style={{ color: '#666', fontSize: '15px', textAlign: 'center', lineHeight: '1.6', maxWidth: '360px' }}>
+                                No encontramos pólizas asociadas al RUT <strong>{rut}</strong> en nuestro sistema.
+                            </p>
+                            <a href="/cotizar" style={{ ...s.btnOrange, textDecoration: 'none', marginTop: '8px' }}>
+                                Contratar seguro ahora
+                            </a>
+                            <button onClick={volverAlFormulario} style={s.btnGhost}>
+                                ← Intentar con otro RUT
+                            </button>
+                        </div>
+                    )}
+
+                    {/* ══════════════════════════════════════════════════════
+                                VISTA 2B: LISTA DE PROPUESTAS
+                            ══════════════════════════════════════════════════════ */}
+                    {Array.isArray(propuestas) && propuestas.length > 0 && !propuestaSeleccionada && (
+                        <div style={s.resultadoWrapper}>
+
+                            {/* Header */}
+                            <div style={s.resultHeader}>
+                                <div>
+                                    <h1 style={{ ...s.heroTitle, fontSize: '24px', textAlign: 'left', marginBottom: '6px' }}>
+                                        Tus pólizas
+                                    </h1>
+                                    <p style={{ fontSize: '14px', color: '#888', margin: 0 }}>
+                                        {propuestas.length} {propuestas.length === 1 ? 'propuesta encontrada' : 'propuestas encontradas'} para el RUT <strong>{rut}</strong>
+                                    </p>
+                                </div>
+                                <button onClick={volverAlFormulario} style={s.btnGhostSmall}>← Otro RUT</button>
+                            </div>
+
+                            {/* Cards propuestas */}
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                                {propuestas.map((p) => {
+                                    const st = getStatus(p.status);
+                                    return (
+                                        <button
+                                            key={p.propuesta}
+                                            onClick={() => seleccionarPropuesta(p)}
+                                            style={s.propuestaCard}
+                                        >
+                                            {/* Ícono vehículo */}
+                                            <div style={s.propuestaIconWrap}>
+                                                <CarIcon />
+                                            </div>
+
+                                            {/* Info principal */}
+                                            <div style={{ flex: 1, textAlign: 'left' }}>
+                                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px', flexWrap: 'wrap' }}>
+                                                    <span style={{ fontSize: '16px', fontWeight: '800', color: '#1a1a1a' }}>
+                                                        {p.brand} {p.model}
+                                                    </span>
+                                                </div>
+                                                <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+                                                    <span style={s.propuestaMeta}>📅 {p.year}</span>
+                                                    {p.patent && <span style={s.propuestaMeta}>🚗 {p.patent}</span>}
+                                                    <span style={s.propuestaMeta}>🏢 {p.company}</span>
+                                                </div>
+                                            </div>
+
+                                            {/* Flecha */}
+                                            <ChevronRight />
+                                        </button>
+                                    );
+                                })}
+                            </div>
+
+                        </div>
+                    )}
+
+                    {/* ══════════════════════════════════════════════════════
+                                VISTA 3: DETALLE DE UNA PROPUESTA
+                            ══════════════════════════════════════════════════════ */}
+                    {propuestaSeleccionada && (() => {
+                        const p = propuestaSeleccionada;
+                        const st = getStatus(p.status);
+                        return (
+                            <div style={s.resultadoWrapper}>
+
+                                {/* Header */}
+                                <div style={s.resultHeader}>
+                                    <div>
+                                        <span style={{
+                                            fontSize: '13px',
+                                            fontWeight: '700',
+                                            color: st.color,
+                                            backgroundColor: st.bg,
+                                            display: 'inline-block',
+                                            padding: '4px 12px',
+                                            borderRadius: '99px',
+                                            border: `1px solid ${st.border}`,
+                                            marginBottom: '8px',
+                                        }}>
+                                            Póliza {st.label}
+                                        </span>
+                                        <h1 style={{ ...s.heroTitle, fontSize: '22px', textAlign: 'left', marginBottom: '0' }}>
+                                            {p.brand} {p.model} {p.year}
+                                        </h1>
                                     </div>
-                                ))}
-                            </div>
-                            <div style={{ marginTop: '20px' }}>
-                                <button style={s.btnDark} onClick={descargarPoliza}>
-                                    <DownloadIcon /> Descargar póliza (PDF)
-                                </button>
-                            </div>
-                        </div>
+                                    <button onClick={volverALista} style={s.btnGhostSmall}>← Mis pólizas</button>
+                                </div>
 
-                        {/* Título sección */}
-                        <div style={s.sectionHeader}>
-                            <h2 style={s.sectionTitle}>¿Qué te ocurrió?</h2>
-                            <p style={s.sectionSub}>Contacta directamente a tu compañía según el caso</p>
-                        </div>
-
-                        {/* Cards siniestro / falla */}
-                        <div style={s.cardsGrid}>
-                            <CardAsistencia
-                                emoji="🚨"
-                                titulo="Tuve un siniestro"
-                                subtitulo="Choque, abollón, robo, vidrios, etc."
-                                coberturas={resultado.siniestro.coberturas}
-                                compania={resultado.siniestro.compania}
-                                telefono={resultado.siniestro.telefono}
-                                color="#FF521B"
-                            />
-                            <CardAsistencia
-                                emoji="🔧"
-                                titulo="Tuve una falla mecánica"
-                                subtitulo="Motor, caja de cambios, sistema eléctrico, etc."
-                                coberturas={resultado.falla_mecanica.coberturas}
-                                compania={resultado.falla_mecanica.compania}
-                                telefono={resultado.falla_mecanica.telefono}
-                                color="#2563eb"
-                            />
-                        </div>
-
-                        {/* Otros productos */}
-                        <div style={s.sectionHeader}>
-                            <h2 style={s.sectionTitle}>Tus otros productos</h2>
-                            <p style={s.sectionSub}>Beneficios incluidos en tu póliza</p>
-                        </div>
-
-                        {resultado.asistencias?.length > 0 ? (
-                            <div style={s.asistenciaGrid}>
-                                {resultado.asistencias.map((a) => (
-                                    <div key={a.id} style={s.asistenciaCard}>
-                                        <span style={s.asistenciaEmoji}>{a.icono}</span>
-                                        <div style={{ flex: 1 }}>
-                                            <span style={s.asistenciaTexto}>{a.titulo}</span>
+                                {/* Card datos */}
+                                <div style={s.card}>
+                                    <p style={s.cardSectionLabel}>Datos del asegurado y vehículo</p>
+                                    <div style={s.infoGrid}>
+                                        {[
+                                            { label: 'RUT', value: p.rut },
+                                            { label: 'Nombre', value: p.name },
+                                            { label: 'Marca', value: p.brand },
+                                            { label: 'Modelo', value: p.model },
+                                            { label: 'Año', value: p.year },
+                                            ...(p.patent ? [{ label: 'Patente', value: p.patent }] : []),
+                                            { label: 'Compañía', value: p.company },
+                                        ].map(({ label, value }) => (
+                                            <div key={label} style={s.infoItem}>
+                                                <span style={s.infoLabel}>{label}</span>
+                                                <span style={s.infoValue}>{value}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    {p.document && (
+                                        <div style={{ marginTop: '8px' }}>
+                                            <button style={s.btnDark} onClick={() => descargarPoliza(p.document)}>
+                                                <DownloadIcon /> Descargar póliza (PDF)
+                                            </button>
                                         </div>
-                                        <CheckIcon color="#16a34a" />
+                                    )}
+                                </div>
+
+                                {/* Sección asistencia */}
+                                <div style={s.sectionHeader}>
+                                    <h2 style={s.sectionTitle}>¿Qué te ocurrió?</h2>
+                                    <p style={s.sectionSub}>Contacta directamente a tu compañía según el caso</p>
+                                </div>
+
+                                <div style={s.cardsGrid}>
+                                    <CardAsistencia
+                                        emoji="🚨"
+                                        titulo="Tuve un siniestro"
+                                        subtitulo="Choque, abollón, robo, vidrios, etc."
+                                        coberturas={['Choque', 'Abollón', 'Robo', 'Rotura de vidrios', 'Volcamiento']}
+                                        compania={p.company}
+                                        telefono={p.assistanciePhone || 'Sin número registrado'}
+                                        color="#FF521B"
+                                        sinTelefono={!p.assistanciePhone}
+                                    />
+                                    <CardAsistencia
+                                        emoji="🔧"
+                                        titulo="Tuve una falla mecánica"
+                                        subtitulo="Motor, caja de cambios, sistema eléctrico, etc."
+                                        coberturas={['Motor', 'Caja de cambios', 'Sistema eléctrico', 'Dirección', 'Frenos']}
+                                        compania={p.company}
+                                        telefono={p.assistanciePhone || 'Sin número registrado'}
+                                        color="#2563eb"
+                                        sinTelefono={!p.assistanciePhone}
+                                    />
+                                </div>
+
+                                {/* Footer contacto */}
+                                <div style={s.footerCard}>
+                                    <p style={s.footerTitle}>¿Necesitas más ayuda?</p>
+                                    <div style={s.footerRow}>
+                                        <a href="https://wa.me/56999999999" style={s.footerBtn} target="_blank" rel="noreferrer">
+                                            <WhatsAppIcon />
+                                            WhatsApp +569 99999999
+                                        </a>
+                                        <a href="tel:6003001919" style={{ ...s.footerBtn, backgroundColor: '#f3f4f6', color: '#1a1a1a' }}>
+                                            <PhoneIcon />
+                                            600 300 1919
+                                        </a>
                                     </div>
-                                ))}
-                            </div>
-                        ) : (
-                            <div style={s.emptyCard}>
-                                <p>No tienes asistencias adicionales contratadas.</p>
-                                <a href="/cotizar" style={{ ...s.btnOrange, marginTop: '12px', display: 'inline-flex', textDecoration: 'none' }}>
-                                    Contratar ahora
-                                </a>
-                            </div>
-                        )}
+                                    <p style={s.footerHint}>
+                                        Llama al <strong>600 300 1919</strong> para modificar o dar de baja tu póliza.
+                                    </p>
+                                </div>
 
-                        {/* Footer contacto */}
-                        <div style={s.footerCard}>
-                            <p style={s.footerTitle}>¿Necesitas más ayuda?</p>
-                            <div style={s.footerRow}>
-                                <a href="https://wa.me/56999999999" style={s.footerBtn} target="_blank" rel="noreferrer">
-                                    <WhatsAppIcon />
-                                    WhatsApp +569 99999999
-                                </a>
-                                <a href="tel:6003001919" style={{ ...s.footerBtn, backgroundColor: '#f3f4f6', color: '#1a1a1a' }}>
-                                    <PhoneIcon />
-                                    600 300 1919
-                                </a>
                             </div>
-                            <p style={s.footerHint}>
-                                Llama al <strong>600 300 1919</strong> para modificar o dar de baja tu póliza.
-                            </p>
-                        </div>
+                        );
+                    })()}
 
-                    </div>)}
                 </div>
-
                 <CotizaAhoraConNosotros />
             </div>
         </div>
@@ -576,7 +516,7 @@ function Siniestro() {
 
 // ─── Sub-componente card ──────────────────────────────────────────────────────
 
-function CardAsistencia({ emoji, titulo, subtitulo, coberturas, compania, telefono, color }) {
+function CardAsistencia({ emoji, titulo, subtitulo, coberturas, compania, telefono, color, sinTelefono }) {
     return (
         <div style={{ ...s.card, borderTop: `4px solid ${color}` }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px' }}>
@@ -603,20 +543,26 @@ function CardAsistencia({ emoji, titulo, subtitulo, coberturas, compania, telefo
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                 <div>
                     <div style={s.infoLabel}>Tu compañía</div>
-                    <div style={{ fontSize: '15px', fontWeight: '700', color: '#1a1a1a' }}>{compania}</div>
+                    <div style={{ fontSize: '14px', fontWeight: '700', color: '#1a1a1a' }}>{compania}</div>
                 </div>
                 <div>
                     <div style={s.infoLabel}>N° de asistencia</div>
-                    <div style={{ fontSize: '15px', fontWeight: '700', color: '#1a1a1a' }}>{telefono}</div>
+                    <div style={{ fontSize: '14px', fontWeight: '700', color: sinTelefono ? '#bbb' : '#1a1a1a' }}>
+                        {telefono}
+                    </div>
                 </div>
             </div>
 
-            <a
-                href={`tel:+56${telefono}`}
-                style={{ ...s.btnCall, backgroundColor: color }}
-            >
-                <PhoneIcon /> Llamar ahora
-            </a>
+            {!sinTelefono ? (
+                <a href={`tel:${telefono}`} style={{ ...s.btnCall, backgroundColor: color }}>
+                    <PhoneIcon /> Llamar ahora
+                </a>
+            ) : (
+                <a href="https://wa.me/56999999999" target="_blank" rel="noreferrer"
+                    style={{ ...s.btnCall, backgroundColor: '#25D366' }}>
+                    <WhatsAppIcon /> Contactar por WhatsApp
+                </a>
+            )}
         </div>
     );
 }
@@ -624,31 +570,12 @@ function CardAsistencia({ emoji, titulo, subtitulo, coberturas, compania, telefo
 // ─── Tokens de estilo ─────────────────────────────────────────────────────────
 
 const s = {
-    pageWrapper: {
-        width: '100%',
-        maxWidth: '720px',
-        padding: '48px 20px 64px',
-        boxSizing: 'border-box',
-    },
-
-    // Formulario
     formWrapper: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         gap: '0px',
         textAlign: 'center',
-    },
-    badge: {
-        display: 'inline-block',
-        backgroundColor: '#fff3e8',
-        color: '#cc4400',
-        fontSize: '13px',
-        fontWeight: '700',
-        padding: '6px 14px',
-        borderRadius: '99px',
-        border: '1px solid #ffd5b8',
-        marginBottom: '20px',
     },
     heroTitle: {
         fontSize: '40px',
@@ -689,8 +616,6 @@ const s = {
         color: '#999',
         marginTop: '10px',
     },
-
-    // Sin datos
     sinDatosWrapper: {
         display: 'flex',
         flexDirection: 'column',
@@ -703,8 +628,6 @@ const s = {
         boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
         textAlign: 'center',
     },
-
-    // Resultado
     resultadoWrapper: {
         display: 'flex',
         flexDirection: 'column',
@@ -718,16 +641,36 @@ const s = {
         flexWrap: 'wrap',
         gap: '12px',
     },
-    resultBadge: {
+
+    // Card propuesta (clickeable)
+    propuestaCard: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: '16px',
+        backgroundColor: '#fff',
+        borderRadius: '16px',
+        border: '1px solid #e8e8e8',
+        padding: '18px 20px',
+        boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
+        cursor: 'pointer',
+        textAlign: 'left',
+        width: '100%',
+        transition: 'box-shadow 0.15s, border-color 0.15s',
+        // hover se maneja inline por limitación de estilos en objeto
+    },
+    propuestaIconWrap: {
+        width: '52px',
+        height: '52px',
+        borderRadius: '14px',
+        backgroundColor: '#fff5f0',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexShrink: 0,
+    },
+    propuestaMeta: {
         fontSize: '13px',
-        fontWeight: '700',
-        color: '#16a34a',
-        backgroundColor: '#f0fdf4',
-        display: 'inline-block',
-        padding: '4px 12px',
-        borderRadius: '99px',
-        border: '1px solid #bbf7d0',
-        marginBottom: '8px',
+        color: '#777',
     },
 
     // Card base
@@ -756,50 +699,16 @@ const s = {
     },
     infoItem: { display: 'flex', flexDirection: 'column', gap: '3px' },
     infoLabel: { fontSize: '11px', color: '#aaa', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.5px' },
-    infoValue: { fontSize: '16px', color: '#1a1a1a', fontWeight: '700' },
-
-    // Grids
+    infoValue: { fontSize: '15px', color: '#1a1a1a', fontWeight: '700' },
     cardsGrid: {
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
         gap: '16px',
     },
-    asistenciaGrid: {
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: '10px',
-    },
-    asistenciaCard: {
-        backgroundColor: '#fff',
-        borderRadius: '12px',
-        border: '1px solid #e8e8e8',
-        padding: '14px 16px',
-        display: 'flex',
-        alignItems: 'center',
-        gap: '12px',
-        boxShadow: '0 1px 4px rgba(0,0,0,0.04)',
-    },
-    asistenciaEmoji: { fontSize: '20px' },
-    asistenciaTexto: { fontSize: '13px', fontWeight: '600', color: '#1a1a1a' },
-    emptyCard: {
-        backgroundColor: '#fff',
-        borderRadius: '14px',
-        border: '1px dashed #ddd',
-        padding: '28px',
-        textAlign: 'center',
-        color: '#999',
-        fontSize: '15px',
-    },
-
-    // Sección header
     sectionHeader: { marginBottom: '-8px' },
     sectionTitle: { fontSize: '20px', fontWeight: '800', color: '#1a1a1a', marginBottom: '4px' },
     sectionSub: { fontSize: '13px', color: '#999' },
-
-    // Divider
     divider: { height: '1px', backgroundColor: '#f0f0f0' },
-
-    // Footer
     footerCard: {
         backgroundColor: '#fff',
         borderRadius: '16px',
@@ -834,8 +743,6 @@ const s = {
         cursor: 'pointer',
     },
     footerHint: { fontSize: '13px', color: '#aaa' },
-
-    // Botones
     btnOrange: {
         display: 'inline-flex',
         alignItems: 'center',
@@ -901,8 +808,6 @@ const s = {
         cursor: 'pointer',
         whiteSpace: 'nowrap',
     },
-
-    // Spinner
     spinner: {
         display: 'inline-block',
         width: '16px',
