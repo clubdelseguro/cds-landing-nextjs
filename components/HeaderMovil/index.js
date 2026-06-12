@@ -25,8 +25,8 @@ const rutas = [
     },
     {
         id: 4,
-        name: 'Seguro automotriz',
-        url: '/seguro-automotriz'
+        name: 'Ver mi póliza',
+        url: '/ver-mi-poliza'
     },
     {
         id: 3,

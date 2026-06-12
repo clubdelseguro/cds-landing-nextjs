@@ -37,12 +37,12 @@ export const TopBar = () => {
               </span>
             </Link>
             <Link
-              href="/seguro-automotriz"
+              href="/ver-mi-poliza"
               className={styles.item}
-              style={{ backgroundColor: "#000000" }}
+              style={{ backgroundColor: "#FF521B" }}
             >
               <span className={styles.link} style={{ color: "#FFFFFF" }}>
-                Seguro Automotriz
+                Ver mi póliza
               </span>
             </Link>
             <Link

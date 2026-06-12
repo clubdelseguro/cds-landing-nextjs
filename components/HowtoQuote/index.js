@@ -55,7 +55,7 @@ export const HowToQuote = () => {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <div className="root-how-to-quote">
-                <h2 className="title-how-to-quote">¡Tuvisate un siniestro o una falla mecánica!</h2>
+                <h2 className="title-how-to-quote">¡Tuviste un siniestro o una falla mecánica!</h2>
                 <h3 style={{
                     margin: '10px',
                     fontSize: '40px',

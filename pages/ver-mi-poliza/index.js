@@ -6,7 +6,7 @@ import { TextField } from '@mui/material';
 
 // ─── Iconos ───────────────────────────────────────────────────────────────────
 
-const CheckIcon = ({ color = '#ff6600' }) => (
+const CheckIcon = ({ color = '#FF521B' }) => (
     <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0 }}>
         <circle cx="11" cy="11" r="11" fill={color} />
         <path d="M6 11.5L9.5 15L16 8" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -206,7 +206,7 @@ function Siniestro() {
                                 borderRadius: '12px',
                                 backgroundColor: '#fff',
                                 fontSize: '16px',
-                                '&.Mui-focused fieldset': { borderColor: '#ff6600', borderWidth: '2px' },
+                                '&.Mui-focused fieldset': { borderColor: '#FF521B', borderWidth: '2px' },
                             },
                         }}
                     />
@@ -311,7 +311,7 @@ function Siniestro() {
                     coberturas={resultado.siniestro.coberturas}
                     compania={resultado.siniestro.compania}
                     telefono={resultado.siniestro.telefono}
-                    color="#ff6600"
+                    color="#FF521B"
                 />
                 <CardAsistencia
                     emoji="🔧"
@@ -410,7 +410,7 @@ function Siniestro() {
                                             borderRadius: '12px',
                                             backgroundColor: '#fff',
                                             fontSize: '16px',
-                                            '&.Mui-focused fieldset': { borderColor: '#ff6600', borderWidth: '2px' },
+                                            '&.Mui-focused fieldset': { borderColor: '#FF521B', borderWidth: '2px' },
                                         },
                                     }}
                                 />
@@ -507,7 +507,7 @@ function Siniestro() {
                                 coberturas={resultado.siniestro.coberturas}
                                 compania={resultado.siniestro.compania}
                                 telefono={resultado.siniestro.telefono}
-                                color="#ff6600"
+                                color="#FF521B"
                             />
                             <CardAsistencia
                                 emoji="🔧"
@@ -665,7 +665,7 @@ const s = {
         maxWidth: '440px',
         marginBottom: '36px',
     },
-    orange: { color: '#ff6600' },
+    orange: { color: '#FF521B' },
     inputGroup: {
         width: '100%',
         maxWidth: '500px',
@@ -844,7 +844,7 @@ const s = {
         height: '52px',
         padding: '0 24px',
         borderRadius: '12px',
-        backgroundColor: '#ff6600',
+        backgroundColor: '#FF521B',
         color: '#fff',
         fontSize: '15px',
         fontWeight: '700',
