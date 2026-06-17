@@ -115,7 +115,7 @@ export const TopBar = () => {
               />
             </a>
             <a
-              href="https://www.facebook.com/clubdelseguro.cl/"
+              href="https://wa.me/56957069658"
               target="_blank"
               rel="noreferrer"
             >
