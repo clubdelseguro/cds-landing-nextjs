@@ -50,7 +50,7 @@ function Contacto({ data }) {
                             <img loading="lazy" style={{ marginLeft: '26px', height: '33.11px' }} src="/assets/logo-fb.svg" alt="logo fb" />
                         </a>
                         <a
-                            href="https://www.facebook.com/clubdelseguro.cl/"
+                            href="https://wa.me/56957069658"
                             target="_blank"
                             rel="noreferrer"
                         >

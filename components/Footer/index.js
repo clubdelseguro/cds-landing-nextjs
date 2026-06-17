@@ -24,7 +24,7 @@ export const Footer = () => {
                             <img loading="lazy" style={{ marginLeft: '12.27px', height: '16.5px' }} src="/assets/logo-twiter.svg" alt="logo twiter" />
                         </a> */}
                         <a
-                            href="https://www.facebook.com/clubdelseguro.cl/"
+                            href="https://wa.me/56957069658"
                             target="_blank"
                             rel="noreferrer"
                         >
