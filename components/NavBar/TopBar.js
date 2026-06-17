@@ -37,12 +37,12 @@ export const TopBar = () => {
               </span>
             </Link>
             <Link
-              href="/seguro-automotriz"
+              href="/ver-mi-poliza"
               className={styles.item}
-              style={{ backgroundColor: "#000000" }}
+              style={{ backgroundColor: "#FF521B" }}
             >
               <span className={styles.link} style={{ color: "#FFFFFF" }}>
-                Seguro Automotriz
+                Ver mi póliza
               </span>
             </Link>
             <Link
@@ -114,6 +114,18 @@ export const TopBar = () => {
                 alt="logo fb"
               />
             </a>
+            <a
+              href="https://www.facebook.com/clubdelseguro.cl/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                loading="lazy"
+                style={{ marginLeft: "10.81px", height: "17px" }}
+                src="/assets/logo-wsp.svg"
+                alt="logo fb"
+              />
+            </a>
            {/*  <a
               href="https://twitter.com/Club_Del_Seguro"
               target="_blank"
@@ -126,7 +138,7 @@ export const TopBar = () => {
                 alt="logo twiter"
               />
             </a> */}
-            <a
+            {/* <a
               className="rrss-a"
               href="tel:+6003001919"
               style={{
@@ -148,7 +160,7 @@ export const TopBar = () => {
                 alt="logo phone"
               />
               <span style={{ marginLeft: "14px" }}>6003001919</span>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

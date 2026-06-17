@@ -22,8 +22,8 @@ export const rutas = [
     },
     {
         id: 3,
-        name: 'Seguro automotriz',
-        url: '/seguro-automotriz'
+        name: 'Ver mi póliza',
+        url: '/ver-mi-poliza-'
     },
     {
         id: 4,

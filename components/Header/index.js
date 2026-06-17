@@ -78,7 +78,7 @@ export const Header = () => {
                     <div className={classes.menu}>
                         <span className={classes.itemsMenu}>Inicio</span>
                         <span className={classes.itemsMenu}>Quienes Somos</span>
-                        <span className={classes.itemsMenu}>Seguro Automotriz</span>
+                        <span className={classes.itemsMenu}>Ver mi póliza</span>
                         <span className={classes.itemsMenu}>Blog</span>
                         <span className={classes.itemsMenu}>Pagar Aqui</span>
                         <span className={classes.itemsMenu}>Cotiza Aqui</span>
