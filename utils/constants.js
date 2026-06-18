@@ -23,7 +23,7 @@ export const rutas = [
     {
         id: 3,
         name: 'Ver mi póliza',
-        url: '/ver-mi-poliza-'
+        url: '/ver-mi-poliza'
     },
     {
         id: 4,
