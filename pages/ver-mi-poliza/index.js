@@ -1,7 +1,7 @@
 'use client';
 import { NavBar } from '../../components/NavBar';
 import { CotizaAhoraConNosotros } from '../../components/CotizaAhoraConNosotros';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { TextField } from '@mui/material';
 
 const CheckIcon = ({ color = '#FF521B', size = 20 }) => (
@@ -26,7 +26,7 @@ const WhatsAppIcon = ({ size = 18 }) => (
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
     </svg>
 );
-const ExternalLinkIcon = ({ size = 17 }) => (
+const ExternalLinkIcon = ({ size = 16 }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
         <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         <polyline points="15 3 21 3 21 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -59,25 +59,25 @@ const ChevronRightIcon = () => (
         <path d="M9 18L15 12L9 6" stroke="#bbb" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
 );
-const ShieldAlertIcon = ({ color = '#FF521B', size = 26 }) => (
+const ShieldAlertIcon = ({ color = '#FF521B', size = 24 }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke={color} strokeWidth="1.8" strokeLinejoin="round" />
         <line x1="12" y1="8" x2="12" y2="12" stroke={color} strokeWidth="2" strokeLinecap="round" />
         <circle cx="12" cy="15" r="1" fill={color} />
     </svg>
 );
-const WrenchIcon = ({ color = '#2563eb', size = 26 }) => (
+const WrenchIcon = ({ color = '#2563eb', size = 24 }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
         <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
 );
-const ShieldCheckIcon = ({ color = '#16a34a', size = 26 }) => (
+const ShieldCheckIcon = ({ color = '#16a34a', size = 24 }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke={color} strokeWidth="1.8" strokeLinejoin="round" />
         <path d="M9 12l2 2 4-4" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
 );
-const ShieldOffIcon = ({ color = '#999', size = 26 }) => (
+const ShieldOffIcon = ({ color = '#999', size = 24 }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
         <path d="M19.69 14A6.9 6.9 0 0020 12V5l-8-3-3.16 1.18" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M4.73 4.73L4 5v7c0 6 8 10 8 10a20.29 20.29 0 005.62-4.38" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -122,28 +122,38 @@ const HashIcon = ({ size = 14 }) => (
         <line x1="16" y1="3" x2="14" y2="21" stroke="#888" strokeWidth="1.8" strokeLinecap="round" />
     </svg>
 );
-// Nuevo: ícono de editar/documento para el aviso de modificación
 const FileEditIcon = ({ size = 20, color = '#d97706' }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
-        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-        <polyline points="14 2 14 8 20 8" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-        <line x1="16" y1="13" x2="8" y2="13" stroke={color} strokeWidth="1.8" strokeLinecap="round"/>
-        <line x1="16" y1="17" x2="8" y2="17" stroke={color} strokeWidth="1.8" strokeLinecap="round"/>
-        <polyline points="10 9 9 9 8 9" stroke={color} strokeWidth="1.8" strokeLinecap="round"/>
+        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        <polyline points="14 2 14 8 20 8" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        <line x1="16" y1="13" x2="8" y2="13" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
+        <line x1="16" y1="17" x2="8" y2="17" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+);
+const LifebuoyIcon = ({ color = '#0891b2', size = 24 }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke={color} strokeWidth="1.8" />
+        <circle cx="12" cy="12" r="4" stroke={color} strokeWidth="1.8" />
+        <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
+        <line x1="16.24" y1="16.24" x2="19.07" y2="19.07" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
+        <line x1="19.07" y1="4.93" x2="16.24" y2="7.76" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
+        <line x1="7.76" y1="16.24" x2="4.93" y2="19.07" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
     </svg>
 );
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-const STATUS_CONFIG = {
+/* const STATUS_CONFIG = {
     activa:     { label: 'Activa',     bg: '#f0fdf4', color: '#16a34a', border: '#bbf7d0' },
     renunciada: { label: 'Renunciada', bg: '#fef2f2', color: '#dc2626', border: '#fecaca' },
     pendiente:  { label: 'Pendiente',  bg: '#fffbeb', color: '#d97706', border: '#fde68a' },
-};
-const getStatus = (status = '') => {
+}; */
+
+/* const getStatus = (status = '') => {
     const key = status.toLowerCase();
     return STATUS_CONFIG[key] || { label: status, bg: '#f3f4f6', color: '#666', border: '#e5e7eb' };
-};
+}; */
+
 const getGuaranteeType = (guarantee = '') => {
     const g = guarantee.toLowerCase().trim();
     if (g.includes('total')) return 'total';
@@ -249,7 +259,7 @@ function Siniestro() {
             <div className="body">
                 <div className="root-error-page" style={{ marginLeft: '10px', marginRight: '10px' }}>
 
-                    {/* VISTA 1: FORMULARIO */}
+                    {/* ══ VISTA 1: FORMULARIO ══ */}
                     {propuestas === undefined && (
                         <div style={s.formWrapper}>
                             <h1 style={s.heroTitle}>
@@ -268,9 +278,7 @@ function Siniestro() {
                                         value={rut}
                                         onChange={handleRutChange}
                                         onKeyDown={(e) => {
-                                            if (e.key === 'Enter' && !loading && rut.trim() && error !== 'RUT no válido') {
-                                                consultarPoliza();
-                                            }
+                                            if (e.key === 'Enter' && !loading && rut.trim() && error !== 'RUT no válido') consultarPoliza();
                                         }}
                                         error={error === 'RUT no válido'}
                                         helperText={error === 'RUT no válido' ? error : ' '}
@@ -278,9 +286,7 @@ function Siniestro() {
                                         size="medium"
                                         sx={{
                                             '& .MuiOutlinedInput-root': {
-                                                borderRadius: '12px',
-                                                backgroundColor: '#fff',
-                                                fontSize: '16px',
+                                                borderRadius: '12px', backgroundColor: '#fff', fontSize: '16px',
                                                 '&.Mui-focused fieldset': { borderColor: '#FF521B', borderWidth: '2px' },
                                             },
                                         }}
@@ -317,10 +323,7 @@ function Siniestro() {
                                             <p style={{ margin: 0, fontSize: '14px', fontWeight: '700', color: '#b91c1c' }}>Error al consultar</p>
                                             <p style={{ margin: '2px 0 0', fontSize: '13px', color: '#7f1d1d', lineHeight: '1.4' }}>{error}</p>
                                         </div>
-                                        <button
-                                            onClick={consultarPoliza}
-                                            style={{ padding: '8px 14px', borderRadius: '8px', backgroundColor: '#b91c1c', color: '#fff', fontWeight: '700', fontSize: '13px', border: 'none', cursor: 'pointer', whiteSpace: 'nowrap' }}
-                                        >
+                                        <button onClick={consultarPoliza} style={{ padding: '8px 14px', borderRadius: '8px', backgroundColor: '#b91c1c', color: '#fff', fontWeight: '700', fontSize: '13px', border: 'none', cursor: 'pointer', whiteSpace: 'nowrap' }}>
                                             Reintentar
                                         </button>
                                     </div>
@@ -329,7 +332,7 @@ function Siniestro() {
                         </div>
                     )}
 
-                    {/* VISTA 2A: SIN RESULTADOS */}
+                    {/* ══ VISTA 2A: SIN RESULTADOS ══ */}
                     {Array.isArray(propuestas) && propuestas.length === 0 && !propuestaSeleccionada && (
                         <div style={s.sinDatosWrapper}>
                             <AlertTriangleIcon />
@@ -344,7 +347,7 @@ function Siniestro() {
                         </div>
                     )}
 
-                    {/* VISTA 2B: LISTA DE PROPUESTAS */}
+                    {/* ══ VISTA 2B: LISTA DE PROPUESTAS ══ */}
                     {Array.isArray(propuestas) && propuestas.length > 1 && !propuestaSeleccionada && (
                         <div style={s.resultadoWrapper}>
                             <div style={s.resultHeader}>
@@ -364,7 +367,7 @@ function Siniestro() {
                             </div>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                                 {propuestas.map((p) => {
-                                    const st = getStatus(p.status);
+                                    /* const st = getStatus(p.status); */
                                     const gt = getGuaranteeType(p.guarantee);
                                     return (
                                         <button
@@ -390,9 +393,9 @@ function Siniestro() {
                                                     </span>
                                                 </div>
                                                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                                    {gt === 'total'    && <><ShieldCheckIcon color="#16a34a" size={14} /><span style={{ fontSize: '12px', color: '#16a34a', fontWeight: '600' }}>Garantía Total</span></>}
-                                                    {gt === 'mecanica' && <><WrenchIcon color="#2563eb" size={14} /><span style={{ fontSize: '12px', color: '#2563eb', fontWeight: '600' }}>Garantía Mecánica</span></>}
-                                                    {gt === 'sin'      && <><ShieldOffIcon color="#bbb" size={14} /><span style={{ fontSize: '12px', color: '#bbb', fontWeight: '600' }}>Sin garantía</span></>}
+                                                    {gt === 'total'    && <><ShieldCheckIcon color="#16a34a" size={13} /><span style={{ fontSize: '12px', color: '#16a34a', fontWeight: '600' }}>Garantía Total</span></>}
+                                                    {gt === 'mecanica' && <><WrenchIcon color="#2563eb" size={13} /><span style={{ fontSize: '12px', color: '#2563eb', fontWeight: '600' }}>Garantía Mecánica</span></>}
+                                                    {gt === 'sin'      && <><ShieldOffIcon color="#bbb" size={13} /><span style={{ fontSize: '12px', color: '#bbb', fontWeight: '600' }}>Sin garantía</span></>}
                                                 </div>
                                             </div>
                                             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', flexShrink: 0 }}>
@@ -406,12 +409,13 @@ function Siniestro() {
                         </div>
                     )}
 
-                    {/* VISTA 3: DETALLE */}
+                    {/* ══ VISTA 3: DETALLE ══ */}
                     {propuestaSeleccionada && (() => {
                         const p = propuestaSeleccionada;
-                        const st = getStatus(p.status);
                         const gt = getGuaranteeType(p.guarantee);
                         const tieneMultiples = Array.isArray(propuestas) && propuestas.length > 1;
+                        const tieneGarantia = gt !== 'sin';
+
                         return (
                             <div style={s.resultadoWrapper}>
                                 <div style={s.resultHeader}>
@@ -424,6 +428,7 @@ function Siniestro() {
                                         ← {tieneMultiples ? 'Mis pólizas' : 'Otro RUT'}
                                     </button>
                                 </div>
+
                                 <div style={s.card}>
                                     <p style={s.cardSectionLabel}>Datos del asegurado y vehículo</p>
                                     <div style={s.infoGrid}>
@@ -446,27 +451,51 @@ function Siniestro() {
                                     {p.document && (
                                         <div style={{ marginTop: '8px' }}>
                                             <button style={s.btnDark} onClick={() => descargarPoliza(p.document)}>
-                                                <DownloadIcon /> Descargar póliza (PDF)
+                                                <DownloadIcon /> Descargar contrato (PDF)
                                             </button>
                                         </div>
                                     )}
                                 </div>
+
                                 <div style={s.sectionHeader}>
-                                    <h2 style={s.sectionTitle}>¿Qué te ocurrió?</h2>
-                                    <p style={s.sectionSub}>Contacta directamente a tu compañía según el caso</p>
+                                    <h2 style={s.sectionTitle}>¿Cómo podemos ayudarte?</h2>
+                                    <p style={s.sectionSub}>Selecciona la opción que corresponda a tu situación</p>
                                 </div>
+
                                 <div style={s.cardsGrid}>
-                                    <CardAsistencia
+                                    {/* Card 1 — Siniestro */}
+                                    <CardAyuda
+                                        accentColor="#FF521B"
                                         icon={<ShieldAlertIcon color="#FF521B" size={22} />}
                                         titulo="Tuve un siniestro"
-                                        subtitulo="Choque, abollón, robo, vidrios, etc."
-                                        coberturas={['Choque', 'Abollón', 'Robo', 'Rotura de vidrios', 'Volcamiento']}
+                                        subtitulo="Choque, abollón, robo, rotura de vidrios, etc."
+                                        text={p.sinisterText}
+                                        phone={p.sinisterPhone}
+                                        url={p.sinisterUrl}
+                                        urlLabel="Ver más información"
+                                        phoneLabel="Llamar a siniestros"
                                         compania={p.company}
-                                        telefono={p.assistanciePhone}
-                                        color="#FF521B"
                                     />
-                                    <CardGarantia tipo={gt} compania={p.company} telefono={p.assistanciePhone} />
+                                    {/* Card 2 — Asistencia */}
+                                    <CardAyuda
+                                        accentColor="#0891b2"
+                                        icon={<LifebuoyIcon color="#0891b2" size={22} />}
+                                        titulo="Necesito asistencia"
+                                        subtitulo="Grúa, vehículo de reemplazo, asistencia en viaje, etc."
+                                        text={p.assistancieText}
+                                        phone={p.assistanciePhone}
+                                        url={p.assistancieUrl}
+                                        urlLabel="Solicitar asistencia"
+                                        phoneLabel="Llamar a asistencia"
+                                        compania={p.company}
+                                    />
                                 </div>
+
+                                {/* Card Garantía — solo si tiene */}
+                                {tieneGarantia && (
+                                    <CardGarantia tipo={gt} compania={p.company} />
+                                )}
+
                             </div>
                         );
                     })()}
@@ -484,8 +513,6 @@ function Siniestro() {
                             <PhoneIcon /> 600 300 1919
                         </a>
                     </div>
-
-                    {/* ── Aviso modificar/cancelar — diseño destacado ── */}
                     <div style={s.avisoModificacion}>
                         <div style={s.avisoIconWrap}>
                             <FileEditIcon size={20} color="#d97706" />
@@ -507,56 +534,144 @@ function Siniestro() {
     );
 }
 
-// ─── CardAsistencia ───────────────────────────────────────────────────────────
+// ─── CardAyuda: Siniestro y Asistencia ───────────────────────────────────────
 
-function CardAsistencia({ icon, titulo, subtitulo, coberturas, compania, telefono, color }) {
-    const sinTelefono = !telefono;
+function CardAyuda({ accentColor, icon, titulo, subtitulo, text, phone, url, urlLabel, phoneLabel, compania }) {
+    const tienePhone = !!phone;
+    const tieneUrl = !!url;
+
     return (
-        <div style={{ ...s.card, borderTop: `4px solid ${color}` }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                {icon}
-                <div>
-                    <div style={{ fontSize: '15px', fontWeight: '800', color: '#1a1a1a' }}>{titulo}</div>
-                    <div style={{ fontSize: '12px', color: '#888' }}>{subtitulo}</div>
+        <div style={{ ...s.card, borderTop: `4px solid ${accentColor}` }}>
+
+            {/* Encabezado con ícono */}
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                <div style={{
+                    width: '42px', height: '42px', borderRadius: '12px',
+                    backgroundColor: `${accentColor}15`,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                }}>
+                    {icon}
                 </div>
-            </div>
-            <div style={s.divider} />
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '7px' }}>
-                {coberturas.map((c) => (
-                    <div key={c} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#444' }}>
-                        <CheckIcon color={color} size={18} /> {c}
+                <div style={{ flex: 1 }}>
+                    <div style={{ fontSize: '15px', fontWeight: '800', color: '#1a1a1a', lineHeight: '1.3' }}>
+                        {titulo}
                     </div>
-                ))}
-            </div>
-            <div style={s.divider} />
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                <div>
-                    <div style={s.infoLabel}>Tu compañía</div>
-                    <div style={{ fontSize: '14px', fontWeight: '700', color: '#1a1a1a' }}>{compania}</div>
-                </div>
-                <div>
-                    <div style={s.infoLabel}>N° de asistencia</div>
-                    <div style={{ fontSize: '14px', fontWeight: '700', color: sinTelefono ? '#bbb' : '#1a1a1a' }}>
-                        {sinTelefono ? 'Sin número registrado' : telefono}
+                    {/* CAMBIO 2: subtítulo como badge destacado con color del acento */}
+                    <div style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        marginTop: '6px',
+                        padding: '3px 10px',
+                        borderRadius: '6px',
+                        backgroundColor: `${accentColor}12`,
+                        border: `1px solid ${accentColor}30`,
+                        fontSize: '11px',
+                        fontWeight: '700',
+                        color: accentColor,
+                        lineHeight: '1.5',
+                        letterSpacing: '0.1px',
+                    }}>
+                        {subtitulo}
                     </div>
                 </div>
             </div>
-            {!sinTelefono ? (
-                <a href={`tel:${telefono}`} style={{ ...s.btnCall, backgroundColor: color }}>
-                    <PhoneIcon /> Llamar ahora
-                </a>
-            ) : (
-                <a href="https://wa.me/56957069658" target="_blank" rel="noreferrer" style={{ ...s.btnCall, backgroundColor: '#25D366' }}>
-                    <WhatsAppIcon /> Contactar por WhatsApp
-                </a>
+
+            <div style={s.divider} />
+
+            {/* CAMBIO 1: Compañía en CardAyuda */}
+            {compania && (
+                <div style={{
+                    display: 'flex', alignItems: 'center', gap: '10px',
+                    padding: '10px 14px', backgroundColor: '#f8f9fa', borderRadius: '10px',
+                }}>
+                    <div style={{
+                        width: '32px', height: '32px', borderRadius: '8px',
+                        backgroundColor: `${accentColor}18`,
+                        display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                    }}>
+                        <BuildingIcon size={15} />
+                    </div>
+                    <div>
+                        <div style={{ fontSize: '11px', color: '#aaa', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                            Tu compañía
+                        </div>
+                        <div style={{ fontSize: '14px', fontWeight: '700', color: '#1a1a1a' }}>{compania}</div>
+                    </div>
+                </div>
             )}
+
+            {/* Texto de instrucciones */}
+            {text && (
+                <div style={{
+                    backgroundColor: '#f8f9fa', borderRadius: '10px',
+                    padding: '14px 16px', borderLeft: `3px solid ${accentColor}`,
+                    display: 'flex', flexDirection: 'column', gap: '6px',
+                }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
+                            <circle cx="12" cy="12" r="10" fill={accentColor} />
+                            <path d="M12 8v5" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+                            <circle cx="12" cy="16" r="1" fill="#fff" />
+                        </svg>
+                        <span style={{ fontSize: '11px', fontWeight: '800', color: accentColor, textTransform: 'uppercase', letterSpacing: '0.6px' }}>
+                            Sigue estos pasos para contactarnos
+                        </span>
+                    </div>
+                    <p style={{ margin: 0, fontSize: '13px', color: '#444', lineHeight: '1.7', paddingLeft: '20px' }}>{text}</p>
+                </div>
+            )}
+
+            {/* Teléfono */}
+            {tienePhone && (
+                <div style={{
+                    display: 'flex', alignItems: 'center', gap: '10px',
+                    padding: '10px 14px', backgroundColor: '#f8f9fa', borderRadius: '10px',
+                }}>
+                    <div style={{
+                        width: '32px', height: '32px', borderRadius: '8px',
+                        backgroundColor: `${accentColor}20`,
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        flexShrink: 0, color: accentColor,
+                    }}>
+                        <PhoneIcon size={15} />
+                    </div>
+                    <div>
+                        <div style={{ fontSize: '11px', color: '#aaa', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                            N° de contacto
+                        </div>
+                        <div style={{ fontSize: '15px', fontWeight: '800', color: '#1a1a1a' }}>{phone}</div>
+                    </div>
+                </div>
+            )}
+
+            {/* Botones de acción */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '4px' }}>
+                {tienePhone && (
+                    <a href={`tel:${phone}`} style={{ ...s.btnAction, backgroundColor: accentColor }}>
+                        <PhoneIcon size={16} /> {phoneLabel}
+                    </a>
+                )}
+                {tieneUrl && (
+                    <a href={url} target="_blank" rel="noreferrer"
+                        style={{ ...s.btnAction, backgroundColor: 'transparent', border: `1.5px solid ${accentColor}`, color: accentColor }}>
+                        <ExternalLinkIcon size={15} /> {urlLabel}
+                    </a>
+                )}
+                {!tienePhone && !tieneUrl && (
+                    <a href="https://wa.me/56957069658" target="_blank" rel="noreferrer"
+                        style={{ ...s.btnAction, backgroundColor: '#25D366' }}>
+                        <WhatsAppIcon size={16} /> Contactar por WhatsApp
+                    </a>
+                )}
+            </div>
         </div>
     );
 }
 
 // ─── CardGarantia ─────────────────────────────────────────────────────────────
+// CAMBIO 1: se eliminó el bloque de compañía de aquí
 
-function CardGarantia({ tipo, compania, telefono }) {
+function CardGarantia({ tipo, compania }) {
     const config = {
         total: {
             color: '#16a34a',
@@ -565,8 +680,8 @@ function CardGarantia({ tipo, compania, telefono }) {
             subtitulo: 'Cobertura completa de tu vehículo',
             coberturas: ['Motor y transmisión', 'Sistema eléctrico', 'Dirección y suspensión', 'Frenos', 'Aire acondicionado'],
             accion: (
-                <a href="tel:6006560017" style={{ ...s.btnCall, backgroundColor: '#16a34a' }}>
-                    <PhoneIcon /> Llamar al 600 656 0017
+                <a href="tel:6006560017" style={{ ...s.btnAction, backgroundColor: '#16a34a' }}>
+                    <PhoneIcon size={16} /> Llamar al 600 656 0017
                 </a>
             ),
         },
@@ -577,58 +692,43 @@ function CardGarantia({ tipo, compania, telefono }) {
             subtitulo: 'Cobertura de fallas del motor y mecánica',
             coberturas: ['Motor', 'Caja de cambios', 'Sistema eléctrico', 'Dirección', 'Frenos'],
             accion: (
-                <a href="https://garantiamecanica.cl/" target="_blank" rel="noreferrer" style={{ ...s.btnCall, backgroundColor: '#2563eb' }}>
-                    <ExternalLinkIcon size={17} /> Ir a Garantía Mecánica
+                <a href="https://garantiamecanica.cl/" target="_blank" rel="noreferrer" style={{ ...s.btnAction, backgroundColor: '#2563eb' }}>
+                    <ExternalLinkIcon size={15} /> Ir a Garantía Mecánica
                 </a>
             ),
         },
-        sin: {
-            color: '#999',
-            icon: <ShieldOffIcon color="#999" size={22} />,
-            titulo: 'Sin garantía contratada',
-            subtitulo: 'Tu póliza no incluye cobertura de garantía',
-            coberturas: [],
-            accion: null,
-        },
     };
 
-    const c = config[tipo] || config.sin;
+    const c = config[tipo];
+    if (!c) return null;
 
     return (
         <div style={{ ...s.card, borderTop: `4px solid ${c.color}` }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                {c.icon}
+            {/* Header */}
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                <div style={{
+                    width: '42px', height: '42px', borderRadius: '12px',
+                    backgroundColor: `${c.color}15`,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                }}>
+                    {c.icon}
+                </div>
                 <div>
-                    <div style={{ fontSize: '15px', fontWeight: '800', color: '#1a1a1a' }}>{c.titulo}</div>
-                    <div style={{ fontSize: '12px', color: '#888' }}>{c.subtitulo}</div>
+                    <div style={{ fontSize: '15px', fontWeight: '800', color: '#1a1a1a', lineHeight: '1.3' }}>{c.titulo}</div>
+                    <div style={{ fontSize: '12px', color: '#999', marginTop: '3px' }}>{c.subtitulo}</div>
                 </div>
             </div>
             <div style={s.divider} />
-            {c.coberturas.length > 0 ? (
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '7px' }}>
-                    {c.coberturas.map((cob) => (
-                        <div key={cob} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#444' }}>
-                            <CheckIcon color={c.color} size={18} /> {cob}
-                        </div>
-                    ))}
-                </div>
-            ) : (
-                /* Sin garantía: solo texto informativo */
-                <div style={{ backgroundColor: '#f9f9f9', borderRadius: '12px', padding: '20px 16px', border: '1px solid #e8e8e8', textAlign: 'center' }}>
-                    <p style={{ fontSize: '14px', color: '#888', margin: 0, lineHeight: '1.6' }}>
-                        Lamentablemente no tienes este producto contratado con nosotros.
-                    </p>
-                </div>
-            )}
-            {tipo !== 'sin' && (
-                <>
-                    <div style={s.divider} />
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                        {tipo === 'total' && <div />}
+            {/* Coberturas en 2 columnas */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 12px' }}>
+                {c.coberturas.map((cob) => (
+                    <div key={cob} style={{ display: 'flex', alignItems: 'center', gap: '7px', fontSize: '13px', color: '#444' }}>
+                        <CheckIcon color={c.color} size={16} /> {cob}
                     </div>
-                    {c.accion}
-                </>
-            )}
+                ))}
+            </div>
+            <div style={s.divider} />
+            {c.accion}
         </div>
     );
 }
@@ -666,52 +766,14 @@ const s = {
     footerTitle: { fontSize: '17px', fontWeight: '800', color: '#1a1a1a' },
     footerRow: { display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' },
     footerBtn: { display: 'flex', alignItems: 'center', gap: '8px', padding: '11px 20px', borderRadius: '10px', backgroundColor: '#25D366', color: '#fff', fontWeight: '700', fontSize: '14px', textDecoration: 'none', border: 'none', cursor: 'pointer' },
-
-    // ── Aviso modificar/cancelar ──
-    avisoModificacion: {
-        display: 'flex',
-        alignItems: 'center',
-        gap: '14px',
-        width: '100%',
-        maxWidth: '420px',
-        backgroundColor: '#fffbeb',
-        border: '1.5px solid #fcd34d',
-        borderLeft: '5px solid #d97706',
-        borderRadius: '12px',
-        padding: '14px 18px',
-        textAlign: 'left',
-    },
-    avisoIconWrap: {
-        width: '38px',
-        height: '38px',
-        borderRadius: '10px',
-        backgroundColor: '#fef3c7',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexShrink: 0,
-    },
-    avisoTitulo: {
-        margin: '0 0 3px 0',
-        fontSize: '14px',
-        fontWeight: '800',
-        color: '#92400e',
-    },
-    avisoTexto: {
-        margin: 0,
-        fontSize: '13px',
-        color: '#78350f',
-        lineHeight: '1.5',
-    },
-    avisoLink: {
-        color: '#d97706',
-        fontWeight: '700',
-        textDecoration: 'none',
-    },
-
+    avisoModificacion: { display: 'flex', alignItems: 'center', gap: '14px', width: '100%', maxWidth: '420px', backgroundColor: '#fffbeb', border: '1.5px solid #fcd34d', borderLeft: '5px solid #d97706', borderRadius: '12px', padding: '14px 18px', textAlign: 'left' },
+    avisoIconWrap: { width: '38px', height: '38px', borderRadius: '10px', backgroundColor: '#fef3c7', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
+    avisoTitulo: { margin: '0 0 3px 0', fontSize: '14px', fontWeight: '800', color: '#92400e' },
+    avisoTexto: { margin: 0, fontSize: '13px', color: '#78350f', lineHeight: '1.5' },
+    avisoLink: { color: '#d97706', fontWeight: '700', textDecoration: 'none' },
     btnOrange: { display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px', height: '52px', padding: '0 24px', borderRadius: '12px', backgroundColor: '#FF521B', color: '#fff', fontSize: '15px', fontWeight: '700', border: 'none', cursor: 'pointer', transition: 'opacity 0.2s' },
     btnDark: { display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 20px', borderRadius: '10px', backgroundColor: '#1a1a1a', color: '#fff', fontSize: '14px', fontWeight: '700', border: 'none', cursor: 'pointer' },
-    btnCall: { display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '12px', borderRadius: '10px', color: '#fff', fontSize: '14px', fontWeight: '700', border: 'none', cursor: 'pointer', textDecoration: 'none', marginTop: '4px' },
+    btnAction: { display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '12px 16px', borderRadius: '10px', color: '#fff', fontSize: '14px', fontWeight: '700', textDecoration: 'none', cursor: 'pointer', border: 'none' },
     btnGhost: { backgroundColor: 'transparent', border: '1.5px solid #ddd', borderRadius: '10px', padding: '10px 20px', fontSize: '14px', fontWeight: '600', color: '#666', cursor: 'pointer' },
     btnGhostSmall: { backgroundColor: 'transparent', border: '1.5px solid #ddd', borderRadius: '8px', padding: '8px 16px', fontSize: '13px', fontWeight: '600', color: '#666', cursor: 'pointer', whiteSpace: 'nowrap' },
     spinner: { display: 'inline-block', width: '16px', height: '16px', border: '2px solid rgba(255,255,255,0.4)', borderTop: '2px solid #fff', borderRadius: '50%', animation: 'spin 0.7s linear infinite' },
