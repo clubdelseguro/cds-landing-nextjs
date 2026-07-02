@@ -15,8 +15,7 @@ export const TopBar = () => {
         </Link>
         <div className={styles.barNavigation}>
           <div className={styles.barNavigation2}>
-            <Link
-              href="/"
+            <div
               className={styles.item}
               style={{
                 backgroundColor: "#000000",
@@ -24,18 +23,25 @@ export const TopBar = () => {
               }}
             >
               <span className={styles.link} style={{ color: "#FFFFFF" }}>
-                Inicio
+                Conócenos ▼
               </span>
-            </Link>
-            <Link
-              href="/quienes-somos"
-              className={styles.item}
-              style={{ backgroundColor: "#000000" }}
-            >
-              <span className={styles.link} style={{ color: "#FFFFFF" }}>
-                Quienes somos
-              </span>
-            </Link>
+
+              <div className={styles.dropdownMenu}>
+                <Link href="/" className={styles.dropdownItem}>
+                  Inicio
+                </Link>
+
+                <Link href="/quienes-somos" className={styles.dropdownItem}>
+                  Quiénes somos
+                </Link>
+                <Link href="/blog" className={styles.dropdownItem}>
+                  Blog
+                </Link>
+                <Link href="/ayuda" className={styles.dropdownItem}>
+                  Ayuda
+                </Link>
+              </div>
+            </div>
             <Link
               href="/ver-mi-poliza"
               className={styles.item}
@@ -45,7 +51,7 @@ export const TopBar = () => {
                 Ver mi póliza
               </span>
             </Link>
-            <Link
+            {/* <Link
               href="/blog"
               className={styles.item}
               style={{ backgroundColor: "#000000" }}
@@ -62,7 +68,7 @@ export const TopBar = () => {
               <span className={styles.link} style={{ color: "#FFFFFF" }}>
                 Ayuda
               </span>
-            </Link>
+            </Link> */}
             <div
               className={styles.item}
               style={{ backgroundColor: "#F5F5F5" }}
@@ -126,7 +132,7 @@ export const TopBar = () => {
                 alt="logo fb"
               />
             </a>
-           {/*  <a
+            {/*  <a
               href="https://twitter.com/Club_Del_Seguro"
               target="_blank"
               rel="noreferrer"

@@ -128,28 +128,18 @@ const FileEditIcon = ({ size = 20, color = '#d97706' }) => (
         <polyline points="14 2 14 8 20 8" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
         <line x1="16" y1="13" x2="8" y2="13" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
         <line x1="16" y1="17" x2="8" y2="17" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
-    </svg>
-);
-const LifebuoyIcon = ({ color = '#0891b2', size = 24 }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="10" stroke={color} strokeWidth="1.8" />
-        <circle cx="12" cy="12" r="4" stroke={color} strokeWidth="1.8" />
-        <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
-        <line x1="16.24" y1="16.24" x2="19.07" y2="19.07" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
-        <line x1="19.07" y1="4.93" x2="16.24" y2="7.76" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
-        <line x1="7.76" y1="16.24" x2="4.93" y2="19.07" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
+        <polyline points="10 9 9 9 8 9" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
     </svg>
 );
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-/* const STATUS_CONFIG = {
-    activa:     { label: 'Activa',     bg: '#f0fdf4', color: '#16a34a', border: '#bbf7d0' },
+const STATUS_CONFIG = {
+    activa: { label: 'Activa', bg: '#f0fdf4', color: '#16a34a', border: '#bbf7d0' },
     renunciada: { label: 'Renunciada', bg: '#fef2f2', color: '#dc2626', border: '#fecaca' },
-    pendiente:  { label: 'Pendiente',  bg: '#fffbeb', color: '#d97706', border: '#fde68a' },
-}; */
-
-/* const getStatus = (status = '') => {
+    pendiente: { label: 'Pendiente', bg: '#fffbeb', color: '#d97706', border: '#fde68a' },
+};
+const getStatus = (status = '') => {
     const key = status.toLowerCase();
     return STATUS_CONFIG[key] || { label: status, bg: '#f3f4f6', color: '#666', border: '#e5e7eb' };
 }; */
@@ -393,9 +383,9 @@ function Siniestro() {
                                                     </span>
                                                 </div>
                                                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                                    {gt === 'total'    && <><ShieldCheckIcon color="#16a34a" size={13} /><span style={{ fontSize: '12px', color: '#16a34a', fontWeight: '600' }}>Garantía Total</span></>}
-                                                    {gt === 'mecanica' && <><WrenchIcon color="#2563eb" size={13} /><span style={{ fontSize: '12px', color: '#2563eb', fontWeight: '600' }}>Garantía Mecánica</span></>}
-                                                    {gt === 'sin'      && <><ShieldOffIcon color="#bbb" size={13} /><span style={{ fontSize: '12px', color: '#bbb', fontWeight: '600' }}>Sin garantía</span></>}
+                                                    {gt === 'total' && <><ShieldCheckIcon color="#16a34a" size={14} /><span style={{ fontSize: '12px', color: '#16a34a', fontWeight: '600' }}>Garantía Total</span></>}
+                                                    {gt === 'mecanica' && <><WrenchIcon color="#2563eb" size={14} /><span style={{ fontSize: '12px', color: '#2563eb', fontWeight: '600' }}>Garantía Mecánica</span></>}
+                                                    {gt === 'sin' && <><ShieldOffIcon color="#bbb" size={14} /><span style={{ fontSize: '12px', color: '#bbb', fontWeight: '600' }}>Sin garantía</span></>}
                                                 </div>
                                             </div>
                                             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', flexShrink: 0 }}>
@@ -433,13 +423,13 @@ function Siniestro() {
                                     <p style={s.cardSectionLabel}>Datos del asegurado y vehículo</p>
                                     <div style={s.infoGrid}>
                                         {[
-                                            { label: 'RUT',       value: p.rut },
-                                            { label: 'Nombre',    value: p.name },
-                                            { label: 'Marca',     value: p.brand },
-                                            { label: 'Modelo',    value: p.model },
-                                            { label: 'Año',       value: p.year },
+                                            { label: 'RUT', value: p.rut },
+                                            { label: 'Nombre', value: p.name },
+                                            { label: 'Marca', value: p.brand },
+                                            { label: 'Modelo', value: p.model },
+                                            { label: 'Año', value: p.year },
                                             ...(p.patent ? [{ label: 'Patente', value: p.patent }] : []),
-                                            { label: 'Compañía',  value: p.company },
+                                            { label: 'Compañía', value: p.company },
                                             { label: 'Propuesta', value: `N° ${p.propuesta}` },
                                         ].map(({ label, value }) => (
                                             <div key={label} style={s.infoItem}>
@@ -448,6 +438,51 @@ function Siniestro() {
                                             </div>
                                         ))}
                                     </div>
+
+                                    {/* ── Banner beneficios exclusivos ── */}
+                                    <a
+                                        href="https://clubdelseguro.descuentosvip.com"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        style={{
+                                            display: 'flex', alignItems: 'center', gap: '14px',
+                                            marginTop: '4px', padding: '14px 16px', borderRadius: '12px',
+                                            background: 'linear-gradient(135deg, #FF521B 0%, #ff7c4d 100%)',
+                                            textDecoration: 'none',
+                                            boxShadow: '0 4px 14px rgba(255,82,27,0.22)',
+                                        }}
+                                        onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 6px 20px rgba(255,82,27,0.38)'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
+                                        onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 4px 14px rgba(255,82,27,0.22)'; e.currentTarget.style.transform = 'translateY(0)'; }}
+                                    >
+                                        {/* Ícono medalla */}
+                                        <div style={{
+                                            width: '44px', height: '44px', borderRadius: '12px', flexShrink: 0,
+                                            backgroundColor: 'rgba(255,255,255,0.2)',
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        }}>
+                                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                                                <circle cx="12" cy="15" r="6" stroke="#fff" strokeWidth="1.8" />
+                                                <path d="M8 9l1.5-5h5L16 9" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                                                <path d="M9 9c0 0 1.5 2 3 2s3-2 3-2" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" />
+                                                <path d="M12 12v3" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" />
+                                                <path d="M10.5 15.5l1.5-1 1.5 1" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                                            </svg>
+                                        </div>
+                                        {/* Texto */}
+                                        <div style={{ flex: 1 }}>
+                                            <div style={{ fontSize: '13px', fontWeight: '800', color: '#fff', marginBottom: '3px' }}>
+                                                ¡Tienes beneficios exclusivos!
+                                            </div>
+                                            <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.88)', lineHeight: '1.45' }}>
+                                                Como cliente del Club del Seguro accedes a descuentos y ventajas especiales. Toca para conocerlos.
+                                            </div>
+                                        </div>
+                                        {/* Chevron */}
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
+                                            <path d="M9 18L15 12L9 6" stroke="rgba(255,255,255,0.75)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </a>
+
                                     {p.document && (
                                         <div style={{ marginTop: '8px' }}>
                                             <button style={s.btnDark} onClick={() => descargarPoliza(p.document)}>
