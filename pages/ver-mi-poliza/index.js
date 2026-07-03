@@ -128,7 +128,16 @@ const FileEditIcon = ({ size = 20, color = '#d97706' }) => (
         <polyline points="14 2 14 8 20 8" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
         <line x1="16" y1="13" x2="8" y2="13" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
         <line x1="16" y1="17" x2="8" y2="17" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
-        <polyline points="10 9 9 9 8 9" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+);
+const LifebuoyIcon = ({ color = '#0891b2', size = 24 }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke={color} strokeWidth="1.8" />
+        <circle cx="12" cy="12" r="4" stroke={color} strokeWidth="1.8" />
+        <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
+        <line x1="16.24" y1="16.24" x2="19.07" y2="19.07" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
+        <line x1="19.07" y1="4.93" x2="16.24" y2="7.76" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
+        <line x1="7.76" y1="16.24" x2="4.93" y2="19.07" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
     </svg>
 );
 
@@ -142,8 +151,7 @@ const STATUS_CONFIG = {
 const getStatus = (status = '') => {
     const key = status.toLowerCase();
     return STATUS_CONFIG[key] || { label: status, bg: '#f3f4f6', color: '#666', border: '#e5e7eb' };
-}; */
-
+};
 const getGuaranteeType = (guarantee = '') => {
     const g = guarantee.toLowerCase().trim();
     if (g.includes('total')) return 'total';
@@ -244,6 +252,20 @@ function Siniestro() {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
+            <style>{`
+                @keyframes spin { to { transform: rotate(360deg); } }
+                @media (max-width: 600px) {
+                    .cards-grid-responsive { grid-template-columns: 1fr !important; }
+                    .info-grid-responsive  { grid-template-columns: 1fr !important; }
+                    .input-row-responsive  { flex-direction: column !important; }
+                    .input-row-responsive button { min-width: 100% !important; max-width: 100% !important; }
+                    .hero-title-responsive { font-size: 28px !important; }
+                    .propuesta-meta-wrap   { flex-direction: column !important; gap: 6px !important; }
+                    .footer-row-responsive { flex-direction: column !important; align-items: stretch !important; }
+                    .footer-row-responsive a { justify-content: center !important; }
+                    .aviso-responsive      { max-width: 100% !important; }
+                }
+            `}</style>
             <div className="root-header-error-page" />
             <NavBar />
             <div className="body">
@@ -252,7 +274,7 @@ function Siniestro() {
                     {/* ══ VISTA 1: FORMULARIO ══ */}
                     {propuestas === undefined && (
                         <div style={s.formWrapper}>
-                            <h1 style={s.heroTitle}>
+                            <h1 style={s.heroTitle} className="hero-title-responsive">
                                 ¡Tuviste un <span style={s.orange}>siniestro</span> o<br />
                                 una <span style={s.orange}>falla mecánica</span>!
                             </h1>
@@ -261,7 +283,7 @@ function Siniestro() {
                             </p>
                             <div style={s.inputGroup}>
                                 <label style={s.inputLabel}>RUT del asegurado</label>
-                                <div style={s.inputRow}>
+                                <div style={s.inputRow} className="input-row-responsive">
                                     <TextField
                                         type="text"
                                         placeholder="Ej: 12.345.678-9"
@@ -357,7 +379,7 @@ function Siniestro() {
                             </div>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                                 {propuestas.map((p) => {
-                                    /* const st = getStatus(p.status); */
+                                    const st = getStatus(p.status);
                                     const gt = getGuaranteeType(p.guarantee);
                                     return (
                                         <button
@@ -383,9 +405,9 @@ function Siniestro() {
                                                     </span>
                                                 </div>
                                                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                                    {gt === 'total' && <><ShieldCheckIcon color="#16a34a" size={14} /><span style={{ fontSize: '12px', color: '#16a34a', fontWeight: '600' }}>Garantía Total</span></>}
-                                                    {gt === 'mecanica' && <><WrenchIcon color="#2563eb" size={14} /><span style={{ fontSize: '12px', color: '#2563eb', fontWeight: '600' }}>Garantía Mecánica</span></>}
-                                                    {gt === 'sin' && <><ShieldOffIcon color="#bbb" size={14} /><span style={{ fontSize: '12px', color: '#bbb', fontWeight: '600' }}>Sin garantía</span></>}
+                                                    {gt === 'total' && <><ShieldCheckIcon color="#16a34a" size={13} /><span style={{ fontSize: '12px', color: '#16a34a', fontWeight: '600' }}>Garantía Total</span></>}
+                                                    {gt === 'mecanica' && <><WrenchIcon color="#2563eb" size={13} /><span style={{ fontSize: '12px', color: '#2563eb', fontWeight: '600' }}>Garantía Mecánica</span></>}
+                                                    {gt === 'sin' && <><ShieldOffIcon color="#bbb" size={13} /><span style={{ fontSize: '12px', color: '#bbb', fontWeight: '600' }}>Sin garantía</span></>}
                                                 </div>
                                             </div>
                                             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', flexShrink: 0 }}>
@@ -421,7 +443,7 @@ function Siniestro() {
 
                                 <div style={s.card}>
                                     <p style={s.cardSectionLabel}>Datos del asegurado y vehículo</p>
-                                    <div style={s.infoGrid}>
+                                    <div style={s.infoGrid} className="info-grid-responsive">
                                         {[
                                             { label: 'RUT', value: p.rut },
                                             { label: 'Nombre', value: p.name },
@@ -438,7 +460,6 @@ function Siniestro() {
                                             </div>
                                         ))}
                                     </div>
-
                                     {/* ── Banner beneficios exclusivos ── */}
                                     <a
                                         href="https://clubdelseguro.descuentosvip.com"
@@ -484,7 +505,7 @@ function Siniestro() {
                                     </a>
 
                                     {p.document && (
-                                        <div style={{ marginTop: '8px' }}>
+                                        <div style={{ marginTop: '4px' }}>
                                             <button style={s.btnDark} onClick={() => descargarPoliza(p.document)}>
                                                 <DownloadIcon /> Descargar contrato (PDF)
                                             </button>
@@ -497,7 +518,7 @@ function Siniestro() {
                                     <p style={s.sectionSub}>Selecciona la opción que corresponda a tu situación</p>
                                 </div>
 
-                                <div style={s.cardsGrid}>
+                                <div style={s.cardsGrid} className="cards-grid-responsive">
                                     {/* Card 1 — Siniestro */}
                                     <CardAyuda
                                         accentColor="#FF521B"
@@ -540,7 +561,7 @@ function Siniestro() {
                 {/* ── Footer global ── */}
                 <div style={s.footerCard}>
                     <p style={s.footerTitle}>¿Necesitas más ayuda?</p>
-                    <div style={s.footerRow}>
+                    <div style={s.footerRow} className="footer-row-responsive">
                         <a href="https://wa.me/56957069658" style={s.footerBtn} target="_blank" rel="noreferrer">
                             <WhatsAppIcon /> WhatsApp +569 5706 9658
                         </a>
@@ -548,7 +569,7 @@ function Siniestro() {
                             <PhoneIcon /> 600 300 1919
                         </a>
                     </div>
-                    <div style={s.avisoModificacion}>
+                    <div style={s.avisoModificacion} className="aviso-responsive">
                         <div style={s.avisoIconWrap}>
                             <FileEditIcon size={20} color="#d97706" />
                         </div>
