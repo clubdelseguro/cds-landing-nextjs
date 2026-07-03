@@ -232,6 +232,8 @@ function Siniestro() {
         }
     };
 
+    /* Correcion del pr */
+
     const volverALista = () => setPropuestaSeleccionada(null);
     const volverAlFormulario = () => {
         setPropuestas(undefined);
