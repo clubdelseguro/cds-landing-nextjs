@@ -659,7 +659,7 @@ function Siniestro() {
                                         ))}
                                     </div>
                                     {/* ── Banner beneficios exclusivos ── */}
-                                    <a
+                                    {/* <a
                                         href="https://clubdelseguro.cl/beneficios"
                                         target="_blank"
                                         rel="noreferrer"
@@ -673,7 +673,6 @@ function Siniestro() {
                                         onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 6px 20px rgba(255,82,27,0.38)'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
                                         onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 4px 14px rgba(255,82,27,0.22)'; e.currentTarget.style.transform = 'translateY(0)'; }}
                                     >
-                                        {/* Ícono medalla */}
                                         <div style={{
                                             width: '44px', height: '44px', borderRadius: '12px', flexShrink: 0,
                                             backgroundColor: 'rgba(255,255,255,0.2)',
@@ -687,7 +686,6 @@ function Siniestro() {
                                                 <path d="M10.5 15.5l1.5-1 1.5 1" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                                             </svg>
                                         </div>
-                                        {/* Texto */}
                                         <div style={{ flex: 1 }}>
                                             <div style={{ fontSize: '13px', fontWeight: '800', color: '#fff', marginBottom: '3px' }}>
                                                 🎉 ¡Tienes beneficios exclusivos!
@@ -696,11 +694,10 @@ function Siniestro() {
                                                 Como cliente del Club del Seguro accedes a descuentos y ventajas especiales. Toca para conocerlos.
                                             </div>
                                         </div>
-                                        {/* Chevron */}
                                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
                                             <path d="M9 18L15 12L9 6" stroke="rgba(255,255,255,0.75)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
-                                    </a>
+                                    </a> */}
 
                                     {p.document && (
                                         <div style={{ marginTop: '4px' }}>
