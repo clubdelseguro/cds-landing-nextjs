@@ -275,7 +275,7 @@ function Siniestro() {
             setOtpLoading(true);
             const rutLimpio = rut.replace(/\./g, '').replace(/-/g, '');
             const response = await fetch(
-                `https://api.dev.clubdelseguro.cl/api/flowguru/getProposalsByRutOrPatentViewLanding/${rutLimpio}/${otp.trim()}`
+                `https://api.clubdelseguro.cl/api/flowguru/getProposalsByRutOrPatentViewLanding/${rutLimpio}/${otp.trim()}`
             );
             if (response.status === 422) {
                 const data = await response.json();
