@@ -143,15 +143,6 @@ const LifebuoyIcon = ({ color = '#0891b2', size = 24 }) => (
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-const STATUS_CONFIG = {
-    activa:     { label: 'Activa',     bg: '#f0fdf4', color: '#16a34a', border: '#bbf7d0' },
-    renunciada: { label: 'Renunciada', bg: '#fef2f2', color: '#dc2626', border: '#fecaca' },
-    pendiente:  { label: 'Pendiente',  bg: '#fffbeb', color: '#d97706', border: '#fde68a' },
-};
-const getStatus = (status = '') => {
-    const key = status.toLowerCase();
-    return STATUS_CONFIG[key] || { label: status, bg: '#f3f4f6', color: '#666', border: '#e5e7eb' };
-};
 const getGuaranteeType = (guarantee = '') => {
     const g = guarantee.toLowerCase().trim();
     if (g.includes('total')) return 'total';
@@ -574,7 +565,6 @@ function Siniestro() {
                             </div>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                                 {propuestas.map((p) => {
-                                    const st = getStatus(p.status);
                                     const gt = getGuaranteeType(p.guarantee);
                                     return (
                                         <button
@@ -588,9 +578,6 @@ function Siniestro() {
                                             <div style={{ flex: 1, textAlign: 'left' }}>
                                                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px', flexWrap: 'wrap' }}>
                                                     <span style={{ fontSize: '16px', fontWeight: '800', color: '#1a1a1a' }}>{p.brand} {p.model}</span>
-                                                    <span style={{ fontSize: '11px', fontWeight: '700', padding: '2px 10px', borderRadius: '99px', backgroundColor: st.bg, color: st.color, border: `1px solid ${st.border}` }}>
-                                                        {st.label}
-                                                    </span>
                                                 </div>
                                                 <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginBottom: '5px' }}>
                                                     <span style={s.metaItem}><CalendarIcon /> {p.year}</span>
