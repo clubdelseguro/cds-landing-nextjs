@@ -702,7 +702,7 @@ function Siniestro() {
                                     {p.document && (
                                         <div style={{ marginTop: '4px' }}>
                                             <button style={s.btnDark} onClick={() => descargarPoliza(p.document)}>
-                                                <DownloadIcon /> Descargar póliza (PDF)
+                                                <DownloadIcon /> Descargar contrato (PDF)
                                             </button>
                                         </div>
                                     )}
