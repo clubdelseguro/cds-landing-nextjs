@@ -1,7 +1,7 @@
 'use client';
 import { NavBar } from '../../components/NavBar';
 import { CotizaAhoraConNosotros } from '../../components/CotizaAhoraConNosotros';
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { TextField } from '@mui/material';
 
 const CheckIcon = ({ color = '#FF521B', size = 20 }) => (
@@ -143,15 +143,6 @@ const LifebuoyIcon = ({ color = '#0891b2', size = 24 }) => (
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-const STATUS_CONFIG = {
-    activa: { label: 'Activa', bg: '#f0fdf4', color: '#16a34a', border: '#bbf7d0' },
-    renunciada: { label: 'Renunciada', bg: '#fef2f2', color: '#dc2626', border: '#fecaca' },
-    pendiente: { label: 'Pendiente', bg: '#fffbeb', color: '#d97706', border: '#fde68a' },
-};
-const getStatus = (status = '') => {
-    const key = status.toLowerCase();
-    return STATUS_CONFIG[key] || { label: status, bg: '#f3f4f6', color: '#666', border: '#e5e7eb' };
-};
 const getGuaranteeType = (guarantee = '') => {
     const g = guarantee.toLowerCase().trim();
     if (g.includes('total')) return 'total';
@@ -167,6 +158,14 @@ function Siniestro() {
     const [propuestaSeleccionada, setPropuestaSeleccionada] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
+
+    // ── OTP ──
+    const [fase, setFase] = useState('rut');       // 'rut' | 'otp'
+    const [telefonoMascarado, setTelefonoMascarado] = useState('');
+    const [otp, setOtp] = useState('');
+    const [otpError, setOtpError] = useState('');
+    const [otpLoading, setOtpLoading] = useState(false);
+    const [segundos, setSegundos] = useState(0);
 
     const formatearRut = (value) => {
         let rutLimpio = value.replace(/[^0-9kK]/g, '').toUpperCase();
@@ -203,6 +202,7 @@ function Siniestro() {
         }
     };
 
+    // Paso 1: enviar OTP — llama API sin code, espera 401
     const consultarPoliza = async () => {
         setError('');
         setPropuestas(undefined);
@@ -211,10 +211,23 @@ function Siniestro() {
         if (!validarRut(rut)) { setError('El RUT ingresado no es válido'); return; }
         try {
             setLoading(true);
-            const rutLimpio = rut.replace(/\./g, '').replace('-', '');
+            const rutLimpio = rut.replace(/\./g, '').replace(/-/g, '');
             const response = await fetch(
                 `https://api.clubdelseguro.cl/api/flowguru/getProposalsByRutOrPatentViewLanding/${rutLimpio}`
             );
+
+            // 401 = OTP enviado por WhatsApp correctamente
+            // 202 = OTP enviado. Body: { "message": "XXXXX3768" } — el número ya enmascarado
+            if (response.status === 202) {
+                const data = await response.json();
+                setTelefonoMascarado(data.message || '');
+                setSegundos(600); // 10 minutos
+                setOtp('');
+                setOtpError('');
+                setFase('otp');
+                return;
+            }
+
             if (!response.ok) throw new Error(`HTTP_${response.status}`);
             const data = await response.json();
             const lista = Array.isArray(data) ? data : [];
@@ -232,7 +245,63 @@ function Siniestro() {
         }
     };
 
-    /* Correcion del pr */
+    // Countdown OTP
+    useEffect(() => {
+        if (segundos <= 0) return;
+        const t = setTimeout(() => setSegundos(s => s - 1), 1000);
+        return () => clearTimeout(t);
+    }, [segundos]);
+
+    const formatCountdown = (s) => {
+        const m = Math.floor(s / 60).toString().padStart(2, '0');
+        const sec = (s % 60).toString().padStart(2, '0');
+        return `${m}:${sec}`;
+    };
+
+    // Paso 2: validar OTP — llama API con /{code}
+    const validarOtp = async () => {
+        setOtpError('');
+        if (!otp.trim() || otp.length < 4) { setOtpError('Ingresa el código recibido'); return; }
+        try {
+            setOtpLoading(true);
+            const rutLimpio = rut.replace(/\./g, '').replace(/-/g, '');
+            const response = await fetch(
+                `https://api.clubdelseguro.cl/api/flowguru/getProposalsByRutOrPatentViewLanding/${rutLimpio}/${otp.trim()}`
+            );
+            if (response.status === 422) {
+                const data = await response.json();
+                setOtpError(
+                    data.message === 'Código expirado'
+                        ? 'El código expiró. Solicita uno nuevo.'
+                        : 'Código inválido. Verifica e intenta nuevamente.'
+                );
+                return;
+            }
+            if (!response.ok) throw new Error(`HTTP_${response.status}`);
+            const data = await response.json();
+            const lista = Array.isArray(data) ? data : [];
+            setPropuestas(lista);
+            if (lista.length === 1) setPropuestaSeleccionada(lista[0]);
+        } catch (err) {
+            const esProblemaDeRed = err instanceof TypeError;
+            setOtpError(
+                esProblemaDeRed
+                    ? 'Sin conexión. Verifica tu red e intenta nuevamente.'
+                    : 'Ocurrió un error. Por favor intenta nuevamente.'
+            );
+        } finally {
+            setOtpLoading(false);
+        }
+    };
+
+    // Reenviar: vuelve a fase rut y dispara el envío de nuevo
+    const reenviarOtp = async () => {
+        setFase('rut');
+        setOtp('');
+        setOtpError('');
+        // pequeño delay para que React actualice fase antes de llamar
+        setTimeout(() => consultarPoliza(), 50);
+    };
 
     const volverALista = () => setPropuestaSeleccionada(null);
     const volverAlFormulario = () => {
@@ -240,6 +309,11 @@ function Siniestro() {
         setPropuestaSeleccionada(null);
         setRut('');
         setError('');
+        setFase('rut');
+        setOtp('');
+        setOtpError('');
+        setSegundos(0);
+        setTelefonoMascarado('');
     };
     const descargarPoliza = (url) => {
         if (!url) return;
@@ -273,8 +347,8 @@ function Siniestro() {
             <div className="body">
                 <div className="root-error-page" style={{ marginLeft: '10px', marginRight: '10px' }}>
 
-                    {/* ══ VISTA 1: FORMULARIO ══ */}
-                    {propuestas === undefined && (
+                    {/* ══ VISTA 1: FORMULARIO RUT ══ */}
+                    {propuestas === undefined && fase === 'rut' && (
                         <div style={s.formWrapper}>
                             <h1 style={s.heroTitle} className="hero-title-responsive">
                                 ¡Tuviste un <span style={s.orange}>siniestro</span> o<br />
@@ -317,7 +391,7 @@ function Siniestro() {
                                     >
                                         {loading ? (
                                             <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                                <span style={s.spinner} /> Consultando...
+                                                <span style={s.spinner} /> Enviando código...
                                             </span>
                                         ) : (
                                             <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -342,6 +416,116 @@ function Siniestro() {
                                         </button>
                                     </div>
                                 )}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* ══ VISTA 1B: INGRESO OTP ══ */}
+                    {propuestas === undefined && fase === 'otp' && (
+                        <div style={s.formWrapper}>
+                            {/* Ícono WhatsApp grande */}
+                            <div style={{
+                                width: '72px', height: '72px', borderRadius: '20px',
+                                backgroundColor: '#f0fdf4', border: '1.5px solid #bbf7d0',
+                                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                marginBottom: '20px',
+                            }}>
+                                <WhatsAppIcon size={36} />
+                            </div>
+
+                            <h1 style={{ ...s.heroTitle, fontSize: '26px' }} className="hero-title-responsive">
+                                Verifica tu identidad
+                            </h1>
+                            <p style={s.heroSub}>
+                                Enviamos un código de verificación por WhatsApp al número{' '}
+                                <strong style={{ color: '#1a1a1a' }}>{telefonoMascarado}</strong>.
+                                Tienes <strong style={{ color: '#FF521B' }}>10 minutos</strong> para ingresarlo.
+                            </p>
+
+                            <div style={s.inputGroup}>
+                                {/* Countdown */}
+                                <div style={{
+                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                    gap: '8px', marginBottom: '20px',
+                                    padding: '10px 18px', borderRadius: '10px',
+                                    backgroundColor: segundos > 60 ? '#f0fdf4' : '#fef2f2',
+                                    border: `1px solid ${segundos > 60 ? '#bbf7d0' : '#fecaca'}`,
+                                }}>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                        <circle cx="12" cy="12" r="10" stroke={segundos > 60 ? '#16a34a' : '#dc2626'} strokeWidth="1.8"/>
+                                        <path d="M12 6v6l4 2" stroke={segundos > 60 ? '#16a34a' : '#dc2626'} strokeWidth="1.8" strokeLinecap="round"/>
+                                    </svg>
+                                    <span style={{ fontSize: '14px', fontWeight: '700', color: segundos > 60 ? '#16a34a' : '#dc2626' }}>
+                                        {segundos > 0 ? `Código válido por ${formatCountdown(segundos)}` : 'Código expirado'}
+                                    </span>
+                                </div>
+
+                                <label style={s.inputLabel}>Código de verificación</label>
+                                <div style={s.inputRow} className="input-row-responsive">
+                                    <TextField
+                                        type="text"
+                                        placeholder="Ej: 123456"
+                                        value={otp}
+                                        onChange={(e) => {
+                                            const v = e.target.value.replace(/\D/g, '').slice(0, 6);
+                                            setOtp(v);
+                                            setOtpError('');
+                                        }}
+                                        onKeyDown={(e) => {
+                                            if (e.key === 'Enter' && !otpLoading && otp.trim()) validarOtp();
+                                        }}
+                                        error={!!otpError}
+                                        helperText={otpError || ' '}
+                                        fullWidth
+                                        size="medium"
+                                        inputProps={{ maxLength: 6, style: { fontSize: '22px', letterSpacing: '6px', textAlign: 'center', fontWeight: '700' } }}
+                                        sx={{
+                                            '& .MuiOutlinedInput-root': {
+                                                borderRadius: '12px', backgroundColor: '#fff',
+                                                '&.Mui-focused fieldset': { borderColor: '#FF521B', borderWidth: '2px' },
+                                            },
+                                        }}
+                                    />
+                                    <button
+                                        onClick={validarOtp}
+                                        disabled={otpLoading || !otp.trim() || segundos === 0}
+                                        style={{
+                                            ...s.btnOrange,
+                                            opacity: (otpLoading || !otp.trim() || segundos === 0) ? 0.55 : 1,
+                                            cursor: (otpLoading || !otp.trim() || segundos === 0) ? 'not-allowed' : 'pointer',
+                                            minWidth: '180px',
+                                        }}
+                                    >
+                                        {otpLoading ? (
+                                            <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                                <span style={s.spinner} /> Verificando...
+                                            </span>
+                                        ) : (
+                                            <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                                                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.8"/>
+                                                </svg>
+                                                Verificar código
+                                            </span>
+                                        )}
+                                    </button>
+                                </div>
+
+                                {/* Acciones secundarias */}
+                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '12px', flexWrap: 'wrap', gap: '8px' }}>
+                                    <button
+                                        onClick={() => { setFase('rut'); setOtp(''); setOtpError(''); }}
+                                        style={{ ...s.btnGhost, padding: '8px 16px', fontSize: '13px' }}
+                                    >
+                                        ← Cambiar RUT
+                                    </button>
+                                    {segundos === 0 && (
+                                        <button onClick={reenviarOtp} style={{ ...s.btnGhost, padding: '8px 16px', fontSize: '13px', borderColor: '#FF521B', color: '#FF521B' }}>
+                                            Reenviar código
+                                        </button>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     )}
@@ -381,7 +565,6 @@ function Siniestro() {
                             </div>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                                 {propuestas.map((p) => {
-                                    const st = getStatus(p.status);
                                     const gt = getGuaranteeType(p.guarantee);
                                     return (
                                         <button
@@ -407,9 +590,9 @@ function Siniestro() {
                                                     </span>
                                                 </div>
                                                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                                    {gt === 'total' && <><ShieldCheckIcon color="#16a34a" size={13} /><span style={{ fontSize: '12px', color: '#16a34a', fontWeight: '600' }}>Garantía Total</span></>}
+                                                    {gt === 'total'    && <><ShieldCheckIcon color="#16a34a" size={13} /><span style={{ fontSize: '12px', color: '#16a34a', fontWeight: '600' }}>Garantía Total</span></>}
                                                     {gt === 'mecanica' && <><WrenchIcon color="#2563eb" size={13} /><span style={{ fontSize: '12px', color: '#2563eb', fontWeight: '600' }}>Garantía Mecánica</span></>}
-                                                    {gt === 'sin' && <><ShieldOffIcon color="#bbb" size={13} /><span style={{ fontSize: '12px', color: '#bbb', fontWeight: '600' }}>Sin garantía</span></>}
+                                                    {gt === 'sin'      && <><ShieldOffIcon color="#bbb" size={13} /><span style={{ fontSize: '12px', color: '#bbb', fontWeight: '600' }}>Sin garantía</span></>}
                                                 </div>
                                             </div>
                                             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', flexShrink: 0 }}>
@@ -447,13 +630,13 @@ function Siniestro() {
                                     <p style={s.cardSectionLabel}>Datos del asegurado y vehículo</p>
                                     <div style={s.infoGrid} className="info-grid-responsive">
                                         {[
-                                            { label: 'RUT', value: p.rut },
-                                            { label: 'Nombre', value: p.name },
-                                            { label: 'Marca', value: p.brand },
-                                            { label: 'Modelo', value: p.model },
-                                            { label: 'Año', value: p.year },
+                                            { label: 'RUT',       value: p.rut },
+                                            { label: 'Nombre',    value: p.name },
+                                            { label: 'Marca',     value: p.brand },
+                                            { label: 'Modelo',    value: p.model },
+                                            { label: 'Año',       value: p.year },
                                             ...(p.patent ? [{ label: 'Patente', value: p.patent }] : []),
-                                            { label: 'Compañía', value: p.company },
+                                            { label: 'Compañía',  value: p.company },
                                             { label: 'Propuesta', value: `N° ${p.propuesta}` },
                                         ].map(({ label, value }) => (
                                             <div key={label} style={s.infoItem}>
@@ -463,8 +646,8 @@ function Siniestro() {
                                         ))}
                                     </div>
                                     {/* ── Banner beneficios exclusivos ── */}
-                                    {/*<a
-                                        href="https://clubdelseguro.descuentosvip.com"
+                                    {/* <a
+                                        href="https://clubdelseguro.cl/beneficios"
                                         target="_blank"
                                         rel="noreferrer"
                                         style={{
@@ -490,16 +673,14 @@ function Siniestro() {
                                                 <path d="M10.5 15.5l1.5-1 1.5 1" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                                             </svg>
                                         </div>
-                                        
                                         <div style={{ flex: 1 }}>
                                             <div style={{ fontSize: '13px', fontWeight: '800', color: '#fff', marginBottom: '3px' }}>
-                                                ¡Tienes beneficios exclusivos!
+                                                🎉 ¡Tienes beneficios exclusivos!
                                             </div>
                                             <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.88)', lineHeight: '1.45' }}>
                                                 Como cliente del Club del Seguro accedes a descuentos y ventajas especiales. Toca para conocerlos.
                                             </div>
                                         </div>
-                                        
                                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
                                             <path d="M9 18L15 12L9 6" stroke="rgba(255,255,255,0.75)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
