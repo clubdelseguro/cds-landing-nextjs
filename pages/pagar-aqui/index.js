@@ -99,7 +99,7 @@ function ConsultaDocumentos() {
             setLoading(true);
             const rutLimpio = rut.replace(/\./g, '').replace(/-/g, '');
             const response = await fetch(
-                `https://api.dev.clubdelseguro.cl/api/flowguru/getUrlPagarAqui/${rutLimpio}`
+                `https://api.clubdelseguro.cl/api/flowguru/getUrlPagarAqui/${rutLimpio}`
             );
             if (!response.ok) throw new Error(`HTTP_${response.status}`);
             const { object } = await response.json();
