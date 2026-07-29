@@ -74,9 +74,7 @@ export const TopBar = () => {
               style={{ backgroundColor: "#F5F5F5" }}
             >
               <a
-                href="https://clubdelseguro.trytoku.com/"
-                target="_blank"
-                rel="noreferrer"
+                href="/pagar-aqui"
                 className={styles.link}
                 style={{ color: "#000000" }}
               >

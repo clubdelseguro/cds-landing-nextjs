@@ -44,7 +44,7 @@ export const TopBarMovil = () => {
                         </ListItem>
                     </Link>
                 ))}
-                <a href="https://clubdelseguro.trytoku.com/" target="_blank" rel="noreferrer" style={{ color: '#000000', textDecoration: 'none' }}>
+                <a href="/pagar-aqui" style={{ color: '#000000', textDecoration: 'none' }}>
                     <ListItem button>
                         <ListItemText primary="Pagar Aqui" />
                     </ListItem>
