@@ -45,11 +45,11 @@ export default function HeaderMovil({ title, description }) {
                         </ListItem>
                     </Link>
                 ))}
-                <a href="/pagar-aqui" style={{ color: '#000000', textDecoration: 'none' }}>
+                <Link href="/pagar-aqui" style={{ color: '#000000', textDecoration: 'none' }}>
                     <ListItem button>
                         <ListItemText primary="Pagar Aqui" />
                     </ListItem>
-                </a>
+                </Link>
                 <a href="https://cotizador.clubdelseguro.cl/" target="_blank" rel="noreferrer" style={{ color: '#000000', textDecoration: 'none' }}>
                     <ListItem button>
                         <ListItemText primary="Cotiza Aqui" />
