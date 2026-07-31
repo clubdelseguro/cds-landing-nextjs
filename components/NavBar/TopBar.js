@@ -73,13 +73,13 @@ export const TopBar = () => {
               className={styles.item}
               style={{ backgroundColor: "#F5F5F5" }}
             >
-              <a
+              <Link
                 href="/pagar-aqui"
                 className={styles.link}
                 style={{ color: "#000000" }}
               >
                 Pagar Aqui
-              </a>
+              </Link>
             </div>
             <div className={styles.item2}>
               <a
