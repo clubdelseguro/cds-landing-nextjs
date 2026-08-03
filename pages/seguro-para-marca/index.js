@@ -47,7 +47,7 @@ function Marcas({ data, benefits, brands }) {
             <div className={styles.bodyMarcasPage}>
                 <div className={styles.contentBodyMarcasPage}>
                     <div className={styles.headerContentBodyMarcasPage}>
-                        <a href="https://cotizador.clubdelseguro.cl/" className={styles.cotizaAhoraMarcasPage} target="_blank" rel="noreferrer">
+                        <a href="https://cotizador.clubdelseguro.cl/?utm_campaign=cds-landing" className={styles.cotizaAhoraMarcasPage} target="_blank" rel="noreferrer">
                             Cotiza Ahora
                         </a>
                         <input className={styles.buscarMarcasPage} onChange={e => searchBrand(e.target.value)} placeholder="Encuentra tu Auto:" />

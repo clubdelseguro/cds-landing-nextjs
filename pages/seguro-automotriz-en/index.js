@@ -41,7 +41,7 @@ function Regiones({ data, benefits, regions }) {
                 <div className={styles.rootContainerRegiones}>
                     <h1 className={styles.titleRegiones}>{data?.data.title}</h1>
                     <p className={styles.descriptionRegiones}>{data?.data.description}</p>
-                    <a href="https://cotizador.clubdelseguro.cl" className={styles.cotizaAhoraRegiones} target="_blank" rel="noreferrer">
+                    <a href="https://cotizador.clubdelseguro.cl?utm_campaign=cds-landing" className={styles.cotizaAhoraRegiones} target="_blank" rel="noreferrer">
                         Cotiza ahora
                     </a>
                     <p className={styles.seguroAutomotrizRegiones}>

@@ -56,7 +56,7 @@ export const CardSeguroAutomotriz = ({img, title, subtitle, color, data, company
                     </div>
                 </div>
             </div>
-            <a href='https://cotizador.clubdelseguro.cl/' target="_blank" rel="noreferrer" className="button-seguro-automotriz">
+            <a href='https://cotizador.clubdelseguro.cl/?utm_campaign=cds-landing' target="_blank" rel="noreferrer" className="button-seguro-automotriz">
                 Quiero saber más
             </a>
         </div>

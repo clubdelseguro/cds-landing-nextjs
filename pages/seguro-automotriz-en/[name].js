@@ -33,7 +33,7 @@ function Region({benefits, regions }) {
                 <div className={styles.rootContainerRegiones}>
                     <h1 className={styles.titleRegion}>Seguro Automotriz en Región {region?.title}</h1>
                     <p className={styles.descriptionRegiones}>{region?.description}</p>
-                    <a href="https://cotizador.clubdelseguro.cl" target="_blank" className={styles.cotizaAhoraRegiones} rel="noreferrer">
+                    <a href="https://cotizador.clubdelseguro.cl?utm_campaign=cds-landing" target="_blank" className={styles.cotizaAhoraRegiones} rel="noreferrer">
                         Cotiza ahora
                     </a>
                 </div>
