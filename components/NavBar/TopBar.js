@@ -83,7 +83,7 @@ export const TopBar = () => {
             </div>
             <div className={styles.item2}>
               <a
-                href="https://cotizador.clubdelseguro.cl/"
+                href="https://cotizador.clubdelseguro.cl/?utm_campaign=cds-landing"
                 target="_blank"
                 rel="noreferrer"
                 className={styles.link}

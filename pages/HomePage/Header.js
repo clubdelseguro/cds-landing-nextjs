@@ -10,7 +10,7 @@ export default function Header({ title, description }) {
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <h1 className="title-header-home">{title}</h1>
                         <p className="description-header-home">{description}</p>
-                        <a href="https://cotizador.clubdelseguro.cl/" className="cotiza-ahora-header-home" target="_blank" rel="noreferrer">
+                        <a href="https://cotizador.clubdelseguro.cl/?utm_campaign=cds-landing" className="cotiza-ahora-header-home" target="_blank" rel="noreferrer">
                             Cotiza ahora
                         </a>
                     </div>

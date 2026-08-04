@@ -25,7 +25,7 @@ function Companias({ data, blogs, companies }) {
                             {data?.data.title}
                         </p>
                     </div>
-                    <a className={styles.quieroCotizarHeaderCompanies} href="https://cotizador.clubdelseguro.cl/" target="_blank" rel="noreferrer">
+                    <a className={styles.quieroCotizarHeaderCompanies} href="https://cotizador.clubdelseguro.cl/?utm_campaign=cds-landing" target="_blank" rel="noreferrer">
                         Quiero Cotizar
                     </a>
                 </div>
@@ -44,11 +44,11 @@ function Companias({ data, blogs, companies }) {
                                         <div className={styles.containerImgCompanies}>
                                             <img loading="lazy" src={company.logo.url} alt="Logo Consorcio" />
                                         </div>
-                                        <Link href={`/aseguradoras/${nameUrl}-seguros`}>
+                                        <a href={`${company.titleHeader}`} target="_blank" rel="noreferrer">
                                             <div className={styles.botonCompany} style={{ backgroundColor: `${company.color}` }}>
                                                 Saber más de <h2 className={styles.nameCompany}>{company.name}</h2>
                                             </div>
-                                        </Link>
+                                        </a>
                                     </div>
                                 )
                             })
