@@ -51,7 +51,7 @@ function Blog({ blogs }) {
             <div className={styles.rootBlog}>
                 <h1 className={styles.titleBlog}>{blog?.title}</h1>
                 <div className={styles.contentContainerBlog}>
-                    <div className={styles.contentContainerBlog}>{ReactHtmlParser(blog?.description)}</div>
+                    <div className={styles.contentContainerBlog}>{blog?.description}</div>
                 </div>
                 <div className={styles.descriptionBlog}>
                     {respuesta}
