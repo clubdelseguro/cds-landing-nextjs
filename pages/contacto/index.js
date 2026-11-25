@@ -43,7 +43,7 @@ function Contacto({ data }) {
                         display: 'flex',
                         flexDirection: 'row'
                     }}>
-                        <a className="rrss-a" href="https://www.instagram.com/clubdelsegurocl/" target="_blank" rel="noreferrer">
+                        <a className="rrss-a" href="https://www.instagram.com/clubdelsegurochile/" target="_blank" rel="noreferrer">
                             <img loading="lazy" style={{ height: '37.28px' }} src="/assets/logo-insta.svg" alt="logo insta" />
                         </a>
                         <a className="rrss-a" href="https://www.facebook.com/clubdelseguro.cl/" target="_blank" rel="noreferrer">

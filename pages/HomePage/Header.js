@@ -5,7 +5,7 @@ export default function Header({ title, description }) {
     return (
         <div className="root-header-home">
             <div className="body">
-                <TopBar />
+                <TopBar centerSocial />
                 <div className="container-header-home">
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <h1 className="title-header-home">{title}</h1>

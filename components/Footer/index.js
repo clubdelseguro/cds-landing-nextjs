@@ -14,11 +14,11 @@ export const Footer = () => {
                         <span>Avenida el Bosque Central #92, Las Condes, Santiago de Chile.</span>
                     </div>
                     <div className="rrss" >
-                        <a className="rrss-a" href="https://www.instagram.com/clubdelsegurocl/" target="_blank" rel="noreferrer">
-                            <img loading="lazy" style={{ marginLeft: '16.98px', height: '19.25px' }} src="/assets/logo-insta.svg" alt="logo insta" />
+                        <a className="rrss-a" href="https://www.instagram.com/clubdelsegurochile/" target="_blank" rel="noreferrer">
+                            <img loading="lazy" src="/assets/logo-insta.svg" alt="logo insta" />
                         </a>
                         <a className="rrss-a" href="https://www.facebook.com/clubdelseguro.cl/" target="_blank" rel="noreferrer">
-                            <img loading="lazy" style={{ marginLeft: '10.81px', height: '17px' }} src="/assets/logo-fb.svg" alt="logo fb" />
+                            <img loading="lazy" src="/assets/logo-fb.svg" alt="logo fb" />
                         </a>
                         {/* <a className="rrss-a" href="https://twitter.com/Club_Del_Seguro" target="_blank" rel="noreferrer">
                             <img loading="lazy" style={{ marginLeft: '12.27px', height: '16.5px' }} src="/assets/logo-twiter.svg" alt="logo twiter" />
@@ -30,9 +30,8 @@ export const Footer = () => {
                         >
                             <img
                                 loading="lazy"
-                                style={{ marginLeft: "10.81px", height: "17px" }}
                                 src="/assets/logo-wsp.svg"
-                                alt="logo fb"
+                                alt="logo whatsapp"
                             />
                         </a>
                         {/* <a className="rrss-a" href="tel:+6003001919" style={{ marginLeft: '11.1px', marginRight: '14.92px', height: '17px', fontStyle: 'normal', fontWeight: 'normal', fontSize: '12px', lineHeight: '14px', textDecoration: 'none', color: '#000000' }}>
