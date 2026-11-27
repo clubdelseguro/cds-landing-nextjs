@@ -98,7 +98,41 @@ button.rec-dot:focus {
   background-repeat: no-repeat;
   background-position: calc(50% - 50vw) top;
   background-size: calc(50vw + 320px) 100%;
-  clip-path: polygon(0px 414px, 742px 414px, 795px 406px, 837px 398px, 866px 390px, 889px 382px, 908px 374px, 925px 366px, 938px 358px, 951px 350px, 961px 342px, 971px 334px, 980px 326px, 988px 318px, 995px 310px, 1002px 303px, 1008px 295px, 1013px 287px, 1018px 279px, 1023px 271px, 1027px 263px, 1031px 255px, 1035px 247px, 1039px 239px, 1042px 231px, 1046px 223px, 1049px 215px, 1052px 207px, 1055px 199px, 1059px 191px, 1062px 183px, 1066px 175px, 1069px 167px, 1073px 159px, 1076px 151px, 1080px 143px, 1084px 135px, 1089px 127px, 1093px 119px, 1098px 111px, 1103px 104px, 1108px 96px, 1114px 88px, 1120px 80px, 1127px 72px, 1134px 64px, 1143px 56px, 1152px 48px, 1162px 40px, 1174px 32px, 1189px 24px, 1207px 16px, 1233px 8px, 1260px 0px, 0px 0px);
+  clip-path: polygon(0px 414px, 872px 414px, 925px 406px, 967px 398px, 996px 390px, 1019px 382px, 1038px 374px, 1055px 366px, 1068px 358px, 1081px 350px, 1091px 342px, 1101px 334px, 1110px 326px, 1118px 318px, 1125px 310px, 1132px 303px, 1138px 295px, 1143px 287px, 1148px 279px, 1153px 271px, 1157px 263px, 1161px 255px, 1165px 247px, 1169px 239px, 1172px 231px, 1176px 223px, 1179px 215px, 1182px 207px, 1185px 199px, 1189px 191px, 1192px 183px, 1196px 175px, 1199px 167px, 1203px 159px, 1206px 151px, 1210px 143px, 1214px 135px, 1219px 127px, 1223px 119px, 1228px 111px, 1233px 104px, 1238px 96px, 1244px 88px, 1250px 80px, 1257px 72px, 1264px 64px, 1273px 56px, 1282px 48px, 1292px 40px, 1304px 32px, 1319px 24px, 1337px 16px, 1363px 8px, 1390px 0px, 0px 0px);
+}
+
+.hero-banner-home::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1060px;
+  width: 180px;
+  height: 36px;
+  background-image: url('/assets/black-club-days-banner.jpg');
+  background-repeat: no-repeat;
+  background-size: calc(50vw + 280px) calc((50vw + 280px) * 613 / 1600);
+  background-position: right top;
+  transform: scaleX(-1);
+  transform-origin: right center;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-banner-home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1060px;
+  width: 180px;
+  height: 100%;
+  background-image: url('/assets/black-club-days-banner.jpg');
+  background-repeat: no-repeat;
+  background-size: calc(50vw + 280px) calc((50vw + 280px) * 613 / 1600);
+  background-position: right 28px;
+  transform: scaleX(-1);
+  transform-origin: right center;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .hero-banner-home img {
@@ -110,12 +144,18 @@ button.rec-dot:focus {
   object-fit: cover;
   object-position: center top;
   display: block;
+  z-index: 1;
 }
 
 @media screen and (max-width: 980px) {
   .hero-banner-home {
     width: 1254px;
     clip-path: polygon(0px 414px, 484px 414px, 519px 406px, 546px 398px, 565px 390px, 581px 382px, 593px 374px, 603px 366px, 613px 358px, 621px 350px, 628px 342px, 634px 334px, 640px 326px, 645px 318px, 650px 310px, 654px 303px, 658px 295px, 662px 287px, 665px 279px, 668px 271px, 671px 263px, 673px 255px, 676px 247px, 678px 239px, 680px 231px, 683px 223px, 685px 215px, 687px 207px, 689px 199px, 691px 191px, 694px 183px, 696px 175px, 698px 167px, 700px 159px, 703px 151px, 705px 143px, 708px 135px, 710px 127px, 713px 119px, 716px 111px, 720px 104px, 724px 96px, 727px 88px, 731px 80px, 736px 72px, 741px 64px, 746px 56px, 752px 48px, 759px 40px, 767px 32px, 776px 24px, 788px 16px, 805px 8px, 828px 0px, 0px 0px);
+  }
+
+  .hero-banner-home::before,
+  .hero-banner-home::after {
+    display: none;
   }
 
   .hero-banner-home img {
@@ -127,6 +167,7 @@ button.rec-dot:focus {
   position: relative;
   z-index: 1;
   pointer-events: none;
+  transform: translateX(130px);
 }
 
 .root-header-home .body a,
@@ -225,22 +266,32 @@ button.rec-dot:focus {
 }
 
 .header-movil-home {
-  background-image: url('/assets/black-club-days-banner.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #12140c !important;
+}
+
+.banner-movil-home {
+  display: block;
+  width: 100%;
+  line-height: 0;
+}
+
+.banner-movil-home img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .container-header-movil-home {
   width: 400px;
-  height: 148px;
+  height: auto;
+  padding-bottom: 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #FFFFFF;
   border-radius: 35px 35px 0px 0px;
-  position: absolute;
-  bottom: 0px;
+  position: relative;
+  margin-top: 0;
 }
 
 @media screen and (max-width: 500px) {
@@ -249,11 +300,6 @@ button.rec-dot:focus {
   }
 }
 
-@media screen and (max-width: 400px) {
-  .header-movil-home {
-    background-position: left center;
-  }
-}
 
 .root-how-to-quote {
   margin-top: 88px;
