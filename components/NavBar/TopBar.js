@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "../../styles/components/TopBar.module.css";
 
-export const TopBar = () => {
+export const TopBar = ({ centerSocial = false }) => {
   return (
     <div className={styles.containerTopBar}>
       <div className={styles.elementSup}>
@@ -93,15 +93,14 @@ export const TopBar = () => {
               </a>
             </div>
           </div>
-          <div className={styles.rrss}>
+          <div className={centerSocial ? `${styles.rrss} ${styles.rrssCenter}` : styles.rrss}>
             <a
-              href="https://www.instagram.com/clubdelsegurocl/"
+              href="https://www.instagram.com/clubdelsegurochile/"
               target="_blank"
               rel="noreferrer"
             >
               <img
                 loading="lazy"
-                style={{ marginLeft: "16.98px", height: "19.25px" }}
                 src="/assets/logo-insta.svg"
                 alt="logo insta"
               />
@@ -113,7 +112,6 @@ export const TopBar = () => {
             >
               <img
                 loading="lazy"
-                style={{ marginLeft: "10.81px", height: "17px" }}
                 src="/assets/logo-fb.svg"
                 alt="logo fb"
               />
@@ -125,9 +123,8 @@ export const TopBar = () => {
             >
               <img
                 loading="lazy"
-                style={{ marginLeft: "10.81px", height: "17px" }}
                 src="/assets/logo-wsp.svg"
-                alt="logo fb"
+                alt="logo whatsapp"
               />
             </a>
             {/*  <a
