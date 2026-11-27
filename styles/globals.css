@@ -811,9 +811,15 @@ button.rec-dot:focus {
   display: flex;
   flex-direction: row;
   margin-top: 36px;
-  height: 20px;
+  height: auto;
+  gap: 18px;
   justify-content: center;
   align-items: center;
+}
+
+.rrss img {
+  height: 32px;
+  width: auto;
 }
 
 .rrss-a {
