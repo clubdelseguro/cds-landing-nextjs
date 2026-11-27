@@ -15,10 +15,12 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#FF521B" />
         <meta name="description" content="Club Del Seguro" />
-        <meta
-          property="og:image"
-          content="https://clubdelseguro.cl/assets/Logo-CDS-Original.svg"
-        />
+        <meta property="og:image" content="https://cds-img.s3.us-east-1.amazonaws.com/favicon-og.png" />
+        <meta property="og:image:width" content="512" />
+        <meta property="og:image:height" content="512" />
+        <meta property="og:image:type" content="image/png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://cds-img.s3.us-east-1.amazonaws.com/favicon-og.png" />
         <link
           rel="apple-touch-icon"
           href="https://clubdelseguro.cl/assets/img-logo.svg"
