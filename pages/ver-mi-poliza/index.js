@@ -538,7 +538,7 @@ function Siniestro() {
                             <p style={{ color: '#666', fontSize: '15px', textAlign: 'center', lineHeight: '1.6', maxWidth: '360px', margin: 0 }}>
                                 No encontramos pólizas asociadas al RUT <strong>{rut}</strong> en nuestro sistema.
                             </p>
-                            <a href="https://cotizador.clubdelseguro.cl/" style={{ ...s.btnOrange, textDecoration: 'none', marginTop: '4px' }}>
+                            <a href="https://cotizador.clubdelseguro.cl/?utm_campaign=cds-landing" style={{ ...s.btnOrange, textDecoration: 'none', marginTop: '4px' }}>
                                 Contratar seguro ahora
                             </a>
                             <button onClick={volverAlFormulario} style={s.btnGhost}>← Intentar con otro RUT</button>

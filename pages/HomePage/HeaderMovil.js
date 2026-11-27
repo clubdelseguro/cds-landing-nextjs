@@ -50,7 +50,7 @@ export default function HeaderMovil({ title, description }) {
                         <ListItemText primary="Pagar Aqui" />
                     </ListItem>
                 </Link>
-                <a href="https://cotizador.clubdelseguro.cl/" target="_blank" rel="noreferrer" style={{ color: '#000000', textDecoration: 'none' }}>
+                <a href="https://cotizador.clubdelseguro.cl/?utm_campaign=cds-landing" target="_blank" rel="noreferrer" style={{ color: '#000000', textDecoration: 'none' }}>
                     <ListItem button>
                         <ListItemText primary="Cotiza Aqui" />
                     </ListItem>
@@ -114,7 +114,7 @@ export default function HeaderMovil({ title, description }) {
                 <div className="container-header-movil-home">
                     <h1 className="title-header-home">{title}</h1>
                     <p className="description-header-home">{description}</p>
-                    <a href="https://cotizador.clubdelseguro.cl/" target="_blank" rel="noreferrer">
+                    <a href="https://cotizador.clubdelseguro.cl/?utm_campaign=cds-landing" target="_blank" rel="noreferrer">
                         <div className="cotiza-ahora-seguro-automotriz">
                             Cotiza ahora
                         </div>

@@ -49,7 +49,7 @@ export const TopBarMovil = () => {
                         <ListItemText primary="Pagar Aqui" />
                     </ListItem>
                 </Link>
-                <a href="https://cotizador.clubdelseguro.cl/" target="_blank" rel="noreferrer" style={{ color: '#000000', textDecoration: 'none' }}>
+                <a href="https://cotizador.clubdelseguro.cl/?utm_campaign=cds-landing" target="_blank" rel="noreferrer" style={{ color: '#000000', textDecoration: 'none' }}>
                     <ListItem button>
                         <ListItemText primary="Cotiza Aqui" />
                     </ListItem>

@@ -8,7 +8,7 @@ export const CotizaAhoraConNosotros = () => {
                 <h2 className="title-cotiza-ahora-con-nosotros">Cotiza tu seguro</h2>
                 <p className="description-cotiza-ahora-con-nosotros">con nosotros</p>
                 <div className="bottom-cotiza-ahora-con-nosotros">
-                    <a style={{ textDecoration: 'none', color: '#FFFFFF' }} href="https://cotizador.clubdelseguro.cl/" target="_blank" rel="noreferrer">Quiero Cotizar</a>
+                    <a style={{ textDecoration: 'none', color: '#FFFFFF' }} href="https://cotizador.clubdelseguro.cl/?utm_campaign=cds-landing" target="_blank" rel="noreferrer">Quiero Cotizar</a>
                 </div>
             </div>
         </div>

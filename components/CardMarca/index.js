@@ -10,7 +10,7 @@ export const CardMarca = ({img, oferta}) => {
             <span className="body-card-marcas">
                 Desde 30.000
             </span>
-            <a href="https://cotizador.clubdelseguro.cl/" target="_blank" rel="noreferrer" className="footer-card-marcas">
+            <a href="https://cotizador.clubdelseguro.cl/?utm_campaign=cds-landing" target="_blank" rel="noreferrer" className="footer-card-marcas">
                 <span className="ver-mas-card-marcas">ver más</span>
             </a>
         </div>

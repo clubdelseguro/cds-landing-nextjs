@@ -23,7 +23,7 @@ function SeguroAutomotriz({ data, benefits, coverages }) {
                     <p className={styles.descriptionSeguroAutomotriz}>
                         {data?.data.description}
                     </p>
-                    <a className={styles.cotizaAhoraSeguroAutomotriz} href="https://cotizador.clubdelseguro.cl/" target="_blank" rel="noreferrer">
+                    <a className={styles.cotizaAhoraSeguroAutomotriz} href="https://cotizador.clubdelseguro.cl/?utm_campaign=cds-landing" target="_blank" rel="noreferrer">
                         Cotiza ahora
                     </a>
                 </div>

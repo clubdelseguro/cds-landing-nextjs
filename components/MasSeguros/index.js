@@ -95,7 +95,7 @@ export const MasSeguros = () => {
                 alignItems="center"
                 spacing={3}
             >
-                <Grid item>
+                {/* <Grid item>
                     <CustomButton
                         style={{
                             width: '150px',
@@ -127,7 +127,7 @@ export const MasSeguros = () => {
                             </span>
                         </Grid>
                     </CustomButton>
-                </Grid>
+                </Grid> */}
                 <Grid item>
                     <CustomButton style={{
                         width: '150px',
