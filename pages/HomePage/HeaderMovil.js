@@ -64,9 +64,8 @@ export default function HeaderMovil({ title, description }) {
 
     return (
         <div className="root-header-movil-home">
-            <AppBar className="header-movil-home" style={{ height: '430px', backgroundSize: 'cover', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: 'none', maxWidth: '1060px', borderBottom: 'solid 1px #FFFFFF', padding: 0, margin: 0 }} position="static" color="transparent">
-                <div style={{ background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%)' }}>
-                    <Toolbar>
+            <AppBar className="header-movil-home" style={{ display: 'flex', flexDirection: 'column', boxShadow: 'none', padding: 0, margin: 0 }} position="static" color="transparent">
+                <Toolbar>
                         <Grid
                             container
                             direction="row"
@@ -101,7 +100,9 @@ export default function HeaderMovil({ title, description }) {
 
                         </Grid>
                     </Toolbar>
-                </div>
+                <a href="https://cotizador.clubdelseguro.cl/" className="banner-movil-home" target="_blank" rel="noreferrer">
+                    <img src="/assets/black-club-days-banner.jpg" alt="Black Club Days: hasta 40% de descuento en tu seguro automotriz. Del 27 al 30 de noviembre. Cotiza 100% online." />
+                </a>
                 <Drawer
                     anchor={anchor}
                     open={state[anchor]}
